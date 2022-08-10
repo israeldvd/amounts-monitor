@@ -1,5 +1,14 @@
 # React - The Complete Guide (incl Hooks, React Router, Redux)
 
+## Summary
+
+- [React - The Complete Guide (incl Hooks, React Router, Redux)](#react---the-complete-guide-incl-hooks-react-router-redux)
+  - [Summary](#summary)
+  - [Introduction](#introduction)
+  - [Sections](#sections)
+
+## Introduction
+
 > Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!
 
 This is the main goal for the current [course][react-udemy], and that is what this repository is all about. The teachers explain:
