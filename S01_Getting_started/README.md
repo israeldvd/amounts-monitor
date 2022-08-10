@@ -6,6 +6,7 @@
   - [Table of contents](#table-of-contents)
   - [What is React.js?](#what-is-reactjs)
   - [Why React Instead Of "Just JavaScript"?](#why-react-instead-of-just-javascript)
+  - [Building Single-Page Applications (SPAs) with React](#building-single-page-applications-spas-with-react)
 
 <!-- 2. What is React.js? -->
 
@@ -29,3 +30,15 @@ Why using this framework? Check next section.
 Defining step after step can limit all the needed details -- this is the **imperative approach**. Basically using _React.js_ helps the developer to work on a higher level.
 
 Besides that, _React_ allows splitting up of the code into smaller blocks, which gives an enormous quality to all of the process.
+
+<!-- 4. Building Single-Page Applications (SPAs) with React -->
+
+## Building Single-Page Applications (SPAs) with React
+
+React can also be used to **control the entire frontend** of a web application -- SPA. So _React_ takes control over the UI, providing better user experience and smoothness.
+
+That is the most common approach (building **SPA**). For example, changing the page even without reloading it is a big "boost" conferred by the technology.
+
+About React and relation to serve, Prateek writes:
+
+> With React, we get an initial HTML file as response from the server and it is on this HTML file, different views are presented by React. So **React** uses **React** Router which gives an illusion of multiple pages. So essentially you use different routes to load different views and each of those views get rendered or painted on this one single HTML file. So it is the App component that we mount on the HTML file.
