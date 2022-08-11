@@ -11,6 +11,7 @@
     - [Front-end frameworks](#front-end-frameworks)
   - [About This Course & Course Outline](#about-this-course--course-outline)
   - [The Two Ways (Paths) Of Taking This Course](#the-two-ways-paths-of-taking-this-course)
+  - [How to Get The Most Out Of The Course](#how-to-get-the-most-out-of-the-course)
 
 <!-- 2. What is React.js? -->
 
@@ -107,3 +108,12 @@ Approaches are many:
   - skip forward to the React summary module
   - optionally also take JavaScdript refresher module if you need it
   - go throught the entire course after going through the summary module and/or if you got more time in the future
+
+<!-- 9. Getting The Most Out Of This Course -->
+
+## How to Get The Most Out Of The Course
+
+- **Watch the videos** (_choose your pace_)
+- **Code along & practice** (_also without me telling you_)
+- **Debug errors & explore solutions** (_also use code attachmens_)
+- **Help each other & learn together** (_dicord, Q&A board_)
