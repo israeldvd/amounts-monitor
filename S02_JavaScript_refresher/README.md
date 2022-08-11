@@ -97,3 +97,21 @@ console.log(multiply(4.5)); //9
 See an issue when using _arrow functions_ in this React repository's [issue](https://github.com/facebook/react/issues/10810). This is an advanced topic, but it should be noted:
 
 - _the new experimental class method arrow function syntax (which is technically different from ES6 arrow functions) shouldn't be used for React's lifecycle hook_
+
+<!-- 14. Exports and Imports -->
+
+We usually export (by `export` keyword) and import (by `import`) `javascript` files into each other. We can import by name or by default, if any **default export** is defined.
+
+- **default export** allows importing defining a new name:
+  ```javascript
+  import person from "./person.js";
+  import prs from "./person.js";
+  ```
+- **named exports** deman _alias_ for new-naming properties from the export object, or expect a curly-braced reference to it (them):
+  ```javascript
+  import { smth } from "./utility.js";
+  import { smth as Smth } from "./utility.js";
+  import * as bundled from "./utility.js";
+  ```
+
+These examples were taken from the course presentation. In them, `person`, `prs` `Smth` and `bundled` are **chosen names** after the importing. `smth` is an example for **defined-by-export named**.
