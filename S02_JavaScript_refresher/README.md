@@ -7,6 +7,7 @@
   - [Module Introduction](#module-introduction)
   - [Understanding "let" and "const"](#understanding-let-and-const)
   - [Arrow Functions](#arrow-functions)
+  - [Understanding Classes](#understanding-classes)
 
 <!-- Module Introduction -->
 
@@ -115,3 +116,21 @@ We usually export (by `export` keyword) and import (by `import`) `javascript` fi
   ```
 
 These examples were taken from the course presentation. In them, `person`, `prs` `Smth` and `bundled` are **chosen names** after the importing. `smth` is an example for **defined-by-export named**.
+
+<!-- 15. Understanding Classes -->
+
+## Understanding Classes
+
+Metaphorically classes are **blueprints** for _javascript_ objects, defining generic _behaviours_ (_methods_) and _attributes_ for instantiated objects.
+
+- **_Extending_** another class (**inheritance**) requires the `super` constructor.
+
+  There is a need to add `super()` to the constructor of the **derived class** (specific one) in order to provide it the **"broader" class'** (general one) methods and attributes. Someone writes:
+
+  > _When you extend a class, calling super within the subclass constructor **calls the the constructor of the parent class** to make sure it gets initialized and then can be **referenced in the subclass**._
+
+  This is related to **prototypes**. _Obs.: Using the ES6 constructor is rarely required_.
+
+- **_Private attributes or methods_** (not used here).
+
+  JavaScript, as opposed to other OOP languages, doesn't know `private` keyword (and _private variables_, for example).
