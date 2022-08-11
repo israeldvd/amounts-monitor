@@ -10,6 +10,7 @@
   - [Exploring React.js Alternatives (Angular / Vue)](#exploring-reactjs-alternatives-angular--vue)
     - [Front-end frameworks](#front-end-frameworks)
   - [About This Course & Course Outline](#about-this-course--course-outline)
+  - [The Two Ways (Paths) Of Taking This Course](#the-two-ways-paths-of-taking-this-course)
 
 <!-- 2. What is React.js? -->
 
@@ -89,3 +90,20 @@ Obs.: this list is not exaustive. Check the **course overview**. All come togeth
 1. theory and small demos & examples,
 2. more realistic (bigger) example projects
 3. challengs & exercises
+
+<!-- 8. The Two Ways (Paths) Of Taking This Course -->
+
+## The Two Ways (Paths) Of Taking This Course
+
+Approaches are many:
+
+- **Standard Approach**
+
+  - Start with lecture 1 in section 1 and go through the course step by step
+  - skip JavaScript refresher module if you don't need it
+  - use React summary module at the end to summarize what you learned or to refresh knowledge in the future
+
+- **Summary approach** (_if you're in a hurry_)
+  - skip forward to the React summary module
+  - optionally also take JavaScdript refresher module if you need it
+  - go throught the entire course after going through the summary module and/or if you got more time in the future
