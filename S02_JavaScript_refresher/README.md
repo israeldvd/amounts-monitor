@@ -8,6 +8,7 @@
   - [Understanding "let" and "const"](#understanding-let-and-const)
   - [Arrow Functions](#arrow-functions)
   - [Understanding Classes](#understanding-classes)
+  - [Classes, Properties and Methods](#classes-properties-and-methods)
 
 <!-- Module Introduction -->
 
@@ -134,3 +135,44 @@ Metaphorically classes are **blueprints** for _javascript_ objects, defining gen
 - **_Private attributes or methods_** (not used here).
 
   JavaScript, as opposed to other OOP languages, doesn't know `private` keyword (and _private variables_, for example).
+
+<!-- 16. Classes, Properties and Methods -->
+
+## Classes, Properties and Methods
+
+More **modern syntax** to spare constructor-usage and other things from next-generation JavaScript -- the examples below are from a class named `Person`:
+
+- ES6 (using **constructor**)
+
+  ```javascript
+    constructor () {
+      this.name = 'John'
+    }
+
+    showName(){
+      console.log(this.name);
+    }
+  ```
+
+- ES7 (no **constructor** defined -- `super()` isn't called either)
+
+  ```javascript
+  name = "John"; //no constructor anymore
+
+  showName = () => {
+    //arrow function is employed, instead
+    console.log(this.name); //the keyword 'this' is kept
+  };
+  ```
+
+And as no constructor is need, as mentioned, no `super()` method should be called. **Note**: if the new code won't work, try changing the compiler to `ES6/babel` (may change).
+
+**Properties** are like "variables attached to classes/objects. **Methods**, similarly, are like "functions attached to them.
+
+> a **method** should be thought as a **property** which stores a function \[an arrow one\] as a value.
+
+One question may arise: "Are arrow functions as methods bad practice?". The simple answer:
+
+> _You need to understand the context of `this` in a situation. You are correct in saying that creating a method with an arrow function in an object will cause it's `this` keyword to point to the Window object. However, we're talking about `this` within the context of classes which are essentially constructor functions. Thus, the context of an arrow function's `this` keyword is the class._ \[Answer by Gerald\]
+
+In arrow functions `this` is always **binded to outer scope of function**. In **React** they will always be **binded to class** where they were CREATED. This is example with pure js class:
