@@ -6,6 +6,7 @@
   - [Table of contents](#table-of-contents)
   - [Module Introduction](#module-introduction)
   - [Understanding "let" and "const"](#understanding-let-and-const)
+  - [Arrow Functions](#arrow-functions)
 
 <!-- Module Introduction -->
 
@@ -62,3 +63,36 @@ Two ways of creating "variables":
 This [MDN article](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#description) dives deeply into `let` and also explains how it differs from `var`:
 
 > The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it.
+
+<!-- 13. Arrow Functions -->
+
+## Arrow Functions
+
+These are truly functions except they're written differently. Syntax:
+
+```javascript
+const function = () => {
+  //body
+}
+```
+
+The **parenthesis** could be omitted when using only **one argument**:
+
+```javascript
+const multiply = (number) => {
+  return number * 2;
+}
+
+console.log(multiply(4)); //8
+```
+
+And the **_body-and-return_** part could be simplified (see example) if only a **return** was made there:
+```javascript
+const multiply = (number) => number * 2;
+
+console.log(multiply(4.5)); //9
+```
+
+See an issue when using _arrow functions_ in this React repository's [issue](https://github.com/facebook/react/issues/10810). This is an advanced topic, but it should be noted:
+
+- _the new experimental class method arrow function syntax (which is technically different from ES6 arrow functions) shouldn't be used for React's lifecycle hook_
