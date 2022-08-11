@@ -81,12 +81,13 @@ The **parenthesis** could be omitted when using only **one argument**:
 ```javascript
 const multiply = (number) => {
   return number * 2;
-}
+};
 
 console.log(multiply(4)); //8
 ```
 
 And the **_body-and-return_** part could be simplified (see example) if only a **return** was made there:
+
 ```javascript
 const multiply = (number) => number * 2;
 
