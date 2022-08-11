@@ -9,6 +9,7 @@
   - [Arrow Functions](#arrow-functions)
   - [Understanding Classes](#understanding-classes)
   - [Classes, Properties and Methods](#classes-properties-and-methods)
+  - [The Spread & Rest Operator](#the-spread--rest-operator)
 
 <!-- Module Introduction -->
 
@@ -176,3 +177,33 @@ One question may arise: "Are arrow functions as methods bad practice?". The simp
 > _You need to understand the context of `this` in a situation. You are correct in saying that creating a method with an arrow function in an object will cause it's `this` keyword to point to the Window object. However, we're talking about `this` within the context of classes which are essentially constructor functions. Thus, the context of an arrow function's `this` keyword is the class._ \[Answer by Gerald\]
 
 In arrow functions `this` is always **binded to outer scope of function**. In **React** they will always be **binded to class** where they were CREATED. This is example with pure js class:
+
+<!-- 17.  -->
+
+## The Spread & Rest Operator
+
+Basically they, written as `...` (three dots), can be defined as follows:
+
+- **Spread operator**: used to split up array elements OR object properties;
+- **Rest operator**: used to merge a list of function arguments into an array
+
+So the **spread operator** may be used to make a shallow copy from an object or array (take its elements up and use it elsewhere):
+
+```javascript
+let oldArray = [1, 2, 3];
+let newArray = [...oldArray, 4, 5];
+console.log(newArray); // [1, 2, 3, 4, 5]
+
+const person = {
+  name: "John";
+}
+
+const newPerson = {
+  ...person,
+  age: 29
+}
+
+console.log(newPerson); // [object Object] { name: "John", age: 29 }
+```
+
+And the **rest operator** (also known as **ellipsis** in other languages) allows you to write variadic functions, i.e. the function accepts a **variable amount of parameters**.
