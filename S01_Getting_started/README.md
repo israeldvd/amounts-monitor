@@ -9,6 +9,7 @@
   - [Building Single-Page Applications (SPAs) with React](#building-single-page-applications-spas-with-react)
   - [Exploring React.js Alternatives (Angular / Vue)](#exploring-reactjs-alternatives-angular--vue)
     - [Front-end frameworks](#front-end-frameworks)
+  - [About This Course & Course Outline](#about-this-course--course-outline)
 
 <!-- 2. What is React.js? -->
 
@@ -62,3 +63,29 @@ There are alternatives to this framework. See the list below. They are sought to
   - Complete component-based UI framework.
   - Includes most core feaures.
   - A bit less popular than React & Angular.
+
+<!-- 7. About This Course & Course Outline -->
+
+## About This Course & Course Outline
+
+The topics covered in this course are, basically:
+
+- **Basics & Foundation** (_introduccing key features_)
+  - components & building UIs
+  - working with events & data: "props" and "state"
+  - styling react apps & components
+  - introduction into "react hooks"
+- **Advanced concepts** (_building for production_)
+  - side effects, "refs" & more react hooks
+  - react's context API & Redux
+  - forms, http requests & "custom hooks"
+  - routing, deployment, NextJS & more
+- **Summaries & refreshers** (_optimizing your time_)
+  - JavaScript refresher
+  - ReactJS summary _(at the end)_
+
+Obs.: this list is not exaustive. Check the **course overview**. All come together with:
+
+1. theory and small demos & examples,
+2. more realistic (bigger) example projects
+3. challengs & exercises
