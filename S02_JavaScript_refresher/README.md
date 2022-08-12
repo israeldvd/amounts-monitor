@@ -12,6 +12,7 @@
   - [The Spread & Rest Operator](#the-spread--rest-operator)
   - [Destructuring](#destructuring)
   - [Reference and Primitive Types Refresher](#reference-and-primitive-types-refresher)
+  - [Refreshing Array Functions](#refreshing-array-functions)
 
 <!-- Module Introduction -->
 
@@ -235,3 +236,17 @@ They were **not used too often**, but they can be present sometimes.
 
 - **_primitive_**: `strings`, `numbers`
 - **_reference_**: `objects`, `arrays`
+
+<!-- 20. Refreshing Array Functions -->
+
+## Refreshing Array Functions
+
+A long-stading feature of JavaScript is `map()`, a built-in **_array method_** which takes a function (in this case, an **array function**) and applies it to each one of its elements. For an _array_, it returns a **new _array_** (whose values can be equal, though). This inner function takes an argument such as:
+
+```javascript
+const doubleNumbers = [1, 2, 3].map((num) => num * 2); // [2, 4, 6]
+```
+
+Other related **array helper tools**, a group of methods: `every()`, `filter()`, `find()`, `findIndex()`, `for of loop`, `map()`, `reduce()` and `some()`.
+
+Similar to `map()`, `forEach()` does not return an **array of values**, and the former can return HTML content.
