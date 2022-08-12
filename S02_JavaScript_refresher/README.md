@@ -10,6 +10,7 @@
   - [Understanding Classes](#understanding-classes)
   - [Classes, Properties and Methods](#classes-properties-and-methods)
   - [The Spread & Rest Operator](#the-spread--rest-operator)
+  - [Destructuring](#destructuring)
 
 <!-- Module Introduction -->
 
@@ -207,3 +208,18 @@ console.log(newPerson); // [object Object] { name: "John", age: 29 }
 ```
 
 And the **rest operator** (also known as **ellipsis** in other languages) allows you to write variadic functions, i.e. the function accepts a **variable amount of parameters**.
+
+<!-- 18. Destructuring -->
+
+## Destructuring
+
+Easily extract array elements or object properties and store them in variables.
+
+- **Array**
+- **Object**
+
+This means a new **variable/constant name** can be defined, extracting only a portion of the _array_ or _object_. One question arose: _"could the developer use this without `let` or `var`, for example?"_ The recommendation:
+
+> _Theoretically it could work without `const` in many cases. But use `const`, unless you're going to overwrite the whole array (below)._
+
+They were **not used too often**, but they can be present sometimes.
