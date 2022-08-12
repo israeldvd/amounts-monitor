@@ -11,6 +11,7 @@
   - [Classes, Properties and Methods](#classes-properties-and-methods)
   - [The Spread & Rest Operator](#the-spread--rest-operator)
   - [Destructuring](#destructuring)
+  - [Reference and Primitive Types Refresher](#reference-and-primitive-types-refresher)
 
 <!-- Module Introduction -->
 
@@ -223,3 +224,14 @@ This means a new **variable/constant name** can be defined, extracting only a po
 > _Theoretically it could work without `const` in many cases. But use `const`, unless you're going to overwrite the whole array (below)._
 
 They were **not used too often**, but they can be present sometimes.
+
+<!-- 19. Reference and Primitive Types Refresher -->
+
+## Reference and Primitive Types Refresher
+
+**Object** and **arrays** are **_reference types_**, meaning their **variable**/**constant** store a `pointer` to the a real object. That means changing a newly **constant** _object_ which refereces another would change the original object.
+
+**_Primitive types_**, on the other hand, are core units. Creating a new **variable** from them would create a new one; and they are simple in structure, namely, _**not composed** of "things"_.
+
+- **_primitive_**: `strings`, `numbers`
+- **_reference_**: `objects`, `arrays`
