@@ -13,6 +13,7 @@
   - [Destructuring](#destructuring)
   - [Reference and Primitive Types Refresher](#reference-and-primitive-types-refresher)
   - [Refreshing Array Functions](#refreshing-array-functions)
+  - [Wrap up](#wrap-up)
 
 <!-- Module Introduction -->
 
@@ -250,3 +251,11 @@ const doubleNumbers = [1, 2, 3].map((num) => num * 2); // [2, 4, 6]
 Other related **array helper tools**, a group of methods: `every()`, `filter()`, `find()`, `findIndex()`, `for of loop`, `map()`, `reduce()` and `some()`.
 
 Similar to `map()`, `forEach()` does not return an **array of values**, and the former can return HTML content.
+
+<!-- 21. Wrap Up &
+22. Next-Gen JavaScript - Summary &
+23. 23. JS Array Functions -->
+
+## Wrap up
+
+For now, the section's lessons are finished, so a **wrap-up** follows. With these instructions a review of the concepts (**Next-gen JavaScript** and **JS Array Functions**) could be done.
