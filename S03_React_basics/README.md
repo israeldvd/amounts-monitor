@@ -8,7 +8,7 @@
   - [What Are Components? And Why Is React All About Them?](#what-are-components-and-why-is-react-all-about-them)
   - [React Code Is Written In A "Declarative Way"!](#react-code-is-written-in-a-declarative-way)
   - [Creating a new React Project](#creating-a-new-react-project)
-    - [Commands and folder](#commands-and-folder)
+    - [Commands and directory](#commands-and-directory)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -54,21 +54,22 @@ So React saves a great deal of a developer's time. Specifically, the expression 
 
 So the framework **describes**, but does not require **step-by-step instruction**.
 
-<!-- 28. Creating a new React Project -->
+<!-- 28. Creating a new React Project &
+29. The Starting Project -->
 
 ## Creating a new React Project
 
-For creation, the best way couldbe using a tool named `create-react-app`. This provides already a local auto-updating server and folders-and-code basis for an _app_. What is needed: key **transformation steps**.
+For creation, the best way couldbe using a tool named `create-react-app`. This provides already a local auto-updating server and directories-and-code basis for an _app_. What is needed: key **transformation steps**.
 
 To use it, a technology: **_NodeJS_** (runtime for JavaScript) -- this is not needed for React, but for running `create-react-app`. **Installation** is enough with default configurations (for MacOS and Windows, for example).
 
-### Commands and folder
+### Commands and directory
 
 Go into a path in which the project should be created (use `cd`):
 
 - run `npx create-react-app react-complete-guide` (this last is project's name)
 
-This project folder could be used for **all projects** developed, but it should be noted that this process put all modules together into one single place.
+This project directory could be used for **all projects** developed, but it should be noted that this process put all modules together into one single place.
 
 Installing the project setup from external source (does not contain `node_modules` or `package-lock.json`): run the commands
 
