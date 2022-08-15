@@ -13,6 +13,7 @@
     - [Syntax](#syntax)
     - [Importing](#importing)
     - [App and methods](#app-and-methods)
+  - [Introducing JSX](#introducing-jsx)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -71,7 +72,7 @@ To use it, a technology: **_NodeJS_** (runtime for JavaScript) -- this is not ne
 
 Go into a path in which the project should be created (use `cd`):
 
-- run `npx create-react-app react-complete-guide` (this last is project's name)
+- run `npx create-react-app react-complete-guide` (this last is the name of the project)
 
 This project directory could be used for **all projects** developed, but it should be noted that this process put all modules together into one single place.
 
@@ -120,6 +121,14 @@ Obs.: the **file extension** is **not required** for own files or 3rd library fi
 `render`: tells what should be rended in that `div`
 
 In the `App.js` (note the capitalized 'A'), it should be mentioned the main function name (`App()`): it's written capitalized and with the syntax mentioned [before](#syntax).
+
+<!-- 31. Introducing JSX -->
+
+## Introducing JSX
+
+**JSX** stands for **JavaScript XML** (HTML is XML in the end, that could be said). **Developer-friendly JavaScript** code is turned into **browser-friendly code** -- a transformation occurs, as mentioned in sections before.
+
+This friendly code runs in the browser, which, after loading the app, contains also React library's code, which could explain the **complex code** in the `source` tab.
 
 <!-- Extra: key terms -->
 
