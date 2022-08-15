@@ -7,6 +7,8 @@
   - [Module Introduction](#module-introduction)
   - [What Are Components? And Why Is React All About Them?](#what-are-components-and-why-is-react-all-about-them)
   - [React Code Is Written In A "Declarative Way"!](#react-code-is-written-in-a-declarative-way)
+  - [Creating a new React Project](#creating-a-new-react-project)
+    - [Commands and folder](#commands-and-folder)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -41,8 +43,8 @@ Basically there is a work by **splitting big chunks of code into multiple small 
 How are they built? **HTML**, **CSS** (least important part) and **JS**, combined, provide React's functionalities.
 
 > _React allows you to create re-usable and reactive components consisting of HTML and JavaScript (and CSS)_.
-> 
-> _Define the desired target state(s) and let React figure out the actual JavaScrirpt DOM instructions_
+>
+> _Define the desired target state(s) and let React figure out the actual JavaScript DOM instructions_
 
 So React saves a great deal of a developer's time. Specifically, the expression **Declarative Way** can be further explained as follows:
 
@@ -51,6 +53,27 @@ So React saves a great deal of a developer's time. Specifically, the expression 
 > With **declarative nature of React**, you use special _hooks_ and the reactivity system of React to get this done. Like if you want to get a reference of a DOM node, you have it via the _refs_ [which will be seen later in the course]. If you want to add a click listener on a button, you just need a special `onClick` prop to do that so manual registration of _event listener_ like we do in imperative way in JavaScript using `addEventListener`.
 
 So the framework **describes**, but does not require **step-by-step instruction**.
+
+<!-- 28. Creating a new React Project -->
+
+## Creating a new React Project
+
+For creation, the best way couldbe using a tool named `create-react-app`. This provides already a local auto-updating server and folders-and-code basis for an _app_. What is needed: key **transformation steps**.
+
+To use it, a technology: **_NodeJS_** (runtime for JavaScript) -- this is not needed for React, but for running `create-react-app`. **Installation** is enough with default configurations (for MacOS and Windows, for example).
+
+### Commands and folder
+
+Go into a path in which the project should be created (use `cd`):
+
+- run `npx create-react-app react-complete-guide` (this last is project's name)
+
+This project folder could be used for **all projects** developed, but it should be noted that this process put all modules together into one single place.
+
+Installing the project setup from external source (does not contain `node_modules` or `package-lock.json`): run the commands
+
+- `npm install` (already included in the overall starting project) and
+- `npm start`, as before, to start the server with the App.
 
 <!-- Extra: key terms -->
 
