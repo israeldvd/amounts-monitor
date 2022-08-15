@@ -9,6 +9,10 @@
   - [React Code Is Written In A "Declarative Way"!](#react-code-is-written-in-a-declarative-way)
   - [Creating a new React Project](#creating-a-new-react-project)
     - [Commands and directory](#commands-and-directory)
+  - [Analyzing a Standard React Project](#analyzing-a-standard-react-project)
+    - [Syntax](#syntax)
+    - [Importing](#importing)
+    - [App and methods](#app-and-methods)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -75,6 +79,47 @@ Installing the project setup from external source (does not contain `node_module
 
 - `npm install` (already included in the overall starting project) and
 - `npm start`, as before, to start the server with the App.
+
+<!-- 30. Analyzing a Standard React Project -->
+
+## Analyzing a Standard React Project
+
+The place React code will be built is the path `project/src/`. There are, in this particular place, two _JavaScript_ files and one _css_ file. Ultimately, when building the app, there is going to be **JavaScript coding**.
+
+"The **first file to execute** is `index.js`", they would say -- actually its transformed version is executed first. **Under the hood** there are many actions similar to that.
+
+### Syntax
+
+There seems to be an invalid syntax whilst analysing the code, but this is just an false supposition.
+
+- _When importing CSS-code file into JavaScript, that is possible?_
+- _Using html inside a `.js` file, is that ok?_
+
+But here all of that work out finely. Now one requirement would be: just **aware** that all these codes are **runs in all browsers**.
+
+**Two react dependencies**: they are just react library split across multiple packages; so in the `package.json` file t.
+
+It should also be found other code based upon **JSX syntax**; this allows writing _HTML_ into _JS_ code.
+
+### Importing
+
+Connecting two files (`export default App`) is made possible here. For example, **importing dom** helps connecting to the `index.html` file, taking the "root".
+
+- `createRoot`: entry point related to `public/index.html`, in this case.
+
+- there is a `div` there (`#root`), where there is an attachment of react-driver UI.
+
+Other import is made by `import App`, which just bring the `App.js` file (`App` is a component)
+
+- `./App` means "in-the-same-folder App"
+
+Obs.: the **file extension** is **not required** for own files or 3rd library files.
+
+### App and methods
+
+`render`: tells what should be rended in that `div`
+
+In the `App.js` (note the capitalized 'A'), it should be mentioned the main function name (`App()`): it's written capitalized and with the syntax mentioned [before](#syntax).
 
 <!-- Extra: key terms -->
 
