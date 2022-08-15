@@ -44,7 +44,13 @@ How are they built? **HTML**, **CSS** (least important part) and **JS**, combine
 > 
 > _Define the desired target state(s) and let React figure out the actual JavaScrirpt DOM instructions_
 
-So React saves a great deal of a developer's time.
+So React saves a great deal of a developer's time. Specifically, the expression **Declarative Way** can be further explained as follows:
+
+> **Declarative** code means that we instruct JavaScript by telling it what we want it to get done, so we don't specify how to do it but what to get done and let JavaScript do all the heavy lifting for us. React is declarative as you mentioned because here we write code in the way React wants us so using its reactivity system like props and events but behind the scenes it does perform all the JavaScript logic that we earlier used to write in a non-framework pure JS app.
+
+> With **declarative nature of React**, you use special _hooks_ and the reactivity system of React to get this done. Like if you want to get a reference of a DOM node, you have it via the _refs_ [which will be seen later in the course]. If you want to add a click listener on a button, you just need a special `onClick` prop to do that so manual registration of _event listener_ like we do in imperative way in JavaScript using `addEventListener`.
+
+So the framework **describes**, but does not require **step-by-step instruction**.
 
 <!-- Extra: key terms -->
 
