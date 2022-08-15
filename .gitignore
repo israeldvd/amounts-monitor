@@ -1,5 +1,7 @@
-# local file
+# local files
 dev_ref.md
+package-lock.json
+.eslintcache
 
 # copied from https://github.com/academind/react-complete-guide-code/blob/master/.gitignore
 
