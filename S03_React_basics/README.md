@@ -6,6 +6,7 @@
   - [Table of contents](#table-of-contents)
   - [Module Introduction](#module-introduction)
   - [What Are Components? And Why Is React All About Them?](#what-are-components-and-why-is-react-all-about-them)
+  - [React Code Is Written In A "Declarative Way"!](#react-code-is-written-in-a-declarative-way)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -26,12 +27,24 @@ Building user interfaces are responsabilities of **HTML**, **CSS** and **JS**, b
 
 > _React \[library\] makes building complex, interactive and reactive user interfaces simpler_.
 
-As it can be seen, React is all about **components** -- all UI are made up of them. They are comparable to _reusable pieces_; basically the main benefits are summed up in:
+As it can be seen, React is all about **components** -- all UI are made up of them. They are comparable to _reusable pieces (building blocks)_; basically the main benefits are summed up in:
 
 - **Reusability**: don't repeat yourself
 - **Separation of concerns**: avoid doing many things in one and same place (function)
 
 Basically there is a work by **splitting big chunks of code into multiple small functions** for that aims.
+
+<!-- 26. React Code Is Written In A "Declarative Way"! -->
+
+## React Code Is Written In A "Declarative Way"!
+
+How are they built? **HTML**, **CSS** (least important part) and **JS**, combined, provide React's functionalities.
+
+> _React allows you to create re-usable and reactive components consisting of HTML and JavaScript (and CSS)_.
+> 
+> _Define the desired target state(s) and let React figure out the actual JavaScrirpt DOM instructions_
+
+So React saves a great deal of a developer's time.
 
 <!-- Extra: key terms -->
 
