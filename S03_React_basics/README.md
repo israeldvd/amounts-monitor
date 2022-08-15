@@ -6,6 +6,7 @@
   - [Table of contents](#table-of-contents)
   - [Module Introduction](#module-introduction)
   - [What Are Components? And Why Is React All About Them?](#what-are-components-and-why-is-react-all-about-them)
+  - [Key terms](#key-terms)
 
 ## Module Introduction
 
@@ -31,3 +32,17 @@ As it can be seen, React is all about **components** -- all UI are made up of th
 - **Separation of concerns**: avoid doing many things in one and same place (function)
 
 Basically there is a work by **splitting big chunks of code into multiple small functions** for that aims.
+
+<!-- Extra: key terms -->
+
+## Key terms
+
+Some definitions are very usefully when building React _websites_. They follow:
+
+- **Responsive**: adapting layouts to a variety of screen and window sizes.
+
+- **Interactive**: elements that react to your actions on the site.
+
+- **Reactive**: automatically checking and updating data from the server without refreshing the website.
+
+- **Complex**: composed of different simple elements like our components in a way that it eases the interactions between different parts of our application to drive the business logic of the application.
