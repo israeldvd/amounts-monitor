@@ -15,6 +15,7 @@
     - [App and methods](#app-and-methods)
   - [Introducing JSX](#introducing-jsx)
   - [How React Works](#how-react-works)
+  - [Building a First Custom Component](#building-a-first-custom-component)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -149,6 +150,34 @@ With common HTML-and-JavaScript-only tools, even to insert a **new paragraph ele
 3. append a new element into another one.
 
 Now options are simpler -- again, **declarative**, not _imperative_, instructions are tooking place.
+
+<!-- 33. Building a First Custom Component -->
+
+## Building a First Custom Component
+
+Common practice: ew components in new file -- dozens or hundreds of file is common in React projects. There is a **_component tree_**:
+
+- "root component": `App.js` (_only that is rendered directly into the HTML page_)
+- other components "below" that (e.g., `<Header />` and `<Tasks />` with many `<Task />`)
+
+_React name convention_: it is common practice to write a file name starting with capital letter, e.g., `WordoneWordtwo` (multiple "words" are present). Remember:
+
+> _a React component is just a JavaScript function_.
+
+In the new created file, it is also a good practice to write the **component's name** having the same name as its file. And to use it, there is a need to **export**.
+
+**_Importing a component_** sounds like normal importing, but using it requires the use of it **as an HTML element** and **capitalization**. See the example below.
+
+```javascript
+function App() {
+  return (
+    <div>
+      {/* something */}
+      <ExpenseItem></ExpenseItem>
+    </div>
+  );
+}
+```
 
 <!-- Extra: key terms -->
 
