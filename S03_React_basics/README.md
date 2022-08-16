@@ -14,6 +14,7 @@
     - [Importing](#importing)
     - [App and methods](#app-and-methods)
   - [Introducing JSX](#introducing-jsx)
+  - [How React Works](#how-react-works)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -129,6 +130,25 @@ In the `App.js` (note the capitalized 'A'), it should be mentioned the main func
 **JSX** stands for **JavaScript XML** (HTML is XML in the end, that could be said). **Developer-friendly JavaScript** code is turned into **browser-friendly code** -- a transformation occurs, as mentioned in sections before.
 
 This friendly code runs in the browser, which, after loading the app, contains also React library's code, which could explain the **complex code** in the `source` tab.
+
+<!-- 32. How React Works -->
+
+## How React Works
+
+A **component** is basically a custom HTML element. `App()` is just a function which can be viewed as a **custom element**; in which case, it is the first component. Its HTML code, in addition, is what is rendered in the page.
+
+**Remember**:
+
+- React runs **DOM instructions** which update what's visible
+- We just write/show **what is needed in the end** (end result).
+
+With common HTML-and-JavaScript-only tools, even to insert a **new paragraph element** we would need to make a couple of steps. They are (**compare** with React implementation):
+
+1. accessing the DOM,
+2. changing the respective text (or HTML) contents and
+3. append a new element into another one.
+
+Now options are simpler -- again, **declarative**, not _imperative_, instructions are tooking place.
 
 <!-- Extra: key terms -->
 
