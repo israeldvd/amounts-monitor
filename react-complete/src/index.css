@@ -94,11 +94,12 @@
 
 html {
   font-family: var(--font-text);
+  background: linear-gradient(320deg, var(--color-primary), var(--color-grey)), rgb(0, 0, 0);
+  height: 100%;
 }
 
 body {
   font-size: 1rem;
   color: var(--color-clear);
-  background: var(--color-primary, rgb(rgb(0, 0, 0)));
   margin: 20px;
 }

@@ -17,7 +17,19 @@ h2 {
   align-items: center;
 }
 
-.whole_amount_item h2 {
+.item_info {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item_info > span {
+  font-size: 0.6rem;
+}
+
+.whole_amount_item > .item_info h2 {
   font-size: 1.3rem;
   margin: 0;
   flex: 1;
@@ -44,7 +56,11 @@ h2 {
     justify-content: end;
   }
 
-  .whole_amount_item h2 {
+  .item_info {
+    text-align: center;
+  }
+
+  .whole_amount_item > .item_info h2 {
     margin: 0 0 0.2rem 0;
     font-size: 1.2rem;
   }
