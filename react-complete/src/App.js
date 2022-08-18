@@ -3,7 +3,10 @@ import AmountItem from "./components/AmountItem";
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <header>
+        <h1>Amounting the savings</h1>
+        <div>2022-08-16</div>
+      </header>
       <AmountItem></AmountItem>
     </div>
   );

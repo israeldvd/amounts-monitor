@@ -1,10 +1,11 @@
+import "./AmountItem.css";
+
 function AmountItem(params) {
   return (
     <div>
-      <div>2022-08-16</div>
-      <div>
-        <h2>Streaming and TV</h2>
-        <div>R$ 49,99</div>
+      <div className="whole_amount_item">
+        <h2 className="item_description">Streaming and TV</h2>
+        <div className="item_cost">R$ 49,99</div>
       </div>
     </div>
   );
