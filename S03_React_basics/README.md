@@ -16,6 +16,7 @@
   - [Introducing JSX](#introducing-jsx)
   - [How React Works](#how-react-works)
   - [Building a First Custom Component](#building-a-first-custom-component)
+  - [Writing More Complex JSX Code](#writing-more-complex-jsx-code)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -178,6 +179,16 @@ function App() {
   );
 }
 ```
+
+<!-- 34. Writing More Complex JSX Code -->
+
+## Writing More Complex JSX Code
+
+Now it's time for improving a component's code for the sake of writing **more complex JSX code**.
+
+**_JSX code must have one parent/root element_**. For a component's _return_, if the HTML code is broken into many lines, there could be an statement inside parenthesis for **readability** and **syntax** purposes; for example, `return <h1>Title</h1>;` is ok, but not nesting many `div`s into multiple lines after it without parenthesis (check code snapshot for example).
+
+**_Component files_**. Usually, there is a sense into building one component per file.
 
 <!-- Extra: key terms -->
 
