@@ -1,4 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300;400;600;700&family=Finlandica:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+:root {
+  /* Custom properties */
+
+  /* Fonts */
+  --font-title: "Anek Latin", sans-serif;
+  --font-text: "Finlandica", sans-serif;
+
+  /* Colors */
+  --color-primary: #191d32ff; /* space-cadet */
+  --color-grey: #453a49ff; /* dark-liver */
+  --color-brown: #6d3b47ff; /* catawba */
+  --color-clear: #d9cab3ff; /* bone */
+  --color-accent: #ba2c73ff; /* magenta-dye */
+
+  /* CSS Gradients */
+  --gradient-top: linear-gradient(
+    0deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-right: linear-gradient(
+    90deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-bottom: linear-gradient(
+    180deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-left: linear-gradient(
+    270deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-top-right: linear-gradient(
+    45deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-bottom-right: linear-gradient(
+    135deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-top-left: linear-gradient(
+    225deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-bottom-left: linear-gradient(
+    315deg,
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+  --gradient-radial: radial-gradient(
+    #191d32ff,
+    #282f44ff,
+    #453a49ff,
+    #6d3b47ff,
+    #ba2c73ff
+  );
+}
 
 * {
   box-sizing: border-box;
