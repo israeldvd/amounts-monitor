@@ -1,20 +1,14 @@
 import "./AmountItem.css";
 
-function AmountItem(params) {
-  const item = {
-    date: new Date(2022, 8, 18),
-    title: "Streaming and TV",
-    cost: 49.99,
-  };
-
+function AmountItem(props) {
   return (
     <div>
       <div className="whole_amount_item">
         <div className="item_info">
-          <h2 className="item_description">{item.title}</h2>
-          <span>{item.date.toISOString()}</span>
+          <h2 className="item_description">{props.item.title}</h2>
+          <span>{props.item.date.toISOString()}</span>
         </div>
-        <div className="item_cost">R$ {item.cost}</div>
+        <div className="item_cost">R$ {props.item.cost}</div>
       </div>
     </div>
   );
