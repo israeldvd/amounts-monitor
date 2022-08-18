@@ -190,6 +190,16 @@ Now it's time for improving a component's code for the sake of writing **more co
 
 **_Component files_**. Usually, there is a sense into building one component per file.
 
+<!-- 35. Adding Basic CSS Styling -->
+
+The file, e.g. `FileName.css`, typically comes next to a component. It should contain typical, standard CSS code (use any selectors). Besides, there is no need here for explaining CSS details.
+
+**_Importing_** is made by `import './FileName.css'`.
+
+**_Class-naming JSX elements_**. It better of not to type `class` but `className` -- "class" a reserved word --, because this coding is not really HTML; here it is **JSX syntax**.
+
+Adding fonts, for example: visit some options [Anek Latin and Finlandica Google Font's page](https://fonts.google.com/share?selection.family=Anek%20Latin:wght@300;400;600;700%7CFinlandica:ital,wght@0,400;0,500;0,700;1,400) then it **import** it accordingly.
+
 <!-- Extra: key terms -->
 
 ## Key terms
