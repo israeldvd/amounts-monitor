@@ -18,6 +18,7 @@
   - [Building a First Custom Component](#building-a-first-custom-component)
   - [Writing More Complex JSX Code](#writing-more-complex-jsx-code)
   - [Outputting Dynamic Data & Working with Expressions in JSX](#outputting-dynamic-data--working-with-expressions-in-jsx)
+  - [Passing Data via "props"](#passing-data-via-props)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -210,6 +211,26 @@ Adding more than just HTML to the component. Now what's left is JavaScript code.
 Open and closed **curly braces** allow **insertion of JavaScript code** (i.e., _dynamic output_) into the component files. Obs.: outputting a `Date` object should be made by transforming \[a copy of\] it into a string first.
 
 **_Current vs. next steps_**. For now, no longer hard-coded text needs to be used; instead, _dynamic "placholders"_ (that is, result of calculation, HTTP request, value stored in constant/vars or database) are better off. Future changes would make the **creation of new and different data** possible.
+
+<!-- 37. Passing Data via "props" -->
+
+## Passing Data via "props"
+
+**_Reusing a component_**. This is already possible (displaying the same data comes with repeating the "element", e.g., `<AmountItem></AmountItem><AmountItem></AmountItem>`). But, more importantly, there needs to be a way to use components with parameters: `props`.
+
+**_Passing data via "props"_**. There is a problem with previous additions:
+
+> _Components can't just use data stored in other components_
+
+Then comes another concept: attributes into custom components, called `props` (**_properties_**) -- accessed as an property of an object. As a result, each **component can receive and show data** from its "surrounding" (outside).
+
+Accessing these **properties** is made by **_parameters_** (inside the function's parameters). An object, from the custom elements, is _passed by React into the component-function_. Typically one names the argument passed in this way: `props`.
+
+- Again, accessing is made by key-value syntax (e.g. `props.title` or `props.itemsList`).
+  - The **key** has to be name chosen for attribute.
+  - The **value** matches the values of the _key_'s reference.
+
+In summary, **_props_** (used all the time) is a super-useful concept because they: _allow one to reuse a component by passing data from another one to this itself_.
 
 <!-- Extra: key terms -->
 
