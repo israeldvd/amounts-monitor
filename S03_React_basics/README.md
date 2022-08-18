@@ -17,6 +17,7 @@
   - [How React Works](#how-react-works)
   - [Building a First Custom Component](#building-a-first-custom-component)
   - [Writing More Complex JSX Code](#writing-more-complex-jsx-code)
+  - [Outputting Dynamic Data & Working with Expressions in JSX](#outputting-dynamic-data--working-with-expressions-in-jsx)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -199,6 +200,16 @@ The file, e.g. `FileName.css`, typically comes next to a component. It should co
 **_Class-naming JSX elements_**. It better of not to type `class` but `className` -- "class" a reserved word --, because this coding is not really HTML; here it is **JSX syntax**.
 
 Adding fonts, for example: visit some options [Anek Latin and Finlandica Google Font's page](https://fonts.google.com/share?selection.family=Anek%20Latin:wght@300;400;600;700%7CFinlandica:ital,wght@0,400;0,500;0,700;1,400) then it **import** it accordingly.
+
+<!-- 36. Outputting Dynamic Data & Working with Expressions in JSX -->
+
+## Outputting Dynamic Data & Working with Expressions in JSX
+
+Adding more than just HTML to the component. Now what's left is JavaScript code. For example, because it is possible to **add JS code into a component**, a new `Date` object can be created in the `function`'s scope definition.
+
+Open and closed **curly braces** allow **insertion of JavaScript code** (i.e., _dynamic output_) into the component files. Obs.: outputting a `Date` object should be made by transforming \[a copy of\] it into a string first.
+
+**_Current vs. next steps_**. For now, no longer hard-coded text needs to be used; instead, _dynamic "placholders"_ (that is, result of calculation, HTTP request, value stored in constant/vars or database) are better off. Future changes would make the **creation of new and different data** possible.
 
 <!-- Extra: key terms -->
 
