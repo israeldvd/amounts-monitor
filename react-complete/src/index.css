@@ -93,11 +93,12 @@
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: var(--font-text);
 }
 
 body {
-  margin: 0;
-  background-color: #3f3f3f;
+  font-size: 1rem;
+  color: var(--color-clear);
+  background: var(--color-primary, rgb(rgb(0, 0, 0)));
+  margin: 20px;
 }
-
