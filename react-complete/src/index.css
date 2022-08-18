@@ -94,7 +94,7 @@
 
 html {
   font-family: var(--font-text);
-  background: linear-gradient(320deg, var(--color-primary), var(--color-grey)), rgb(0, 0, 0);
+  background: linear-gradient(225deg, var(--color-primary), var(--color-grey)), rgb(0, 0, 0);
   height: 100%;
 }
 
