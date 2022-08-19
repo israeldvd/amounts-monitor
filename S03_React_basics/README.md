@@ -230,7 +230,7 @@ Accessing these **properties** is made by **_parameters_** (inside the function'
   - The **key** has to be name chosen for attribute.
   - The **value** matches the values of the _key_'s reference.
 
-In summary, **_props_** (used all the time) is a super-useful concept because they: _allow one to reuse a component by passing data from another one to this itself_.
+In summary, **_props_** (used all the time) is a super-useful concept because they: _allow one to reuse a component by passing data from another one to this itself_ -- thus it also becomes more configurable.
 
 <!-- Extra: key terms -->
 
