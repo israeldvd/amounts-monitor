@@ -33,13 +33,14 @@ function App() {
             <header>
                 <h1>Amounting the savings</h1>
             </header>
-            {items.map((id, title, cost, date) => {
+            {items.map((item) => {
                 return (
                     <AmountItem
-                        id={id}
-                        title={title}
-                        cost={cost}
-                        date={date}
+                        key={item.id}
+                        id={item.id}
+                        title={item.title}
+                        cost={item.cost}
+                        date={item.date}
                     ></AmountItem>
                 );
             })}
