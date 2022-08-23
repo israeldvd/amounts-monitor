@@ -232,6 +232,10 @@ Accessing these **properties** is made by **_parameters_** (inside the function'
 
 In summary, **_props_** (used all the time) is a super-useful concept because they: _allow one to reuse a component by passing data from another one to this itself_ -- thus it also becomes more configurable.
 
+As additional note, mapping is a way to [render multiple components](https://reactjs.org/docs/lists-and-keys.html#rendering-multiple-components), in which case **unique keys** should be given to each array element -- that means using its index only if needed.
+
+> _A good rule of thumb is that elements inside the `map()` call need keys_.
+
 <!-- Extra: key terms -->
 
 ## Key terms
