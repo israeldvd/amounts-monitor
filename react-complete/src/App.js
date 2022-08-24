@@ -41,7 +41,7 @@ function App() {
                         title={item.title}
                         cost={item.cost}
                         date={item.date}
-                    ></AmountItem>
+                    />
                 );
             })}
         </div>
