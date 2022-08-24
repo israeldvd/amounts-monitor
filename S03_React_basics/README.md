@@ -19,6 +19,7 @@
   - [Writing More Complex JSX Code](#writing-more-complex-jsx-code)
   - [Outputting Dynamic Data & Working with Expressions in JSX](#outputting-dynamic-data--working-with-expressions-in-jsx)
   - [Passing Data via "props"](#passing-data-via-props)
+  - [Adding "normal" JavaScript Logic to Components](#adding-normal-javascript-logic-to-components)
   - [Key terms](#key-terms)
 
 ## Module Introduction
@@ -235,6 +236,19 @@ In summary, **_props_** (used all the time) is a super-useful concept because th
 As additional note, mapping is a way to [render multiple components](https://reactjs.org/docs/lists-and-keys.html#rendering-multiple-components), in which case **unique keys** should be given to each array element -- that means using its index only if needed.
 
 > _A good rule of thumb is that elements inside the `map()` call need keys_.
+
+<!-- 38. Adding "normal" JavaScript Logic to Components -->
+
+## Adding "normal" JavaScript Logic to Components
+
+Up to this time, some **tips and suggestions** arise from the work:
+
+- **_Props do not to be be hard-coded_**. Usually the developer wants to pass dynamic data into them.
+
+- **_Changing date look_** with built-in methods for `Date` objects and place them in a pretty format according to a defined HTML structure
+
+  - `toLocaleString()`: output a **date string** in human-readable format, receiving two parameters: **locales** and **options**
+  - `getFullYear()`: get the 4-digit-number **year** as a value from object
 
 <!-- Extra: key terms -->
 
