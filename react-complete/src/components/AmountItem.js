@@ -9,9 +9,7 @@ function AmountItem(props) {
     const month = props.date.toLocaleString(locale, {
         month: locSet.dateOptions.month,
     });
-    const year = props.date.toLocaleString(locale, {
-        year: locSet.dateOptions.year,
-    });
+    const year = props.date.getFullYear();
 
     return (
         <div>
