@@ -20,7 +20,10 @@
   - [Outputting Dynamic Data & Working with Expressions in JSX](#outputting-dynamic-data--working-with-expressions-in-jsx)
   - [Passing Data via "props"](#passing-data-via-props)
   - [Adding "normal" JavaScript Logic to Components](#adding-normal-javascript-logic-to-components)
+  - [Splitting Components Into Multiple Components](#splitting-components-into-multiple-components)
   - [Key terms](#key-terms)
+  - [Appendix](#appendix)
+    - [Using self-closing tags](#using-self-closing-tags)
 
 ## Module Introduction
 
@@ -250,6 +253,24 @@ Up to this time, some **tips and suggestions** arise from the work:
   - `toLocaleString()`: output a **date string** in human-readable format, receiving two parameters: **locales** and **options**
   - `getFullYear()`: get the 4-digit-number **year** as a value from object
 
+
+<!-- 39. Splitting Components Into Multiple Components -->
+
+## Splitting Components Into Multiple Components
+
+**Building a new component**: as a general rule, this could be done when:
+  - things are getting a little too **big**,
+  - some parts are in need of **specific "configurations"**, such as styling, code (constants and variables) and/or
+  - the HTML elements are related in some **semantic** way
+
+In this project, there could be a **calendar** component. The following steps are very similiar to previous section on [building a new component](#building-a-first-custom-component).
+
+One more additional observation, which might have been overlooked:
+
+> When a component element doesn't have a child, it can be written with **self-closing tag**
+
+See [regex replacing][appendix-tags] to replace those tags not yet simplified.
+
 <!-- Extra: key terms -->
 
 ## Key terms
@@ -263,3 +284,14 @@ Some definitions are very usefully when building React _websites_. They follow:
 - **Reactive**: automatically checking and updating data from the server without refreshing the website.
 
 - **Complex**: composed of different simple elements like our components in a way that it eases the interactions between different parts of our application to drive the business logic of the application.
+
+## Appendix
+
+### Using self-closing tags
+
+Use this RegEx, if needed, to find and replace occurrences of **not-self-closing React-component element** (especially those starting with capital letter):
+
+> `>\s*</\s*[A-Z]\w*\s*>`
+> to be replaced with `/>`
+
+[appendix-tags]: #using-self-closing-tags
