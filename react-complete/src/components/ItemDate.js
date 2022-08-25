@@ -1,3 +1,4 @@
+import "./ItemDate.css";
 import * as locSet from "../utils/localeSettings";
 
 function ItemDate(props) {
@@ -11,10 +12,10 @@ function ItemDate(props) {
     const year = props.date.getFullYear();
 
     return (
-        <div>
-            <div>{month}</div>
-            <div>{year}</div>
-            <div>{day}</div>
+        <div className="item-date">
+            <div className="month">{month}</div>
+            <div className="day">{day}</div>
+            <div className="year">{year}</div>
         </div>
     );
 }
