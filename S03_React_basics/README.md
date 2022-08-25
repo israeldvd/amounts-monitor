@@ -40,7 +40,7 @@ A **project** will be built in the next sections, whose portrayed **purpose** is
 
 ## What Are Components? And Why Is React All About Them?
 
-Building user interfaces are responsabilities of **HTML**, **CSS** and **JS**, but not only to them. That is also the case with React. One simple distinction \[see definitions at [key terms](#key-terms)] is.
+Building user interfaces are responsabilities of **HTML**, **CSS** and **JS**, but not only to them. That is also the case with React. One simple distinction \[see definitions at [key terms][key-terms] is.
 
 > _React \[library\] makes building complex, interactive and reactive user interfaces simpler_.
 
@@ -266,13 +266,17 @@ Up to this time, some **tips and suggestions** arise from the work:
   - some parts are in need of **specific "configurations"**, such as styling, code (constants and variables) and/or
   - the HTML elements are related in some **semantic** way
 
-In this project, there could be a **calendar** component. The following steps are very similiar to previous section on [building a new component](#building-a-first-custom-component).
+In this project, there could be a **calendar** component. The following steps are very similiar to previous section on [building a new component][first-component].
 
 One more additional observation, which might have been overlooked:
 
 > When a component element doesn't have a child, it can be written with **self-closing tag**
 
 See [regex replacing][appendix-tags] to replace those tags not yet simplified.
+
+**_Nesting and prop_**: data is _forwarded_ through multiple components -- that is totally fine, because _props_ work this way. For example, a **child component** may pass on a **parent's props** into its some component of its own.
+
+Of course, **styling** it is not a bad idea. Generally, one may think of creating a new file `Cmp.css` for the component `Cmp.js`, as done [before][add-css-style].
 
 <!-- Extra: key terms -->
 
