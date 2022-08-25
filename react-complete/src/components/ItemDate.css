@@ -1,0 +1,34 @@
+.item-date {
+    padding: 0.5rem;
+    border-radius: 15px 2px;
+    border: 1px var(--color-clear) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 5rem;
+    height: 5rem;
+    transition: 0.3s 0.1s ease-in;
+    transition-property: background-color, color;
+}
+
+.item-date:hover {
+    border-color: var(--color-clear);
+    background-color: var(--color-brown);
+}
+
+.item-date .month {
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* padding: 3px; */
+    border-radius: 5px;
+}
+
+.item-date .year {
+    font-size: 0.75rem;
+}
+
+.item-date .day {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
