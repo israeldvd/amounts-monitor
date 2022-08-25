@@ -17,6 +17,7 @@
   - [How React Works](#how-react-works)
   - [Building a First Custom Component](#building-a-first-custom-component)
   - [Writing More Complex JSX Code](#writing-more-complex-jsx-code)
+  - [Adding Basic CSS Styling](#adding-basic-css-styling)
   - [Outputting Dynamic Data & Working with Expressions in JSX](#outputting-dynamic-data--working-with-expressions-in-jsx)
   - [Passing Data via "props"](#passing-data-via-props)
   - [Adding "normal" JavaScript Logic to Components](#adding-normal-javascript-logic-to-components)
@@ -198,6 +199,8 @@ Now it's time for improving a component's code for the sake of writing **more co
 
 <!-- 35. Adding Basic CSS Styling -->
 
+## Adding Basic CSS Styling
+
 The file, e.g. `FileName.css`, typically comes next to a component. It should contain typical, standard CSS code (use any selectors). Besides, there is no need here for explaining CSS details.
 
 **_Importing_** is made by `import './FileName.css'`.
@@ -295,3 +298,6 @@ Use this RegEx, if needed, to find and replace occurrences of **not-self-closing
 > to be replaced with `/>`
 
 [appendix-tags]: #using-self-closing-tags
+[add-css-style]: #adding-basic-css-styling
+[first-component]: #building-a-first-custom-component
+[key-terms]: #key-terms
