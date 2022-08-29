@@ -22,6 +22,7 @@
   - [Passing Data via "props"](#passing-data-via-props)
   - [Adding "normal" JavaScript Logic to Components](#adding-normal-javascript-logic-to-components)
   - [Splitting Components Into Multiple Components](#splitting-components-into-multiple-components)
+  - [The Concept of "Composition" ("children props")](#the-concept-of-composition-children-props)
   - [Key terms](#key-terms)
   - [Appendix](#appendix)
     - [Using self-closing tags](#using-self-closing-tags)
@@ -277,6 +278,24 @@ See [regex replacing][appendix-tags] to replace those tags not yet simplified.
 **_Nesting and prop_** (_component tree_): data is _forwarded_ through multiple components — that is totally fine, because _props_ work this way. For example, a **child component** may pass on a **parent's props** into its some component of its own.
 
 Of course, **styling** it is not a bad idea. Generally, one may think of creating a new file `Cmp.css` for the component `Cmp.js`, as done [before][add-css-style].
+
+<!-- 40. The Concept of "Composition" ("children props") -->
+
+## The Concept of "Composition" ("children props")
+
+So many **components** were built so far. Generally, **composition** comes into play whenever a component acts like an aggregate for styles and other definitions. Technically, it is called a **_Wrapper component_**.
+
+To use such component (named `<Card>`, for example — see [meaning][card-component]) there is a reserved word for `props`: **`children`**. With that, `props.children` acts like a substitute for all contents between open-and-closing tag of the main component (`Card`). Here it goes some example code — see the possible need of retrieving and reusing **class names**:
+
+```javascript
+function Card(props) {
+  const classes = 'card ' + props.className;
+  
+  return <div className={classes}>{props.children}</div>
+}
+```
+
+Using this technique provides removal of **code duplication**, ocurring specially with alike components or alike styles-of-these. For complex code, it may also shorten HTML-code usage. In other word, this alludes to the principle of **DRY** (Don't repeat yourself).
 
 <!-- Extra: key terms -->
 
