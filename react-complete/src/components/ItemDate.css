@@ -12,11 +12,6 @@
     transition-property: background-color, color;
 }
 
-.item-date:hover {
-    border-color: var(--color-clear);
-    background-color: var(--color-brown);
-}
-
 .item-date .month {
     font-size: 1.2rem;
     font-weight: bold;
