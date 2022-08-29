@@ -15,8 +15,6 @@
 .item-date .month {
     font-size: 1.2rem;
     font-weight: bold;
-    /* padding: 3px; */
-    border-radius: 5px;
 }
 
 .item-date .year {

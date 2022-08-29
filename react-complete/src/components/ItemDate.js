@@ -1,5 +1,5 @@
-import "./ItemDate.css";
 import * as locSet from "../utils/localeSettings";
+import "./ItemDate.css";
 
 function ItemDate(props) {
     const locale = locSet.getNavigatorLanguage;
