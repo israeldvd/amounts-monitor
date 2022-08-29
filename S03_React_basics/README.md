@@ -26,6 +26,7 @@
   - [Key terms](#key-terms)
   - [Appendix](#appendix)
     - [Using self-closing tags](#using-self-closing-tags)
+    - [A Card component](#a-card-component)
 
 ## Module Introduction
 
@@ -320,6 +321,12 @@ Use this RegEx, if needed, to find and replace occurrences of **not-self-closing
 > `>\s*</\s*[A-Z]\w*\s*>`
 > to be replaced with `/>`
 
+
+### A Card component
+
+**_Card_** is a common term for a container-look pieces which have something in common, such as rounded-corners — in the web, having _drop shadows_ and stylings like those —, usually resembling a physical card.
+
+[card-component]: #a-card-component
 [appendix-tags]: #using-self-closing-tags
 [add-css-style]: #adding-basic-css-styling
 [first-component]: #building-a-first-custom-component
