@@ -44,7 +44,7 @@ Building user interfaces are responsabilities of **HTML**, **CSS** and **JS**, b
 
 > _React \[library\] makes building complex, interactive and reactive user interfaces simpler_.
 
-As it can be seen, React is all about **components** -- all UI are made up of them. They are comparable to _reusable pieces (building blocks)_; basically the main benefits are summed up in:
+As it can be seen, React is all about **components** — all UI are made up of them. They are comparable to _reusable pieces (building blocks)_; basically the main benefits are summed up in:
 
 - **Reusability**: don't repeat yourself
 - **Separation of concerns**: avoid doing many things in one and same place (function)
@@ -76,7 +76,7 @@ So the framework **describes**, but does not require **step-by-step instruction*
 
 For creation, the best way couldbe using a tool named `create-react-app`. This provides already a local auto-updating server and directories-and-code basis for an _app_. What is needed: key **transformation steps**.
 
-To use it, a technology: **_NodeJS_** (runtime for JavaScript) -- this is not needed for React, but for running `create-react-app`. **Installation** is enough with default configurations (for MacOS and Windows, for example).
+To use it, a technology: **_NodeJS_** (runtime for JavaScript) — this is not needed for React, but for running `create-react-app`. **Installation** is enough with default configurations (for MacOS and Windows, for example).
 
 ### Commands and directory
 
@@ -97,7 +97,7 @@ Installing the project setup from external source (does not contain `node_module
 
 The place React code will be built is the path `project/src/`. There are, in this particular place, two _JavaScript_ files and one _css_ file. Ultimately, when building the app, there is going to be **JavaScript coding**.
 
-"The **first file to execute** is `index.js`", they would say -- actually its transformed version is executed first. **Under the hood** there are many actions similar to that.
+"The **first file to execute** is `index.js`", they would say — actually its transformed version is executed first. **Under the hood** there are many actions similar to that.
 
 ### Syntax
 
@@ -136,7 +136,7 @@ In the `App.js` (note the capitalized 'A'), it should be mentioned the main func
 
 ## Introducing JSX
 
-**JSX** stands for **JavaScript XML** (HTML is XML in the end, that could be said). **Developer-friendly JavaScript** code is turned into **browser-friendly code** -- a transformation occurs, as mentioned in sections before.
+**JSX** stands for **JavaScript XML** (HTML is XML in the end, that could be said). **Developer-friendly JavaScript** code is turned into **browser-friendly code** — a transformation occurs, as mentioned in sections before.
 
 This friendly code runs in the browser, which, after loading the app, contains also React library's code, which could explain the **complex code** in the `source` tab.
 
@@ -157,13 +157,13 @@ With common HTML-and-JavaScript-only tools, even to insert a **new paragraph ele
 2. changing the respective text (or HTML) contents and
 3. append a new element into another one.
 
-Now options are simpler -- again, **declarative**, not _imperative_, instructions are tooking place.
+Now options are simpler — again, **declarative**, not _imperative_, instructions are tooking place.
 
 <!-- 33. Building a First Custom Component -->
 
 ## Building a First Custom Component
 
-Common practice: ew components in new file -- dozens or hundreds of file is common in React projects. There is a **_component tree_**:
+Common practice: ew components in new file — dozens or hundreds of file is common in React projects. There is a **_component tree_**:
 
 - "root component": `App.js` (_only that is rendered directly into the HTML page_)
 - other components "below" that (e.g., `<Header />` and `<Tasks />` with many `<Task />`)
@@ -205,7 +205,7 @@ The file, e.g. `FileName.css`, typically comes next to a component. It should co
 
 **_Importing_** is made by `import './FileName.css'`.
 
-**_Class-naming JSX elements_**. It better of not to type `class` but `className` -- "class" a reserved word --, because this coding is not really HTML; here it is **JSX syntax**.
+**_Class-naming JSX elements_**. It better of not to type `class` but `className` — "class" a reserved word --, because this coding is not really HTML; here it is **JSX syntax**.
 
 Adding fonts, for example: visit some options [Anek Latin and Finlandica Google Font's page](https://fonts.google.com/share?selection.family=Anek%20Latin:wght@300;400;600;700%7CFinlandica:ital,wght@0,400;0,500;0,700;1,400) then it **import** it accordingly.
 
@@ -229,7 +229,7 @@ Open and closed **curly braces** allow **insertion of JavaScript code** (i.e., _
 
 > _Components can't just use data stored in other components_
 
-Then comes another concept: attributes into custom components, called `props` (**_properties_**) -- accessed as an property of an object. As a result, each **component can receive and show data** from its "surrounding" (outside).
+Then comes another concept: attributes into custom components, called `props` (**_properties_**) — accessed as an property of an object. As a result, each **component can receive and show data** from its "surrounding" (outside).
 
 Accessing these **properties** is made by **_parameters_** (inside the function's parameters). An object, from the custom elements, is _passed by React into the component-function_. Typically one names the argument passed in this way: `props`.
 
@@ -237,9 +237,9 @@ Accessing these **properties** is made by **_parameters_** (inside the function'
   - The **key** has to be name chosen for attribute.
   - The **value** matches the values of the _key_'s reference.
 
-In summary, **_props_** (used all the time) is a super-useful concept because they: _allow one to reuse a component by passing data from another one to this itself_ -- thus it also becomes more configurable.
+In summary, **_props_** (used all the time) is a super-useful concept because they: _allow one to reuse a component by passing data from another one to this itself_ — thus it also becomes more configurable.
 
-As additional note, mapping is a way to [render multiple components](https://reactjs.org/docs/lists-and-keys.html#rendering-multiple-components), in which case **unique keys** should be given to each array element -- that means using its index only if needed.
+As additional note, mapping is a way to [render multiple components](https://reactjs.org/docs/lists-and-keys.html#rendering-multiple-components), in which case **unique keys** should be given to each array element — that means using its index only if needed.
 
 > _A good rule of thumb is that elements inside the `map()` call need keys_.
 
@@ -274,7 +274,7 @@ One more additional observation, which might have been overlooked:
 
 See [regex replacing][appendix-tags] to replace those tags not yet simplified.
 
-**_Nesting and prop_** (_component tree_): data is _forwarded_ through multiple components -- that is totally fine, because _props_ work this way. For example, a **child component** may pass on a **parent's props** into its some component of its own.
+**_Nesting and prop_** (_component tree_): data is _forwarded_ through multiple components — that is totally fine, because _props_ work this way. For example, a **child component** may pass on a **parent's props** into its some component of its own.
 
 Of course, **styling** it is not a bad idea. Generally, one may think of creating a new file `Cmp.css` for the component `Cmp.js`, as done [before][add-css-style].
 
