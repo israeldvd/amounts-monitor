@@ -274,7 +274,7 @@ One more additional observation, which might have been overlooked:
 
 See [regex replacing][appendix-tags] to replace those tags not yet simplified.
 
-**_Nesting and prop_**: data is _forwarded_ through multiple components -- that is totally fine, because _props_ work this way. For example, a **child component** may pass on a **parent's props** into its some component of its own.
+**_Nesting and prop_** (_component tree_): data is _forwarded_ through multiple components -- that is totally fine, because _props_ work this way. For example, a **child component** may pass on a **parent's props** into its some component of its own.
 
 Of course, **styling** it is not a bad idea. Generally, one may think of creating a new file `Cmp.css` for the component `Cmp.js`, as done [before][add-css-style].
 
