@@ -23,6 +23,7 @@
   - [Adding "normal" JavaScript Logic to Components](#adding-normal-javascript-logic-to-components)
   - [Splitting Components Into Multiple Components](#splitting-components-into-multiple-components)
   - [The Concept of "Composition" ("children props")](#the-concept-of-composition-children-props)
+  - [A First Summary](#a-first-summary)
   - [Key terms](#key-terms)
   - [Appendix](#appendix)
     - [Using self-closing tags](#using-self-closing-tags)
@@ -297,6 +298,18 @@ function Card(props) {
 ```
 
 Using this technique provides removal of **code duplication**, ocurring specially with alike components or alike styles-of-these. For complex code, it may also shorten HTML-code usage. In other word, this alludes to the principle of **DRY** (Don't repeat yourself).
+
+<!-- 41. A First Summary -->
+
+## A First Summary
+
+This project still is pretty much **static** -- no interaction with the application (see future topics). Some **topics** covered by it:
+
+- JSX syntax
+- Working with components and
+- with data (using _props_).
+
+At the browser-rendered page, the react-specific code is not shown, but each component is used for the creation of elements.
 
 <!-- Extra: key terms -->
 
