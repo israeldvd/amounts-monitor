@@ -1,11 +1,13 @@
-# local file
+# local files
 dev_ref.md
+package-lock.json
+.eslintcache
 
 # copied from https://github.com/academind/react-complete-guide-code/blob/master/.gitignore
 
 .DS_Store
 .vscode
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+*.code-workspace
 
 # dependencies
 /node_modules
