@@ -1,4 +1,4 @@
-import Items from "./components/Items";
+import Items from "./components/Amounts/Items";
 
 function App() {
     const items = [

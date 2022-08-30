@@ -1,4 +1,4 @@
-import * as locSet from "../utils/localeSettings";
+import * as locSet from "../../utils/localeSettings";
 import "./ItemDate.css";
 
 function ItemDate(props) {
