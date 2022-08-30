@@ -25,6 +25,7 @@
   - [The Concept of "Composition" ("children props")](#the-concept-of-composition-children-props)
   - [A First Summary](#a-first-summary)
   - [A Closer Look At JSX](#a-closer-look-at-jsx)
+  - [Organizing Component Files](#organizing-component-files)
   - [Key terms](#key-terms)
   - [Appendix](#appendix)
     - [Using self-closing tags](#using-self-closing-tags)
@@ -325,6 +326,17 @@ Importing `react` (the package) in the past was a common thing. Nowadays JSX is 
 In view of this, one comes to the conclusion that the old way was **a bit harder to read**. **Under the hood**, the code is transformed into the "hard-to-read approach"; this is _still_ present. Besides that, some projects would contain **import to the `react` library** (and use the `React` object).
 
 React is still used _under the hood_. The structure, whose outmost parent is supposed to be unique or the-only-found sibling, might explain why there is a need for using only **one element per return statement**.
+
+<!-- 43. Organizing Component Files -->
+
+## Organizing Component Files
+
+A good ideia is stablish **subfolders** of components, keeping all of them organized. For example, one project may possess the following suggestions:
+
+- General UI (e.g., `UI` folder/directory)
+- Feature-specific components
+
+This should be done **conventionally** -- making sure every participant is confortable with the organization.
 
 <!-- Extra: key terms -->
 
