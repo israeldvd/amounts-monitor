@@ -30,6 +30,7 @@
   - [Key terms](#key-terms)
   - [Appendix](#appendix)
     - [Using self-closing tags](#using-self-closing-tags)
+    - [Using arrow functions](#using-arrow-functions)
     - [A Card component](#a-card-component)
 
 ## Module Introduction
@@ -345,7 +346,7 @@ This should be done **conventionally** -- making sure every participant is confo
 
 Modern JavaScript: arrow functions (applying to any function, not only _component functions_). This is just standard JS code. **Preferences**: it is shorter, but that should be optional and drived by personal preference.
 
-In the next steps, we'll look at another concept: **_state_**, which helps making the application interactive.
+In the next steps, we'll look at another concept: **_state_**, which helps making the application interactive. See tips in [how to replace][using-arrow-func] functions definitions automatically.
 
 <!-- Extra: key terms -->
 
@@ -370,6 +371,12 @@ Use this RegEx, if needed, to find and replace occurrences of **not-self-closing
 > `>\s*</\s*[A-Z]\w*\s*>`
 > to be replaced with `/>`
 
+### Using arrow functions
+
+Using regex, all the code containing a function could be written in the arrow-function form: searching for
+
+- `function ([A-Z]\w+)\s*\(([\w\s,]*)\)`
+- and replacing it with `const $1 = ($2) =>`.
 
 ### A Card component
 
@@ -380,3 +387,4 @@ Use this RegEx, if needed, to find and replace occurrences of **not-self-closing
 [add-css-style]: #adding-basic-css-styling
 [first-component]: #building-a-first-custom-component
 [key-terms]: #key-terms
+[using-arrow-func]: #using-arrow-functions
