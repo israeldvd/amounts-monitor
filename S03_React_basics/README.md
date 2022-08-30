@@ -24,6 +24,7 @@
   - [Splitting Components Into Multiple Components](#splitting-components-into-multiple-components)
   - [The Concept of "Composition" ("children props")](#the-concept-of-composition-children-props)
   - [A First Summary](#a-first-summary)
+  - [A Closer Look At JSX](#a-closer-look-at-jsx)
   - [Key terms](#key-terms)
   - [Appendix](#appendix)
     - [Using self-closing tags](#using-self-closing-tags)
@@ -310,6 +311,20 @@ This project still is pretty much **static** -- no interaction with the applicat
 - with data (using _props_).
 
 At the browser-rendered page, the react-specific code is not shown, but each component is used for the creation of elements.
+
+<!-- 42. A Closer Look At JSX -->
+
+## A Closer Look At JSX
+
+Importing `react` (the package) in the past was a common thing. Nowadays JSX is broadly used: it is the syntactic sugar for `React.createElement()`, which would receive two or more arguments:
+
+- the string representation of an **element**, e.g., `'div'`
+- an object which would describe it (e.g., his **attributes**)
+- one or more `children` having the same syntax (thus, a tree), if there is any.
+
+In view of this, one comes to the conclusion that the old way was **a bit harder to read**. **Under the hood**, the code is transformed into the "hard-to-read approach"; this is _still_ present. Besides that, some projects would contain **import to the `react` library** (and use the `React` object).
+
+React is still used _under the hood_. The structure, whose outmost parent is supposed to be unique or the-only-found sibling, might explain why there is a need for using only **one element per return statement**.
 
 <!-- Extra: key terms -->
 
