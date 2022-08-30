@@ -1,7 +1,7 @@
 import * as locSet from "../../utils/localeSettings";
 import "./ItemDate.css";
 
-function ItemDate(props) {
+const ItemDate = (props) => {
     const locale = locSet.getNavigatorLanguage;
     const day = props.date.toLocaleString(locale, {
         day: locSet.dateOptions.day,

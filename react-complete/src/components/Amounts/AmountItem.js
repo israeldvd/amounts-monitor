@@ -2,7 +2,7 @@ import Card from "../UI/Card";
 import ItemDate from "./ItemDate";
 import "./AmountItem.css";
 
-function AmountItem(props) {
+const AmountItem = (props) => {
     return (
         <Card className="whole_amount_item">
             <div className="item_info">

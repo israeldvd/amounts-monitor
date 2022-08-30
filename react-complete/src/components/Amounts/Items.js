@@ -2,7 +2,7 @@ import Card from "./UI/Card";
 import AmountItem from "./AmountItem";
 import "./Items.css";
 
-function Items(props) {
+const Items = (props) => {
     return (
         <Card className="items">
             {props.items

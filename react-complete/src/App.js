@@ -1,6 +1,6 @@
 import Items from "./components/Amounts/Items";
 
-function App() {
+const App = () => {
     const items = [
         {
             id: "0",
