@@ -26,6 +26,7 @@
   - [A First Summary](#a-first-summary)
   - [A Closer Look At JSX](#a-closer-look-at-jsx)
   - [Organizing Component Files](#organizing-component-files)
+  - [An Alternative Function Syntax](#an-alternative-function-syntax)
   - [Key terms](#key-terms)
   - [Appendix](#appendix)
     - [Using self-closing tags](#using-self-closing-tags)
@@ -337,6 +338,14 @@ A good ideia is stablish **subfolders** of components, keeping all of them organ
 - Feature-specific components
 
 This should be done **conventionally** -- making sure every participant is confortable with the organization.
+
+<!-- 44. An Alternative Function Syntax -->
+
+## An Alternative Function Syntax
+
+Modern JavaScript: arrow functions (applying to any function, not only _component functions_). This is just standard JS code. **Preferences**: it is shorter, but that should be optional and drived by personal preference.
+
+In the next steps, we'll look at another concept: **_state_**, which helps making the application interactive.
 
 <!-- Extra: key terms -->
 
