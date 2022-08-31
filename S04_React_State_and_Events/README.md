@@ -7,6 +7,7 @@
   - [1.2. Module Introduction](#12-module-introduction)
   - [1.3. Listening to Events Working with Event Handlers](#13-listening-to-events-working-with-event-handlers)
   - [1.4. How Component Functions Are Executed](#14-how-component-functions-are-executed)
+  - [1.5. Working with "State"](#15-working-with-state)
 
 <!-- 46. Module Introduction -->
 
@@ -35,3 +36,20 @@ Related to **naming conventions**, usually functions are named ending with **"Ha
 Changing what shows up on the screen: e.g., defining a **variable**, changing it every time the _handler_ is called. But there is a catch. **Nothing happens** after a click handler, even though it is getting triggered.
 
 React does not work like this. One **key thing**: a component is just a regular function, returning JSX; and someone has to call it, or call every component React encounters -- **a series of functions calls**. And React never repeats those steps, but there is a way to re-evaluate a component: **_state_**.
+
+<!-- 49. Working with "State" -->
+
+## 1.5. Working with "State"
+
+Changing some variable does not change a component. And even if it would be the case, in this project (using a variable `title`), the title would reload its initial contents (received via `props.title`).
+
+Importing from the react library: `useState`. Call it (a **_React hook_**) inside the component, generally.
+
+- Receives a **value** (e.g., inital _title_).
+- Assigning a **new value** by its returned function.
+
+Actually it returns an _array_: the current state value (e.g., `title`) and the function (e.g., `setTitle`). Refer to the **convention**: description and "_set_" followed by it (see the code).
+
+Calling the _state-updated function_ not only **update** the old 'value', but also the component. Obs.: `setTitle` (or any "setFunction") is executed asynchronously. So the change is not yet reflected in the next line (.e.g, using `console.log(title)` would print an old reference).
+
+The **_takeway_**: if there is a design to change something in the UI based on data change, then **_state_** is in charge of that.
