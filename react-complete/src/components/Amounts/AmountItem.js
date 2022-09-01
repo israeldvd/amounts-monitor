@@ -5,23 +5,23 @@ import ItemDate from "./ItemDate";
 import "./AmountItem.css";
 
 const AmountItem = (props) => {
-    const [title, setTitle] = useState(props.title);
+    const [description, setDescription] = useState(props.description);
 
-    const titleChangeHandler = () => {
-        setTitle("Updated!");
+    const descriptionChangeHandler = () => {
+        setDescription("Updated!");
     };
 
     return (
         <Card className="whole_amount_item">
             <div className="item_data">
                 <div className="item_info">
-                    <h2 className="item_description">{title}</h2>
+                    <h2 className="item_description">{description}</h2>
                     <ItemDate date={props.date} />
                 </div>
                 <div className="item_cost">R$ {props.cost}</div>
             </div>
             <div>
-                <button onClick={titleChangeHandler}>Change title</button>
+                <button onClick={descriptionChangeHandler}>Change description</button>
             </div>
         </Card>
     );

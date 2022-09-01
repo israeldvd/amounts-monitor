@@ -12,7 +12,7 @@ const Items = (props) => {
                         <AmountItem
                             key={item.id}
                             id={item.id}
-                            title={item.title}
+                            description={item.description}
                             cost={item.cost}
                             date={item.date}
                         />

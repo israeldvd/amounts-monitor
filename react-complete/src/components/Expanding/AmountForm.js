@@ -5,8 +5,8 @@ const AmountForm = () => {
         <form action="POST">
             <div className="settings">
                 <div className="setter">
-                    <label htmlFor="set-title">Title</label>
-                    <input type="text" name="set-title" />
+                    <label htmlFor="set-description">Description</label>
+                    <input type="text" name="set-description" />
                 </div>
                 <div className="setter">
                     <label htmlFor="set-amount">Amount</label>
