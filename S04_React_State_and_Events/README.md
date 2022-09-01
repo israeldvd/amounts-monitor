@@ -11,6 +11,7 @@
   - [1.6. A Closer Look at the "useState" Hook](#16-a-closer-look-at-the-usestate-hook)
     - [1.6.1. Using _const_](#161-using-const)
     - [1.6.2. Instances and `useState`](#162-instances-and-usestate)
+  - [State can be updated in many ways!](#state-can-be-updated-in-many-ways)
 
 <!-- 46. Module Introduction -->
 
@@ -70,3 +71,15 @@ Now, **using _const_** with `useState` remains a common practice to state-regula
 ### 1.6.2. Instances and `useState`
 
 Another important concept here is related to **first execution of `useState`**: calling `useState` only sets an initial value the first time it starts keeping track of the argument's state. That means the argument to it is **initialized once**; otherwise, it grabs the latest state which was updated, for exampled.
+
+<!-- 51. State can be updated in many ways! -->
+
+## State can be updated in many ways!
+
+As noted by an instructor, everything done so far was related to **user event listeners** (such as _click handlers_):
+
+> _That's very common but not required for state updates! You can update states for whatever reason you may have._
+
+A course or learning sessions one would take might present new **ways of keeping track and updating states**. They write:
+
+> _Later in the course, we'll see HTTP requests that complete (where we then want to update the state based on the Http response we got back) but you could also be updating state because a timer (set with setTimeout()) expired for example_.
