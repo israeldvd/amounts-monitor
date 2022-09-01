@@ -2,7 +2,6 @@
     text-align: left;
     display: flex;
     flex-wrap: wrap;
-    justify-content: initial;
     gap: 1.4rem;
 }
 
@@ -28,5 +27,6 @@
 }
 
 .action {
+    align-self: flex-end;
     text-align: right;
 }

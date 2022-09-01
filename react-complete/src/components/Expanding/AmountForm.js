@@ -26,9 +26,9 @@ const AmountForm = () => {
                         max="2050-12-31"
                     />
                 </div>
-                <div className="action">
-                    <button type="submit">Add new</button>
-                </div>
+            </div>
+            <div className="action">
+                <button type="submit">Add new</button>
             </div>
         </form>
     );
