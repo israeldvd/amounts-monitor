@@ -8,6 +8,9 @@
   - [1.3. Listening to Events Working with Event Handlers](#13-listening-to-events-working-with-event-handlers)
   - [1.4. How Component Functions Are Executed](#14-how-component-functions-are-executed)
   - [1.5. Working with "State"](#15-working-with-state)
+  - [1.6. A Closer Look at the "useState" Hook](#16-a-closer-look-at-the-usestate-hook)
+    - [1.6.1. Using _const_](#161-using-const)
+    - [1.6.2. Instances and `useState`](#162-instances-and-usestate)
 
 <!-- 46. Module Introduction -->
 
@@ -15,9 +18,9 @@
 
 Making apps interactive and reactive is the main goal of the projects with React. Remember that here the developer declare **desired target** states and **React takes care** of reaching that state. Some topics covered ahead:
 
-- Handling events
-- Updating UI and working with "_state_"
-- A closer look at components and _state_
+-   Handling events
+-   Updating UI and working with "_state_"
+-   A closer look at components and _state_
 
 <!-- 47. Listening to Events & Working with Event Handlers -->
 
@@ -45,11 +48,25 @@ Changing some variable does not change a component. And even if it would be the 
 
 Importing from the react library: `useState`. Call it (a **_React hook_**) inside the component, generally.
 
-- Receives a **value** (e.g., inital _title_).
-- Assigning a **new value** by its returned function.
+-   Receives a **value** (e.g., inital _title_).
+-   Assigning a **new value** by its returned function.
 
 Actually it returns an _array_: the current state value (e.g., `title`) and the function (e.g., `setTitle`). Refer to the **convention**: description and "_set_" followed by it (see the code).
 
 Calling the _state-updated function_ not only **update** the old 'value', but also the component. Obs.: `setTitle` (or any "setFunction") is executed asynchronously. So the change is not yet reflected in the next line (.e.g, using `console.log(title)` would print an old reference).
 
 The **_takeway_**: if there is a design to change something in the UI based on data change, then **_state_** is in charge of that.
+
+<!-- 50. A Closer Look at the "useState" Hook -->
+
+## 1.6. A Closer Look at the "useState" Hook
+
+Even when the same component is called multiple times, a **different state** is given to each one. In other words, React, after a change in state, do another evaluation on a **per-component-instance basis**, which means that other instances are not affected (e.g., other _items_ remain immutable).
+
+### 1.6.1. Using _const_
+
+Now, **using _const_** with `useState` remains a common practice to state-regulated values/variables/constants because React manages the state for the developer -- it is responsible for adding **interactivity** to the UI.
+
+### 1.6.2. Instances and `useState`
+
+Another important concept here is related to **first execution of `useState`**: calling `useState` only sets an initial value the first time it starts keeping track of the argument's state. That means the argument to it is **initialized once**; otherwise, it grabs the latest state which was updated, for exampled.
