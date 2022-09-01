@@ -11,7 +11,8 @@
   - [1.6. A Closer Look at the "useState" Hook](#16-a-closer-look-at-the-usestate-hook)
     - [1.6.1. Using _const_](#161-using-const)
     - [1.6.2. Instances and `useState`](#162-instances-and-usestate)
-  - [State can be updated in many ways!](#state-can-be-updated-in-many-ways)
+  - [1.7. State can be updated in many ways!](#17-state-can-be-updated-in-many-ways)
+  - [1.8. Adding Form Inputs](#18-adding-form-inputs)
 
 <!-- 46. Module Introduction -->
 
@@ -74,7 +75,7 @@ Another important concept here is related to **first execution of `useState`**: 
 
 <!-- 51. State can be updated in many ways! -->
 
-## State can be updated in many ways!
+## 1.7. State can be updated in many ways!
 
 As noted by an instructor, everything done so far was related to **user event listeners** (such as _click handlers_):
 
@@ -83,3 +84,9 @@ As noted by an instructor, everything done so far was related to **user event li
 A course or learning sessions one would take might present new **ways of keeping track and updating states**. They write:
 
 > _Later in the course, we'll see HTTP requests that complete (where we then want to update the state based on the Http response we got back) but you could also be updating state because a timer (set with setTimeout()) expired for example_.
+
+<!-- 52. Adding Form Inputs -->
+
+## 1.8. Adding Form Inputs
+
+Now, the code gains an **_input form_**, which aims to **add** a new user-defined expense item (by the components `AddAmount` and related). As this is a **new component**, it can be a good step to separate it (and its associations) to a specific path (e.g., `AddingNew` or something like that), given that its **purpose differs** from previous components (this project already has the folders/directories `/UI` and `Amounts`).
