@@ -60,18 +60,23 @@ h2 {
 }
 
 .whole_amount_item button {
-    color: inherit;
-    background-color: var(--color-brown);
-    border: 2px var(--color-accent) solid;
-    border-radius: 5px;
+    border: none;
+    background-color: unset;
     padding: 0.3rem;
     margin: 3px;
+}
+
+.whole_amount_item button:hover, 
+.whole_amount_item button:active {
+    background-color: var(--color-accent);
+    border-color: var(--color-clear);
 }
 
 @media (max-width: 580px) {
     .whole_amount_item {
         flex-direction: column;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .item_info {
