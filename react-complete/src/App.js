@@ -1,4 +1,5 @@
 import Items from "./components/Amounts/Items";
+import AddAmount from "./components/Expanding/AddAmount";
 
 const App = () => {
     const items = [
@@ -33,9 +34,10 @@ const App = () => {
             <header>
                 <h1>Amounting the savings</h1>
             </header>
+            <AddAmount />
             <Items items={items} />
         </div>
     );
-}
+};
 
 export default App;
