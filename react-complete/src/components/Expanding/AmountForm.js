@@ -11,6 +11,7 @@ const AmountForm = () => {
                 <div className="setter">
                     <label htmlFor="set-amount">Amount</label>
                     <input
+                        id="amount-input"
                         type="number"
                         name="set-amount"
                         min="0.01"
