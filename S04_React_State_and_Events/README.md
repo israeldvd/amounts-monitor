@@ -13,6 +13,7 @@
     - [1.6.2. Instances and `useState`](#162-instances-and-usestate)
   - [1.7. State can be updated in many ways!](#17-state-can-be-updated-in-many-ways)
   - [1.8. Adding Form Inputs](#18-adding-form-inputs)
+  - [1.9. Listening to User Input](#19-listening-to-user-input)
 
 <!-- 46. Module Introduction -->
 
@@ -90,3 +91,11 @@ A course or learning sessions one would take might present new **ways of keeping
 ## 1.8. Adding Form Inputs
 
 Now, the code gains an **_input form_**, which aims to **add** a new user-defined expense item (by the components `AddAmount` and related). As this is a **new component**, it can be a good step to separate it (and its associations) to a specific path (e.g., `AddingNew` or something like that), given that its **purpose differs** from previous components (this project already has the folders/directories `/UI` and `Amounts`).
+
+<!-- 53. Listening to User Input -->
+
+## 1.9. Listening to User Input
+
+For this case, **listening to user input** comes with the concepts dealt with in [listening-events][listening-events] topic. Typical methods include `onChange`, which is better of than `onInput` here because it also maintain record of **any changes** besides text typing (e.g., those triggered by _dropdown menus_).
+
+[listening-events]: #13-listening-to-events-working-with-event-handlers

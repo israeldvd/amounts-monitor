@@ -13,6 +13,8 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
     transition: transform 1s ease;
 }
 
@@ -25,8 +27,12 @@ h2 {
     transition: transform 0.5s ease;
 }
 
+.whole_amount_item > * {
+    max-width: 100%;
+}
+
 .item_data {
-    width: 80%;
+    min-width: 80%;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -60,10 +66,11 @@ h2 {
 }
 
 .whole_amount_item button {
+    width: min-content;
     border: none;
     background-color: unset;
     padding: 0.3rem;
-    margin: 3px;
+    margin-left: auto;
 }
 
 .whole_amount_item button:hover, 
@@ -84,8 +91,16 @@ h2 {
         flex-direction: column;
     }
 
-    .whole_amount_item > .item_info h2 {
-        margin: 0 0 0.2rem 0;
+    .whole_amount_item .item_info > h2 {
+        margin: 0 0 0.1rem 0;
         font-size: 1.2rem;
+    }
+
+    .item_data {
+        flex-direction: column;
+    }
+
+    .whole_amount_item button {
+        width: max-content; 
     }
 }
