@@ -1,0 +1,32 @@
+.settings {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: initial;
+    gap: 1.4rem;
+}
+
+.settings label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.settings input {
+    font: inherit;
+    width: 100%;
+    overflow-wrap: break-word;
+    color: var(--color-clear);
+    border: 1px solid var(--color-clear);
+    border-radius: 6px 2px;
+    background-color: var(--color-grey);
+    padding: 4px;
+}
+
+.settings button {
+    padding: 1rem 1.5rem;
+}
+
+.action {
+    text-align: right;
+}
