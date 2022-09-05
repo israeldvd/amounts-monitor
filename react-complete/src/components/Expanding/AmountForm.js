@@ -32,6 +32,8 @@ const AmountForm = () => {
                 Object.entries(enteredInput).map(([k]) => [k, ""])
             )
         );
+
+        console.log(amountsData);
     };
 
     return (

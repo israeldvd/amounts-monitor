@@ -18,6 +18,7 @@
   - [1.11. Using One State Instead (And What's Better)](#111-using-one-state-instead-and-whats-better)
   - [1.12. Updating State That Depends On The Previous State](#112-updating-state-that-depends-on-the-previous-state)
   - [1.13. Handling Form Submission](#113-handling-form-submission)
+  - [1.14. Adding Two-Way Binding](#114-adding-two-way-binding)
 
 <!-- 46. Module Introduction -->
 
@@ -165,6 +166,15 @@ Submitting a form has a challenge: **how to listen to the submission** -- a _tip
 -   **Clear form data**
 
     After handlign the data, the input may clear as usually is done. This is the [next section](#114-adding-two-way-binding)'s main point.
+
+<!-- 58. Adding Two-Way Binding -->
+
+## 1.14. Adding Two-Way Binding
+
+This **two-way binding technique** covers resetting a new value back to the input whenever a update is set to a state. That **means** one can use `value=""`, which would bind it to the state value (e.g., `value={enteredTitle}`) -- to recall, this is the first list item returned from `useState`.
+
+-   This guarantees \[an element's\] **value is bound** after every change in state
+-   It is done in conjuction with **setting the state to a default value** (in this example, to the _empty string_)
 
 ##
 
