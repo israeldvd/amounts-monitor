@@ -2,52 +2,46 @@ import { useState } from "react";
 import "./AmountForm.css";
 
 const AmountForm = () => {
-    const [enteredDescription, setEnteredDescription] = useState("");
-    const [enteredAmount, setEnteredAmount] = useState("");
-    const [enteredDate, setEnteredDate] = useState("");
+    const [enteredInput, setInput] = useState({
+        setDescription: "",
+        setAmount: "",
+        setDate: "",
+    });
 
-    const descripChangeHandler = (event) => {
-        setEnteredDescription(event.target.value);
-    };
-
-    const amountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value);
-    };
-
-    const dateChangeHandler = (event) => {
-        setEnteredDate(event.target.value);
+    const inputChangeHandler = (event) => {
+        if (event.target.name in enteredInput)
+            setInput((prevState) => {
+                return {
+                    ...prevState,
+                    [event.target.name]: event.target.value,
+                };
+            });
     };
 
     return (
         <form action="POST">
-            <div className="settings">
+            <div className="settings" onChange={inputChangeHandler}>
                 <div className="setter">
-                    <label htmlFor="set-description">Description</label>
-                    <input
-                        type="text"
-                        name="set-description"
-                        onChange={descripChangeHandler}
-                    />
+                    <label htmlFor="setDescription">Description</label>
+                    <input type="text" name="setDescription" />
                 </div>
                 <div className="setter">
-                    <label htmlFor="set-amount">Amount</label>
+                    <label htmlFor="setAmount">Amount</label>
                     <input
                         id="amount-input"
                         type="number"
-                        name="set-amount"
+                        name="setAmount"
                         min="0.01"
                         step="0.01"
-                        onChange={amountChangeHandler}
                     />
                 </div>
                 <div className="setter">
-                    <label htmlFor="set-date">Date</label>
+                    <label htmlFor="setDate">Date</label>
                     <input
                         type="date"
-                        name="set-date"
+                        name="setDate"
                         min="2000-01-01"
                         max="2050-12-31"
-                        onChange={dateChangeHandler}
                     />
                 </div>
             </div>
