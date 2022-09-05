@@ -3,9 +3,9 @@ import "./AmountForm.css";
 
 const AmountForm = () => {
     const [enteredInput, setInput] = useState({
-        setDescription: "",
-        setAmount: "",
-        setDate: "",
+        itemDescription: "",
+        itemAmount: "",
+        itemDate: "",
     });
 
     const inputChangeHandler = (event) => {
@@ -22,24 +22,24 @@ const AmountForm = () => {
         <form action="POST">
             <div className="settings" onChange={inputChangeHandler}>
                 <div className="setter">
-                    <label htmlFor="setDescription">Description</label>
-                    <input type="text" name="setDescription" />
+                    <label htmlFor="itemDescription">Description</label>
+                    <input type="text" name="itemDescription" />
                 </div>
                 <div className="setter">
-                    <label htmlFor="setAmount">Amount</label>
+                    <label htmlFor="itemAmount">Amount</label>
                     <input
                         id="amount-input"
                         type="number"
-                        name="setAmount"
+                        name="itemAmount"
                         min="0.01"
                         step="0.01"
                     />
                 </div>
                 <div className="setter">
-                    <label htmlFor="setDate">Date</label>
+                    <label htmlFor="itemDate">Date</label>
                     <input
                         type="date"
-                        name="setDate"
+                        name="itemDate"
                         min="2000-01-01"
                         max="2050-12-31"
                     />
