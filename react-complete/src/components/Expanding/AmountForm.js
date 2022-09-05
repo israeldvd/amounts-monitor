@@ -18,30 +18,55 @@ const AmountForm = () => {
             });
     };
 
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const amountsData = {
+            description: enteredInput.itemDescription,
+            amount: enteredInput.itemAmount,
+            date: new Date(enteredInput.itemDate + "T00:00:00"),
+        };
+
+        setInput(
+            Object.fromEntries(
+                Object.entries(enteredInput).map(([k]) => [k, ""])
+            )
+        );
+    };
+
     return (
-        <form action="POST">
-            <div className="settings" onChange={inputChangeHandler}>
+        <form action="POST" onSubmit={submitHandler}>
+            <div className="settings">
                 <div className="setter">
                     <label htmlFor="itemDescription">Description</label>
-                    <input type="text" name="itemDescription" />
+                    <input
+                        type="text"
+                        value={enteredInput.itemDescription}
+                        name="itemDescription"
+                        onChange={inputChangeHandler}
+                    />
                 </div>
                 <div className="setter">
                     <label htmlFor="itemAmount">Amount</label>
                     <input
                         id="amount-input"
                         type="number"
+                        value={enteredInput.itemAmount}
                         name="itemAmount"
                         min="0.01"
                         step="0.01"
+                        onChange={inputChangeHandler}
                     />
                 </div>
                 <div className="setter">
                     <label htmlFor="itemDate">Date</label>
                     <input
                         type="date"
+                        value={enteredInput.itemDate}
                         name="itemDate"
                         min="2000-01-01"
                         max="2050-12-31"
+                        onChange={inputChangeHandler}
                     />
                 </div>
             </div>
