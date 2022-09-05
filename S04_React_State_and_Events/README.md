@@ -96,7 +96,11 @@ Now, the code gains an **_input form_**, which aims to **add** a new user-define
 
 ## 1.9. Listening to User Input
 
-For this case, **listening to user input** comes with the concepts dealt with in [listening-events][listening-events] topic. Typical methods include `onChange`, which is better of than `onInput` here because it also maintain record of **any changes** besides text typing (e.g., those triggered by _dropdown menus_).
+For this case, **listening to user input** comes with the concepts dealt with in [listening-events][listening-events] topic. Typical methods include `onChange`, which is better than `onInput` here, given that it also maintain record of **any changes** besides text typing (e.g., those triggered by _dropdown menus_).
+
+Defining a **_onEvent_** "prop" in a HTML element actually let React **set a listener** in it _under the hood_. One thing to remeber from JavaScript: The **handler** it points to receives, by default, an **_event object_** (check it out, for example, in the _console log_), which, in its turn, have a _target_ field.
+
+The **target field** is a reference to the element listened to. As that is the case, an _input element_ (applied here) contains a property named `value`, por example. Thus, with that value, any keystroke event might be handled as an example.
 
 ##
 
