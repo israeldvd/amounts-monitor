@@ -17,6 +17,7 @@
   - [1.10. Working with Multiple States](#110-working-with-multiple-states)
   - [1.11. Using One State Instead (And What's Better)](#111-using-one-state-instead-and-whats-better)
   - [1.12. Updating State That Depends On The Previous State](#112-updating-state-that-depends-on-the-previous-state)
+  - [1.13. Handling Form Submission](#113-handling-form-submission)
 
 <!-- 46. Module Introduction -->
 
@@ -146,6 +147,24 @@ setInput((prevState) => {
 Note: the _spread operator_ gets the **previous \[and unchanged\] state to remain in effect**. In code, whenever a state depends on previous one, there should be found this **function design/technique form**.
 
 Such **approach is replicable** to every handler method other than title-handler one, or it is also possible to use a _single change-handler function_ by means of ES6's _Computed Property Names_.
+
+<!-- 57. Handling Form Submission -->
+
+## 1.13. Handling Form Submission
+
+Submitting a form has a challenge: **how to listen to the submission** -- a _tip_: `onClick` is not the best solution. Overall **`form` emit an event**: `onSubmit`. To to that, some steps are required:
+
+-   **Disabling default form submission behavior**
+
+    The default behavior _updates the page_ at submission, whereas this project's requirements deal with something even more **manual**. **Disabling** it could be achieved by a JavaScript piece of code: `event.preventDefault`.
+
+-   **Handling the form data manually**
+
+    For that specific project, a single object containing everything is enough. It should be noted, though, that for a one-state approach (see previous [section](#112-updating-state-that-depends-on-the-previous-state)).
+
+-   **Clear form data**
+
+    After handlign the data, the input may clear as usually is done. This is the [next section](#114-adding-two-way-binding)'s main point.
 
 ##
 
