@@ -98,4 +98,8 @@ Now, the code gains an **_input form_**, which aims to **add** a new user-define
 
 For this case, **listening to user input** comes with the concepts dealt with in [listening-events][listening-events] topic. Typical methods include `onChange`, which is better of than `onInput` here because it also maintain record of **any changes** besides text typing (e.g., those triggered by _dropdown menus_).
 
+##
+
+<!-- Link references -->
+
 [listening-events]: #13-listening-to-events-working-with-event-handlers
