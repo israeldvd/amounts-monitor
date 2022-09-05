@@ -14,6 +14,7 @@
   - [1.7. State can be updated in many ways!](#17-state-can-be-updated-in-many-ways)
   - [1.8. Adding Form Inputs](#18-adding-form-inputs)
   - [1.9. Listening to User Input](#19-listening-to-user-input)
+  - [1.10. Working with Multiple States](#110-working-with-multiple-states)
 
 <!-- 46. Module Introduction -->
 
@@ -101,6 +102,16 @@ For this case, **listening to user input** comes with the concepts dealt with in
 Defining a **_onEvent_** "prop" in a HTML element actually let React **set a listener** in it _under the hood_. One thing to remeber from JavaScript: The **handler** it points to receives, by default, an **_event object_** (check it out, for example, in the _console log_), which, in its turn, have a _target_ field.
 
 The **target field** is a reference to the element listened to. As that is the case, an _input element_ (applied here) contains a property named `value`, por example. Thus, with that value, any keystroke event might be handled as an example.
+
+<!-- 54. Working with Multiple States -->
+
+## 1.10. Working with Multiple States
+
+Following the example from before, saving the `input` change may be done using `useState`. The _state updating function_, in that case, is a **bonus**, considering the need for saving the value.
+
+But at some point, **many states** might be handled, which is done simply by using multiple `useState()` calls. They are separated from each other, even being inside the same component.
+
+The **initial value's type** for each call might be expressed by a `string`, the reason for that being the return type of `event.target.value` — a string.
 
 ##
 
