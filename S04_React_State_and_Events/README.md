@@ -15,6 +15,7 @@
   - [1.8. Adding Form Inputs](#18-adding-form-inputs)
   - [1.9. Listening to User Input](#19-listening-to-user-input)
   - [1.10. Working with Multiple States](#110-working-with-multiple-states)
+  - [1.11. Using One State Instead (And What's Better)](#111-using-one-state-instead-and-whats-better)
 
 <!-- 46. Module Introduction -->
 
@@ -113,6 +114,21 @@ But at some point, **many states** might be handled, which is done simply by usi
 
 The **initial value's type** for each call might be expressed by a `string`, the reason for that being the return type of `event.target.value` — a string.
 
+<!-- 55. Using One State Instead (And What's Better) -->
+
+## 1.11. Using One State Instead (And What's Better)
+
+An alternative to using three useState-slices is to pass a object to `useState()` for grouping together them all. To do that, everytime the common state is set up, updated, every item from object should be changed too, because **React doesn't merge the old state with the new one**. The first part would be written this way:
+
+```javascript
+const [enteredInput, setInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+});
+```
+
+Following this every **handler** should update every property from the forementioned object, especially keeping the value if it is not related to the function handler.
 ##
 
 <!-- Link references -->
