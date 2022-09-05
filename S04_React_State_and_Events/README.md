@@ -16,6 +16,7 @@
   - [1.9. Listening to User Input](#19-listening-to-user-input)
   - [1.10. Working with Multiple States](#110-working-with-multiple-states)
   - [1.11. Using One State Instead (And What's Better)](#111-using-one-state-instead-and-whats-better)
+  - [1.12. Updating State That Depends On The Previous State](#112-updating-state-that-depends-on-the-previous-state)
 
 <!-- 46. Module Introduction -->
 
@@ -129,6 +130,23 @@ const [enteredInput, setInput] = useState({
 ```
 
 Following this every **handler** should update every property from the forementioned object, especially keeping the value if it is not related to the function handler.
+
+<!-- 56. Updating State That Depends On The Previous State -->
+
+## 1.12. Updating State That Depends On The Previous State
+
+There is a problem related whenever the app needs to update a state which **depends on previous state** -- if someone wants to reduce the statements down to one-state approach. To operate correctly on the **_latest state snapshot_**, the _setter_ function (e.g. `setInput`) could receive a function as parameter, such as an anonymous one, which in turn returns the desired state object:
+
+```javascript
+setInput((prevState) => {
+    return { ...prevState, enteredTitle: event.target.value };
+});
+```
+
+Note: the _spread operator_ gets the **previous \[and unchanged\] state to remain in effect**. In code, whenever a state depends on previous one, there should be found this **function design/technique form**.
+
+Such **approach is replicable** to every handler method other than title-handler one, or it is also possible to use a _single change-handler function_ by means of ES6's _Computed Property Names_.
+
 ##
 
 <!-- Link references -->
