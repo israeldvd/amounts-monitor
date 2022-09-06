@@ -171,10 +171,12 @@ Submitting a form has a challenge: **how to listen to the submission** -- a _tip
 
 ## 1.14. Adding Two-Way Binding
 
-This **two-way binding technique** covers resetting a new value back to the input whenever a update is set to a state. That **means** one can use `value=""`, which would bind it to the state value (e.g., `value={enteredTitle}`) -- to recall, this is the first list item returned from `useState`.
+This **two-way binding technique** covers resetting a new value back, e.g. to the input, whenever a update is set to a state which affects it. That means one can replace `value=""` with a dynamic state value, which would bind it to the state value (e.g., `value={enteredTitle}`) -- to recall, this is the first list item returned from `useState`.
 
 -   This guarantees \[an element's\] **value is bound** after every change in state
 -   It is done in conjuction with **setting the state to a default value** (in this example, to the _empty string_)
+
+That way of working, if codified to reset a value-state, intends to **keep a value "self-refreshing"** to a desired state whenever an event arises; in this case, the event is triggered by a change in input element.
 
 ##
 
