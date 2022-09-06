@@ -19,6 +19,7 @@
   - [1.12. Updating State That Depends On The Previous State](#112-updating-state-that-depends-on-the-previous-state)
   - [1.13. Handling Form Submission](#113-handling-form-submission)
   - [1.14. Adding Two-Way Binding](#114-adding-two-way-binding)
+  - [1.15. Child-to-Parent Component Communication (Bottom-up)](#115-child-to-parent-component-communication-bottom-up)
 
 <!-- 46. Module Introduction -->
 
@@ -177,6 +178,20 @@ This **two-way binding technique** covers resetting a new value back, e.g. to th
 -   It is done in conjuction with **setting the state to a default value** (in this example, to the _empty string_)
 
 That way of working, if codified to reset a value-state, intends to **keep a value "self-refreshing"** to a desired state whenever an event arises; in this case, the event is triggered by a change in input element.
+
+<!-- 59. Child-to-Parent Component Communication (Bottom-up) -->
+
+## 1.15. Child-to-Parent Component Communication (Bottom-up)
+
+The ultimate goal for this snapshot it to **add amounts objects** and connect it with the event listener. Usually there is a connection from parent to child. The other way around, however, is best suited for sending input-form data -- **child to parent**. 
+
+**Calling a function** (data is passed to it) is the solution to that part. For instance, `onChange` is just a prop in the end. Props can only be passed from parent to child, which also means there **cannot be a skipped component** in the "family tree".
+
+Any function pointed to by a prop prefixed with `on...` (usually representing that it points to a method) is to be called/executed in the child component, which should expect this behavior by its `props` argument. _Going up even further_, the lower component must actually send its data to a higher-level parent by a prop chaining.
+
+As a side note related to the project, saving an user payment could come up with an ID (for example, using the method `v4()` from package `uuid`).
+
+**_The takeway_**: communicating between components is also done **upwards the components tree**, specifically by means of **_props_**. Until now, this project snapshot had focused in states and event handling, but from now on it takes its destiny to insert the input-form data into the already-existing list.
 
 ##
 
