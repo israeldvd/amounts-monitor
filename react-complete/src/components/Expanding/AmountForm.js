@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./AmountForm.css";
 
-const AmountForm = () => {
+const AmountForm = (props) => {
     const [enteredInput, setInput] = useState({
         itemDescription: "",
         itemAmount: "",
@@ -33,7 +33,7 @@ const AmountForm = () => {
             )
         );
 
-        console.log(amountsData);
+        props.onUserInput(amountsData);
     };
 
     return (

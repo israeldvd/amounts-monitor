@@ -29,12 +29,16 @@ const App = () => {
         },
     ];
 
+    const userInputHandler = (data) => {
+        console.log(data);
+    }
+
     return (
         <div>
             <header>
                 <h1>Amounting the savings</h1>
             </header>
-            <AddAmount />
+            <AddAmount onUserInput={userInputHandler} />
             <Items items={items} />
         </div>
     );
