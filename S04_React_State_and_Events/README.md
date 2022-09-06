@@ -20,6 +20,7 @@
   - [1.13. Handling Form Submission](#113-handling-form-submission)
   - [1.14. Adding Two-Way Binding](#114-adding-two-way-binding)
   - [1.15. Child-to-Parent Component Communication (Bottom-up)](#115-child-to-parent-component-communication-bottom-up)
+  - [Lifting The State Up](#lifting-the-state-up)
 
 <!-- 46. Module Introduction -->
 
@@ -183,7 +184,7 @@ That way of working, if codified to reset a value-state, intends to **keep a val
 
 ## 1.15. Child-to-Parent Component Communication (Bottom-up)
 
-The ultimate goal for this snapshot it to **add amounts objects** and connect it with the event listener. Usually there is a connection from parent to child. The other way around, however, is best suited for sending input-form data -- **child to parent**. 
+The ultimate goal for this snapshot it to **add amounts objects** and connect it with the event listener. Usually there is a connection from parent to child. The other way around, however, is best suited for sending input-form data -- **child to parent**.
 
 **Calling a function** (data is passed to it) is the solution to that part. For instance, `onChange` is just a prop in the end. Props can only be passed from parent to child, which also means there **cannot be a skipped component** in the "family tree".
 
@@ -192,6 +193,12 @@ Any function pointed to by a prop prefixed with `on...` (usually representing th
 As a side note related to the project, saving an user payment could come up with an ID (for example, using the method `v4()` from package `uuid`).
 
 **_The takeway_**: communicating between components is also done **upwards the components tree**, specifically by means of **_props_**. Until now, this project snapshot had focused in states and event handling, but from now on it takes its destiny to insert the input-form data into the already-existing list.
+
+<!-- 60. Lifting The State Up -->
+
+## Lifting The State Up
+
+This is another concept related to what was seen before. Connecting **siblings**: closest parent component becomes the intermediator. Lifting the state (or data) up is simply moving up a child's particular state by its **_props_**, so that it can be used directly there or elsewhere, indirectly (in a sibling component, for exemple) -- via props again.
 
 ##
 
