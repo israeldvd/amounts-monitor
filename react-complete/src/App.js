@@ -7,7 +7,7 @@ const App = () => {
             id: "0",
             description: "Car and gas",
             cost: 50.0,
-            date: new Date(2022, 8 - 1, 17),
+            date: new Date(2021, 8 - 1, 17),
         },
         {
             id: "1",
