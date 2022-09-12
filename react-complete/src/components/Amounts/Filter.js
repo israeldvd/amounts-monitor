@@ -12,7 +12,7 @@ const Filter = (props) => {
     return (
         <div className="filter">
             <div className="filter-control">
-                <label>Filter by year</label>
+                <label htmlFor="year-filter">Filter by year</label>
                 <select
                     name="year-filter"
                     id="year-filter"
