@@ -12,6 +12,12 @@ const Items = (props) => {
     };
 
     const sortedItems = props.items.sort((a, b) => b.date - a.date);
+
+    const filteredItems = sortedItems.filter((item) => {
+        return item.date.getFullYear().toString() === selectedYear;
+    });
+    console.log(filteredItems);
+
     const yearsAlternatives = sortedItems.map((item) =>
         item.date.getFullYear()
     );
@@ -23,7 +29,7 @@ const Items = (props) => {
                 onSelectYear={selectYearHandler}
                 selected={selectedYear}
             />
-            {sortedItems.map((item) => {
+            {filteredItems.map((item) => {
                 return (
                     <AmountItem
                         key={item.id}
