@@ -5,7 +5,7 @@ import "./Items.css";
 import { useState } from "react";
 
 const Items = (props) => {
-    const [selectedYear, setSelectedYear] = useState(2021);
+    const [selectedYear, setSelectedYear] = useState("2021");
 
     const selectYearHandler = (yearData) => {
         setSelectedYear(yearData);
