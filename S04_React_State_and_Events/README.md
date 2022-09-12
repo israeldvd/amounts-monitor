@@ -20,7 +20,8 @@
   - [1.13. Handling Form Submission](#113-handling-form-submission)
   - [1.14. Adding Two-Way Binding](#114-adding-two-way-binding)
   - [1.15. Child-to-Parent Component Communication (Bottom-up)](#115-child-to-parent-component-communication-bottom-up)
-  - [Lifting The State Up](#lifting-the-state-up)
+  - [1.16. Lifting The State Up](#116-lifting-the-state-up)
+  - [1.17. Controlled vs Uncontrolled Components & Stateless vs Stateful Components](#117-controlled-vs-uncontrolled-components--stateless-vs-stateful-components)
 
 <!-- 46. Module Introduction -->
 
@@ -196,9 +197,18 @@ As a side note related to the project, saving an user payment could come up with
 
 <!-- 60. Lifting The State Up -->
 
-## Lifting The State Up
+## 1.16. Lifting The State Up
 
 This is another concept related to what was seen before. Connecting **siblings**: closest parent component becomes the intermediator. Lifting the state (or data) up is simply moving up a child's particular state by its **_props_**, so that it can be used directly there or elsewhere, indirectly (in a sibling component, for exemple) -- via props again.
+
+<!-- 61. Controlled vs Uncontrolled Components & Stateless vs Stateful Components -->
+
+## 1.17. Controlled vs Uncontrolled Components & Stateless vs Stateful Components
+
+These are useful, important naming convetions for components for identifying them:
+
+-   **Controlled components**: basically it refer to those with two-way binding; they use _props_ and function(s) from a parent component.
+-   **Stateful components**: these are components that control a state; in other hand, **stateless**, or "dumb" (as opposed to "smart") ones just present information on page.
 
 ##
 
