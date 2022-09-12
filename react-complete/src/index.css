@@ -101,6 +101,7 @@
 }
 
 ::selection {
+    color: var(--color-clear);
     background-color: var(--color-accent-3);
 }
 
