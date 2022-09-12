@@ -4,7 +4,7 @@ import "./AmountForm.css";
 const AmountForm = (props) => {
     const [enteredInput, setInput] = useState({
         itemDescription: "",
-        itemAmount: "",
+        itemAmount: 0,
         itemDate: "",
     });
 
@@ -23,7 +23,7 @@ const AmountForm = (props) => {
 
         const amountsData = {
             description: enteredInput.itemDescription,
-            amount: enteredInput.itemAmount,
+            cost: parseFloat(enteredInput.itemAmount),
             date: new Date(enteredInput.itemDate + "T00:00:00"),
         };
 
