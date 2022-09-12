@@ -16,7 +16,6 @@ const Items = (props) => {
     const filteredItems = sortedItems.filter((item) => {
         return item.date.getFullYear().toString() === selectedYear;
     });
-    console.log(filteredItems);
 
     const yearsAlternatives = sortedItems.map((item) =>
         item.date.getFullYear()
