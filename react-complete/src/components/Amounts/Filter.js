@@ -1,8 +1,8 @@
 import "./Filter.css";
 
 const Filter = (props) => {
-    const filterSelecHandler = () => {
-        console.log("year selected!!");
+    const filterSelecHandler = (event) => {
+        props.onSelectYear(event.target.value); //move data upwards the components tree
     };
 
     const selectYears = [
@@ -17,6 +17,7 @@ const Filter = (props) => {
                     name="year-filter"
                     id="year-filter"
                     onChange={filterSelecHandler}
+                    value={props.selected}
                 >
                     {selectYears.map((element) => {
                         return (
