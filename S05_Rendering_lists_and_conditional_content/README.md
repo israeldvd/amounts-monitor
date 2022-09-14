@@ -8,6 +8,9 @@
   - [1.3. Rendering Lists of Data](#13-rendering-lists-of-data)
   - [1.4. Using Stateful Lists](#14-using-stateful-lists)
   - [1.5. Understanding "Keys"](#15-understanding-keys)
+  - [1.6. Outputting Conditional Content](#16-outputting-conditional-content)
+    - [1.6.1. Using the ternary operator](#161-using-the-ternary-operator)
+    - [1.6.2. Using outsider conditions](#162-using-outsider-conditions)
 
 <!-- 63. Module Introduction -->
 
@@ -54,3 +57,33 @@ const todoItems = todos.map((todo, index) => (
 ```
 
 Summing up, **without the keys** there wouldn't be an efficient manner to update components list without cycling through the whole list, producing **performance issues**.
+
+<!-- 67. Outputting Conditional Content -->
+
+## 1.6. Outputting Conditional Content
+
+**Rendering contents conditionally** is another concept treated by this project. This is different than any other seen before, such as [components list](#13-rendering-lists-of-data), and can be illustrated by showing a message if no item is present given a certain filter.
+
+To do that, some alternatives may aid the project along the way:
+
+-   inside curly braces, simply insert the **ternary operator** with the conditions – if-else clauses aren't allowed;
+
+-   use outside-of-the-component **if-else clauses** (see below); or
+-   use **another component** (even with [conditional return statements](#17-adding-conditional-return-statements))
+
+### 1.6.1. Using the ternary operator
+
+From Javascript you could borrow a syntax trick to split the **ternary operator into an easier-to-read code** – because the language is going to return the second statement if **the first is false**, shown by the pseudo-code example:
+
+-   `{condition_true && paragraph}` followed by
+-   `{condition_false && other_element}`.
+
+In which both `condition` clauses must be mutually exclusive if one wants to render just one thing — either `paragraph` or `other_element`.
+
+### 1.6.2. Using outsider conditions
+
+A second alternative to the rendering of some view conditionally by ternary operator is **storing a default element in a variable "outside" the return statement**, then check the condition there (using if-else) and change/keep the value to it accordingly.
+
+For instance, components may be rendered if the list isn't lacking anything. In the `return` context, it would suffice to insert a curly-braces "call" of the constant/var.
+
+This second approach, being **optional**, depends on the amount of operations, conditions and so on, but it's probably more readable.
