@@ -11,6 +11,7 @@
   - [1.6. Outputting Conditional Content](#16-outputting-conditional-content)
     - [1.6.1. Using the ternary operator](#161-using-the-ternary-operator)
     - [1.6.2. Using outsider conditions](#162-using-outsider-conditions)
+  - [1.7. Adding Conditional Return Statements](#17-adding-conditional-return-statements)
 
 <!-- 63. Module Introduction -->
 
@@ -87,3 +88,14 @@ A second alternative to the rendering of some view conditionally by ternary oper
 For instance, components may be rendered if the list isn't lacking anything. In the `return` context, it would suffice to insert a curly-braces "call" of the constant/var.
 
 This second approach, being **optional**, depends on the amount of operations, conditions and so on, but it's probably more readable.
+
+<!-- 68. Adding Conditional Return Statements -->
+
+## 1.7. Adding Conditional Return Statements
+
+**Conditional return statements** go together with using if-else logic applied to `return` statements. From that technique, any project – including this one – gains a **third alternative for rendering conditional output**.
+
+-   In this case, the if-else code (and the variable/const), relative to the last option, was moved to a **new component**, whose returned JSX-code is conditional (not to a simple variable), saving a lot of code to the Expenses.js, which now just sends a prop.
+-   This new component could return `h2` or `ul` elements, respectively for missing items and for full-of-items component.
+
+A little **final tweak**: semantically using `li` (wrapping single items) with the `ul` is better.
