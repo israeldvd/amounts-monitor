@@ -1,5 +1,5 @@
 import Card from "../UI/Card";
-import AmountItem from "./AmountItem";
+import ListItems from "./ItemsList";
 import Filter from "./Filter";
 import "./Items.css";
 import { useState } from "react";
@@ -21,22 +21,6 @@ const Items = (props) => {
         item.date.getFullYear()
     );
 
-    let itemsContent = <p>No items are present!</p>;
-
-    if (filteredItems.length) {
-        itemsContent = filteredItems.map((item) => {
-            return (
-                <AmountItem
-                    key={item.id}
-                    id={item.id}
-                    description={item.description}
-                    cost={item.cost}
-                    date={item.date}
-                />
-            );
-        });
-    }
-
     return (
         <Card className="item-listing">
             <Filter
@@ -44,7 +28,7 @@ const Items = (props) => {
                 onSelectYear={selectYearHandler}
                 selected={selectedYear}
             />
-            {itemsContent}
+            <ListItems items={filteredItems} />
         </Card>
     );
 };

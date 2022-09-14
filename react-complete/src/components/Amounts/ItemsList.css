@@ -1,0 +1,9 @@
+.amounts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.amounts-list__fallback {
+    text-align: center;
+    color: inherit;
+}
