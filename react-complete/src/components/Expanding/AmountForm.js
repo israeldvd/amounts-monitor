@@ -3,9 +3,9 @@ import "./AmountForm.css";
 
 const AmountForm = (props) => {
     const [enteredInput, setInput] = useState({
-        itemDescription: "",
-        itemAmount: 0,
-        itemDate: "",
+        "item-description-input": "",
+        "item-cost-input": 0,
+        "item-date-input": "",
     });
 
     const inputChangeHandler = (event) => {
@@ -22,9 +22,9 @@ const AmountForm = (props) => {
         event.preventDefault();
 
         const amountsData = {
-            description: enteredInput.itemDescription,
-            cost: parseFloat(enteredInput.itemAmount),
-            date: new Date(enteredInput.itemDate + "T00:00:00"),
+            description: enteredInput["item-description-input"],
+            cost: parseFloat(enteredInput["item-cost-input"]),
+            date: new Date(enteredInput["item-date-input"] + "T00:00:00"),
         };
 
         setInput(
@@ -40,32 +40,34 @@ const AmountForm = (props) => {
         <form action="POST" onSubmit={submitHandler}>
             <div className="settings">
                 <div className="setter">
-                    <label htmlFor="itemDescription">Description</label>
+                    <label htmlFor="item-description-input">Description</label>
                     <input
                         type="text"
-                        value={enteredInput.itemDescription}
-                        name="itemDescription"
+                        value={enteredInput["item-description-input"]}
+                        id="item-description-input"
+                        name="item-description-input"
                         onChange={inputChangeHandler}
                     />
                 </div>
                 <div className="setter">
-                    <label htmlFor="itemAmount">Amount</label>
+                    <label htmlFor="item-cost-input">Cost</label>
                     <input
-                        id="amount-input"
+                        id="item-cost-input"
+                        name="item-cost-input"
                         type="number"
-                        value={enteredInput.itemAmount}
-                        name="itemAmount"
+                        value={enteredInput["item-cost-input"]}
                         min="0.01"
                         step="0.01"
                         onChange={inputChangeHandler}
                     />
                 </div>
                 <div className="setter">
-                    <label htmlFor="itemDate">Date</label>
+                    <label htmlFor="item-date-input">Date</label>
                     <input
                         type="date"
-                        value={enteredInput.itemDate}
-                        name="itemDate"
+                        value={enteredInput["item-date-input"]}
+                        id="item-date-input"
+                        name="item-date-input"
                         min="2000-01-01"
                         max="2050-12-31"
                         onChange={inputChangeHandler}
