@@ -75,6 +75,7 @@ const AmountForm = (props) => {
                 </div>
             </div>
             <div className="action">
+                <button type='button' onClick={props.onUserCancel}>Cancel</button>
                 <button type="submit">Add new</button>
             </div>
         </form>
