@@ -1,5 +1,5 @@
 import Card from "../UI/Card";
-import ListItems from "./ItemsList";
+import ItemsList from "./ItemsList";
 import Filter from "./Filter";
 import "./Items.css";
 import { useState } from "react";
@@ -28,7 +28,7 @@ const Items = (props) => {
                 onSelectYear={selectYearHandler}
                 selected={selectedYear}
             />
-            <ListItems items={filteredItems} />
+            <ItemsList items={filteredItems} />
         </Card>
     );
 };

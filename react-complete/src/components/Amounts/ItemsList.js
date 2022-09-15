@@ -1,7 +1,7 @@
 import AmountItem from "./AmountItem.js";
 import "./ItemsList.css";
 
-const ListItems = (props) => {
+const ItemsList = (props) => {
     const filteredItems = props.items;
 
     if (!filteredItems.length) {
@@ -28,4 +28,4 @@ const ListItems = (props) => {
     );
 };
 
-export default ListItems;
+export default ItemsList;
