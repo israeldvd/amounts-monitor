@@ -1,3 +1,5 @@
+import "./Bars.css";
+
 const Bars = (props) => {
     let barFillPerc = '0%';
 
