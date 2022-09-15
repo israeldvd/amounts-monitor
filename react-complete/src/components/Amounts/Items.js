@@ -1,6 +1,7 @@
 import Card from "../UI/Card";
 import ItemsList from "./ItemsList";
 import Filter from "./Filter";
+import AmountsChart from "../Amounts/AmountsChart";
 import "./Items.css";
 import { useState } from "react";
 
@@ -28,6 +29,7 @@ const Items = (props) => {
                 onSelectYear={selectYearHandler}
                 selected={selectedYear}
             />
+            <AmountsChart amounts={filteredItems} />
             <ItemsList items={filteredItems} />
         </Card>
     );
