@@ -12,6 +12,7 @@
     - [1.6.1. Using the ternary operator](#161-using-the-ternary-operator)
     - [1.6.2. Using outsider conditions](#162-using-outsider-conditions)
   - [1.7. Adding Conditional Return Statements](#17-adding-conditional-return-statements)
+  - [1.8. Demo App: Adding a Dynamic Chart](#18-demo-app-adding-a-dynamic-chart)
 
 <!-- 63. Module Introduction -->
 
@@ -99,3 +100,32 @@ This second approach, being **optional**, depends on the amount of operations, c
 -   This new component could return `h2` or `ul` elements, respectively for missing items and for full-of-items component.
 
 A little **final tweak**: semantically using `li` (wrapping single items) with the `ul` is better.
+
+<!-- 69. Demo App: Adding a Chart &
+70. Adding Dynamic Styles &
+71. Wrap Up & Next Steps
+-->
+
+## 1.8. Demo App: Adding a Dynamic Chart
+
+**_The chart part of this project_**. It is related to a new `Chart` component and it is supposed to have multiple bars (originating the `Bars` component.
+
+-   These, in turn, would be created according to multiple objects, each of which with some important properties.
+-   The `Chart` component is responsible for sending down the data to the `Bars` components.
+
+Other _props_ that the `Bars` component need is a **maximum value** that defines the point it refers to in a month or data "set" – it is going to be coded id depth soon – and a **label** for it, description which could also be the React-key (ID) of the "bars".
+
+These are the properties sent downward to `Chart`, then to `Bars`:
+
+-   `label`
+-   `value`
+
+The `value` _prop_ from is going to be sent to adjust the fill height of a Bar, according the the percentage this bar in relation to a total amount cost.
+
+**_Adding dynamic styles_**. For that part, a dynamic height is a proper way to exhibit the value percentage. The `style` attribute might be used here to that desire, but it works differently when dealing with HTML:
+
+-   if there is a _dynamic_ output, then there should be an **object** in place
+-   every **property-key pair** of this object also corresponds to a CSS pair
+-   using **quotes** or **camel case** for dashed-properties is necessary
+
+For example, the code could resemble `style={{ 'background-color': '10%', color: 'red' }}`. Finally, the project gains new styling, including a in-the-bars filling transition to each year.
