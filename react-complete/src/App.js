@@ -7,13 +7,13 @@ const DUMMY_ITEMS = [
         id: "0",
         description: "Car and gas",
         cost: 50.0,
-        date: new Date(2021, 8 - 1, 17),
+        date: new Date(2021, 1 - 1, 17),
     },
     {
         id: "1",
         description: "Education bills",
         cost: 400.0,
-        date: new Date(2022, 8 - 1, 16),
+        date: new Date(2022, 2 - 1, 16),
     },
     {
         id: "2",
