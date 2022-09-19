@@ -1,6 +1,6 @@
 .add-amount {
     text-align: center;
-    background-color: var(--color-grey);
+    background-color: var(--color-background-info);
     padding: 1rem;
     width: 50rem;
     max-width: 90%;

@@ -23,11 +23,16 @@
     max-width: 100%;
     min-height: 2rem;
     overflow-wrap: break-word;
-    color: var(--color-clear);
-    border: 1px solid var(--color-clear);
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border-focus);
     border-radius: 6px 2px;
-    background-color: var(--color-grey);
+    background-color: var(--color-background-info);
     padding: 4px;
+}
+
+.settings input:focus,
+.settings input:active {
+    background-color: var(--color-background-main);
 }
 
 #amount-input {
@@ -35,13 +40,23 @@
     max-width: 100%;
 }
 
-.settings button {
-    padding: 1rem 1.5rem;
-}
-
 .action {
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
     text-align: right;
+}
+
+.settings button {
+    padding: 1rem 1.5rem;
+}
+
+.action button:first-child {
+    color: var(--color-text-placedholder);
+    background-color: var(--color-background-destructive);
+}
+
+.action button:last-child {
+    color: white;
+    background-color: var(--color-background-sucess);
 }

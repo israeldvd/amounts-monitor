@@ -1,15 +1,13 @@
 .item-date {
     padding: 0.5rem;
     border-radius: 15px 2px;
-    border: 1px var(--color-clear) solid;
+    border: 1px var(--color-border-focus) solid;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 5.9rem;
     height: 5rem;
-    transition: 0.3s 0.1s ease-in;
-    transition-property: background-color, color;
 }
 
 .item-date .month {
