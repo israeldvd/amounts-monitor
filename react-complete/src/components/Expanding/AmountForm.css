@@ -52,11 +52,19 @@
 }
 
 .action button:first-child {
-    color: var(--color-text-placedholder);
-    background-color: var(--color-background-destructive);
+    background-color: var(--color-background-info);
+}
+
+.action button:first-child:hover {
+    color: black;
+    background-color: var(--color-background-destructive-hover);
 }
 
 .action button:last-child {
     color: white;
-    background-color: var(--color-background-sucess);
+    background-color: var(--color-background-success);
+}
+
+.action button:last-child:hover {
+    background-color: var(--color-background-success-hover);
 }

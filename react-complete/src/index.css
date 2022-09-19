@@ -19,7 +19,9 @@
     --color-accent-2: #a52766; /* same as before, but 9 steps before black */
     --color-accent-3: #841f52; /* same as before, but 7 steps before black */
     --color-danger: #ff6542; /* tomato */
+    --color-danger-2: #ff481f; /* tomato, shade 2 */
     --color-success: #2a7221; /* pakistan green*/
+    --color-success-2: #235F1C; /* pakistan green, shade 2*/
 
     /* CSS Gradients */
     --gradient-top: linear-gradient(
@@ -107,9 +109,11 @@
     --color-background-focus: var(--color-accent-1);
     --color-background-strong: var(--color-accent-3);
 
-    --color-background-sucess: var(--color-success);
+    --color-background-success: var(--color-success);
+    --color-background-success-hover: var(--color-success-2);
     --color-border-destructive: var(--color-danger);
     --color-background-destructive: var(--color-danger);
+    --color-background-destructive-hover: var(--color-danger-2);
 }
 
 * {
