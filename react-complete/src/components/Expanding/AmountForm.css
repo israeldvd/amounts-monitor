@@ -52,11 +52,13 @@
 }
 
 .action button:first-child {
+    border-color: var(--color-border-destructive);
     background-color: var(--color-background-info);
 }
 
 .action button:first-child:hover {
     color: black;
+    border-color: var(--color-background-destructive-hover);
     background-color: var(--color-background-destructive-hover);
 }
 
@@ -67,4 +69,9 @@
 
 .action button:last-child:hover {
     background-color: var(--color-background-success-hover);
+}
+
+.setter .invalid {
+    outline: var(--color-border-destructive) dotted 1px;
+    border-color: var(--color-border-destructive);
 }
