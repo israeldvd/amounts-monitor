@@ -10,6 +10,8 @@
   - [1.5. Introducing Styled Components](#15-introducing-styled-components)
   - [1.6. Styled Components, Dynamic Props and Media Queries](#16-styled-components-dynamic-props-and-media-queries)
   - [1.7. Using CSS Modules and dynamic styles with them](#17-using-css-modules-and-dynamic-styles-with-them)
+  - [Appendix tools](#appendix-tools)
+    - [Bulk-renaming CSS file references](#bulk-renaming-css-file-references)
 
 <!-- 74. Module Introduction -->
 
@@ -82,10 +84,23 @@ Comments on this **_styled component_**:
 Using CSS modules also permits **scoping styles** to only certain component, making sure the _import_ is effective only where it is done. And they require some steps (here, they aim to add **dynamic classes**):
 
 1. choose a project that support it (e.g., CRA does)
-2. name every style file as `[name].module.css`
+2. [name every style](#bulk-renaming-css-files) file as `[name].module.css`
 3. import and give it any name wanted: `import my_styles from '...'`
 4. then apply this import to a `className`, refering to it as an object (whose properties match **CSS classes**): `className={my_styles.button}` (or use brackets for accessing a property)
 
 The final **class names** are computer-generated, **uniquely-identified** as the previous approach, but there is still some readableness to it. As the CSS module is used, and its import is called, all these classes have their names changed for the purpose mentioned before.
 
 By calling the **import reference**, it is possible to render dynamic classes by template literals, for example. Besides, the **ternary operator** with conditional output may optimize the process. When rendering the classes, the final outputs are "converted class names", identifiers referenced simply through `imported_styles["class-name"]`.
+
+## Appendix tools
+
+Sometimes it is useful to refactor a code or redesign segments of a program, for which simple tools or means turn out to be useful. When renaming pieces of code, in VSCode, for example, the reader may turn to all-files search; check availables shortchuts (in this case, the default is `Ctrl + Shift + F`). Activating Regular Expressions, in turn, may be triggered by `Alt + R`.
+
+### Bulk-renaming CSS file references
+
+For that task, a simple regex substitution in a IDE which supports it is enough:
+
+-   replace `(.+?)(?<!module).css`
+-   with `$1.module.css`
+
+Be aware that this may do **unwanted actions** such as renaming not-to-be-renamed files or font imports. Make sure to exclude files from this action or use another RegEx.
