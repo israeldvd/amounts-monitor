@@ -7,6 +7,7 @@
   - [1.2. Module Introduction](#12-module-introduction)
   - [1.3. Setting Dynamic Inline Styles](#13-setting-dynamic-inline-styles)
   - [1.4. Setting CSS Classes Dynamically](#14-setting-css-classes-dynamically)
+  - [1.5. Introducing Styled Components](#15-introducing-styled-components)
 
 <!-- 74. Module Introduction -->
 
@@ -27,3 +28,22 @@ It implements the logic verification by ternary operator inside the JSX insertio
 ## 1.4. Setting CSS Classes Dynamically
 
 Adding **dynamic classes**: JSX syntax still plays the major role, but now the styles are a responsibility of classes, e.g., "invalid". These "controls" might be implemented by use of states (boolean ones, for example). Then validation comes into play according to `event` objects, as the developer wishes.
+
+<!-- 77. Introducing Styled Components -->
+
+## 1.5. Introducing Styled Components
+
+Adding **styles to components** comes mainly with 2 approaches:
+
+1. install this package named after styled components, "styled components", or
+2. through CSS Modules (see next section)
+
+Using this styled-components package, some steps required are: import styles from attacked components and use **_tagged template literals_** (JS feature with which a function derives its _arguments_).
+
+Adding styles to these elements (from the libraries) can be done by means of these "special" template literals.
+
+-   direct styles are applied to the element itaelft;
+-   pseudo-selectors would have a special syntax-trick from the package: `&`, which refers to the element itself
+    -   e.g., `&:hover` as in a CSS file.
+
+Then this line breaks are useful to simulate a common CSS file. Also, using this package yields somewhat "strange" **class names** results, because those references are **still global**, but unique-prone.
