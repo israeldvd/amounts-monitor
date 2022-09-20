@@ -8,6 +8,7 @@
   - [1.3. Setting Dynamic Inline Styles](#13-setting-dynamic-inline-styles)
   - [1.4. Setting CSS Classes Dynamically](#14-setting-css-classes-dynamically)
   - [1.5. Introducing Styled Components](#15-introducing-styled-components)
+  - [1.6. Styled Components & Dynamic Props](#16-styled-components--dynamic-props)
 
 <!-- 74. Module Introduction -->
 
@@ -47,3 +48,19 @@ Adding styles to these elements (from the libraries) can be done by means of the
     -   e.g., `&:hover` as in a CSS file.
 
 Then this line breaks are useful to simulate a common CSS file. Also, using this package yields somewhat "strange" **class names** results, because those references are **still global**, but unique-prone.
+
+<!-- 78. Styled Components & Dynamic Props -->
+
+## 1.6. Styled Components & Dynamic Props
+
+Defining two or more components per file – instead of limiting the number to one – it's generally a good idea, but in that case two components in one is fine, specially for styling porposes, as this new _div-form_-component is only used in your project's component.
+
+Comments on this **_styled component_**:
+
+1. First option is pretty much like calling a **common component**, and everything it entails is available, such as:
+
+    - setting other classes by `className`, meaning there is no need of setting permanent classes (these are set by the definition of the component, not when calling it).
+
+2. Another approach is as follows: **setting props to the styled component** – the props is then set as argument to a function which sets the property value dynamically, e.g., using `${props => pros.invalid}` based on a dynamic state named `invalid`.
+
+**Media queries**, in their turn, are totally fine (example: using `width: auto` for button in mobile devices).
