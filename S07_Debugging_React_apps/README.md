@@ -7,6 +7,7 @@
   - [1.2. Module Introduction](#12-module-introduction)
   - [1.3. Understanding React Error Messages and Analyzing Code](#13-understanding-react-error-messages-and-analyzing-code)
   - [1.4. Working with Breakpoints](#14-working-with-breakpoints)
+  - [1.5. Using the React DevTools](#15-using-the-react-devtools)
 
 <!-- 83. Module Introduction -->
 
@@ -45,3 +46,14 @@ As it can be seen, sometimes it is important to look out for pieces of code whic
 
 -   **navigating to the files** in the Sources tab, adding a break point in the line (click on its number)
 -   add the `debugger` statement
+
+<!-- 87. Using the React DevTools -->
+
+## 1.5. Using the React DevTools
+
+React Developer Tools is an extension available in Chrome-based browsers for analyzing and debugging React applications, including the DOM and the UI. After adding it, two options are available:
+
+-   **Profiler**: this is commented on later
+-   **Components**: this highlight the current component tree and informations (key, _props_, "rendered by", hooks)
+
+At the bottom, the **components that rendered** the selected one are organized according to its tree, the topmost being the one that directly rendered.
