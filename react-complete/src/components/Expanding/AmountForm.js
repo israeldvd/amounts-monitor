@@ -2,20 +2,18 @@ import { useState } from "react";
 import styles from "./AmountForm.module.css";
 
 const AmountForm = (props) => {
-    const inputIdentifiers = {
-        description: "item-description-input",
-        date: "item-date-input",
-        cost: "item-cost-input",
-    };
+    const descriptionInputName = "item-description-input";
+    const dateInputName = "item-date-input";
+    const costInputName = "item-cost-input";
 
     const [enteredInput, setInput] = useState({
-        [inputIdentifiers.description]: "",
-        [inputIdentifiers.cost]: 0,
-        [inputIdentifiers.date]: "",
+        [descriptionInputName]: "",
+        [costInputName]: 0,
+        [dateInputName]: "",
     });
 
     const [isValid, setValidationState] = useState({
-        [inputIdentifiers.description]: true,
+        [descriptionInputName]: true,
     });
 
     const inputChangeHandler = (event) => {
@@ -48,7 +46,7 @@ const AmountForm = (props) => {
         console.log(emptyInputFields);
 
         if (emptyInputFields.length) {
-            setValidationState({ [inputIdentifiers.description]: false });
+            setValidationState({ [descriptionInputName]: false });
 
             emptyInputFields.forEach((element) => {
                 element.placeholder = "Insert a valid text here";
@@ -58,9 +56,9 @@ const AmountForm = (props) => {
         }
 
         const amountsData = {
-            description: enteredInput[inputIdentifiers.description],
-            cost: parseFloat(enteredInput[inputIdentifiers.cost]),
-            date: new Date(enteredInput[inputIdentifiers.date] + "T00:00:00"),
+            description: enteredInput[descriptionInputName],
+            cost: parseFloat(enteredInput[costInputName]),
+            date: new Date(enteredInput[dateInputName] + "T00:00:00"),
         };
 
         setInput(
@@ -76,20 +74,18 @@ const AmountForm = (props) => {
         <form action="POST" onSubmit={submitHandler}>
             <div className={styles["settings"]}>
                 <div className={styles["setter"]}>
-                    <label htmlFor={inputIdentifiers.description}>
-                        Description
-                    </label>
+                    <label htmlFor={descriptionInputName}>Description</label>
                     <input
                         type="text"
                         value={
-                            isValid[inputIdentifiers.description]
-                                ? enteredInput[inputIdentifiers.description]
+                            isValid[descriptionInputName]
+                                ? enteredInput[descriptionInputName]
                                 : ""
                         }
-                        id={inputIdentifiers.description}
-                        name={inputIdentifiers.description}
+                        id={descriptionInputName}
+                        name={descriptionInputName}
                         className={
-                            isValid[inputIdentifiers.description]
+                            isValid[descriptionInputName]
                                 ? ""
                                 : styles["invalid"]
                         }
@@ -98,12 +94,12 @@ const AmountForm = (props) => {
                     />
                 </div>
                 <div className={styles["setter"]}>
-                    <label htmlFor={inputIdentifiers.cost}>Cost</label>
+                    <label htmlFor={costInputName}>Cost</label>
                     <input
-                        id={inputIdentifiers.cost}
-                        name={inputIdentifiers.cost}
+                        id={costInputName}
+                        name={costInputName}
                         type="number"
-                        value={enteredInput[inputIdentifiers.cost]}
+                        value={enteredInput[costInputName]}
                         min="0.01"
                         step="0.01"
                         onChange={inputChangeHandler}
@@ -111,12 +107,12 @@ const AmountForm = (props) => {
                     />
                 </div>
                 <div className={styles["setter"]}>
-                    <label htmlFor={inputIdentifiers.date}>Date</label>
+                    <label htmlFor={dateInputName}>Date</label>
                     <input
                         type="date"
-                        value={enteredInput[inputIdentifiers.date]}
-                        id={inputIdentifiers.date}
-                        name={inputIdentifiers.date}
+                        value={enteredInput[dateInputName]}
+                        id={dateInputName}
+                        name={dateInputName}
                         min="2000-01-01"
                         max="2050-12-31"
                         onChange={inputChangeHandler}
