@@ -40,10 +40,12 @@ const AmountForm = (props) => {
         event.preventDefault();
 
         const emptyInputFields = Array.from(
-            Array.from(event.target.querySelectorAll(".setter input")).filter(
-                (input) => input.value.trim().length === 0
-            )
+            Array.from(
+                event.target.querySelectorAll(`.${styles.setter} input`)
+            ).filter((input) => input.value.trim().length === 0)
         );
+
+        console.log(emptyInputFields);
 
         if (emptyInputFields.length) {
             setValidationState({ [inputIdentifiers.description]: false });
@@ -89,7 +91,7 @@ const AmountForm = (props) => {
                         className={
                             isValid[inputIdentifiers.description]
                                 ? ""
-                                : "invalid"
+                                : styles["invalid"]
                         }
                         onChange={inputChangeHandler}
                         required
