@@ -1,4 +1,4 @@
-import "./Bars.css";
+import styles from "./Bars.module.css";
 
 const Bars = (props) => {
     let barFillPerc = '0%';
@@ -7,11 +7,11 @@ const Bars = (props) => {
         barFillPerc = Math.round(props.value*100/props.maxValue) + '%'
 
     return (
-        <div className="bar">
-            <div className="bar__wrapper">
-                <div className="bar__fill" style={{height: barFillPerc}}></div>
+        <div className={styles["bar"]}>
+            <div className={styles["bar__wrapper"]}>
+                <div className={styles["bar__fill"]} style={{height: barFillPerc}}></div>
             </div>
-            <div className="bar__label">
+            <div className={styles["bar__label"]}>
                 {props.label}
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./AmountForm.css";
+import styles from "./AmountForm.module.css";
 
 const AmountForm = (props) => {
     const inputIdentifiers = {
@@ -72,8 +72,8 @@ const AmountForm = (props) => {
 
     return (
         <form action="POST" onSubmit={submitHandler}>
-            <div className="settings">
-                <div className="setter">
+            <div className={styles["settings"]}>
+                <div className={styles["setter"]}>
                     <label htmlFor={inputIdentifiers.description}>
                         Description
                     </label>
@@ -95,7 +95,7 @@ const AmountForm = (props) => {
                         required
                     />
                 </div>
-                <div className="setter">
+                <div className={styles["setter"]}>
                     <label htmlFor={inputIdentifiers.cost}>Cost</label>
                     <input
                         id={inputIdentifiers.cost}
@@ -108,7 +108,7 @@ const AmountForm = (props) => {
                         required
                     />
                 </div>
-                <div className="setter">
+                <div className={styles["setter"]}>
                     <label htmlFor={inputIdentifiers.date}>Date</label>
                     <input
                         type="date"
@@ -122,7 +122,7 @@ const AmountForm = (props) => {
                     />
                 </div>
             </div>
-            <div className="action">
+            <div className={styles["action"]}>
                 <button type="button" onClick={props.onUserCancel}>
                     Cancel
                 </button>

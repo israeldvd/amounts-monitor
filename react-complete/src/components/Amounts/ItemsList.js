@@ -1,19 +1,19 @@
 import AmountItem from "./AmountItem.js";
-import "./ItemsList.css";
+import styles from "./ItemsList.module.css";
 
 const ItemsList = (props) => {
     const filteredItems = props.items;
 
     if (!filteredItems.length) {
         return (
-            <h2 className="amounts-list__fallback">
+            <h2 className={styles["amounts-list__fallback"]}>
                 No items are present! Add some at the top.
             </h2>
         );
     }
 
     return (
-        <ul className="amounts-list">
+        <ul className={styles["amounts-list"]}>
             {filteredItems.map((item) => (
                 <li key={item.id}>
                     <AmountItem

@@ -1,4 +1,4 @@
-import "./Filter.css";
+import styles from "./Filter.module.css";
 
 const Filter = (props) => {
     const filterSelecHandler = (event) => {
@@ -10,8 +10,8 @@ const Filter = (props) => {
     ];
 
     return (
-        <div className="filter">
-            <div className="filter-control">
+        <div className={styles["filter"]}>
+            <div className={styles["filter-control"]}>
                 <label htmlFor="year-filter">Filter by year</label>
                 <select
                     name="year-filter"
