@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 5rem;
+    width: 5.9rem;
     height: 5rem;
     transition: 0.3s 0.1s ease-in;
     transition-property: background-color, color;

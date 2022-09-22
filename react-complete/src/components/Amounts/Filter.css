@@ -17,6 +17,7 @@
 .filter-control select {
     font: inherit;
     color: var(--color-primary);
+    background-color: var(--color-clear);
     padding: 0.5rem 1rem;
     border-radius: 5px 1px;
 }

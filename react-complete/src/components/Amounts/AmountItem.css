@@ -10,11 +10,6 @@ h2 {
     margin: 1.25rem auto;
     background-color: var(--color-grey);
     border-left: 0.2rem var(--color-accent) solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
     transition: transform 1s ease;
 }
 

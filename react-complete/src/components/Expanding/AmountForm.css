@@ -40,6 +40,8 @@
 }
 
 .action {
-    align-self: flex-end;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
     text-align: right;
 }

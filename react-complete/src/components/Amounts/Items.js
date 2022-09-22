@@ -1,6 +1,7 @@
 import Card from "../UI/Card";
-import AmountItem from "./AmountItem";
+import ItemsList from "./ItemsList";
 import Filter from "./Filter";
+import AmountsChart from "../Amounts/AmountsChart";
 import "./Items.css";
 import { useState } from "react";
 
@@ -16,7 +17,6 @@ const Items = (props) => {
     const filteredItems = sortedItems.filter((item) => {
         return item.date.getFullYear().toString() === selectedYear;
     });
-    console.log(filteredItems);
 
     const yearsAlternatives = sortedItems.map((item) =>
         item.date.getFullYear()
@@ -29,17 +29,8 @@ const Items = (props) => {
                 onSelectYear={selectYearHandler}
                 selected={selectedYear}
             />
-            {filteredItems.map((item) => {
-                return (
-                    <AmountItem
-                        key={item.id}
-                        id={item.id}
-                        description={item.description}
-                        cost={item.cost}
-                        date={item.date}
-                    />
-                );
-            })}
+            <AmountsChart amounts={filteredItems} />
+            <ItemsList items={filteredItems} />
         </Card>
     );
 };
