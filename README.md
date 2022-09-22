@@ -1,54 +1,40 @@
-# React - The Complete Guide (incl Hooks, React Router, Redux)
+# 1. Amounts Monitor with React
 
-## Summary
+## 1.1. Summary
 
-- [React - The Complete Guide (incl Hooks, React Router, Redux)](#react---the-complete-guide-incl-hooks-react-router-redux)
-  - [Summary](#summary)
-  - [Introduction](#introduction)
-  - [Sections](#sections)
+- [1. Amounts Monitor with React](#1-amounts-monitor-with-react)
+  - [1.1. Summary](#11-summary)
+  - [1.2. Introduction](#12-introduction)
+  - [1.3. Project's intents](#13-projects-intents)
+  - [1.4. How to run it](#14-how-to-run-it)
 
-## Introduction
+## 1.2. Introduction
 
-> Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!
+The current project aims at organizing some **expenses** (called here "_amounts_") someone may have and it is based off this [course][react-udemy] and it is open to PRs. That is what this repository is all about. As of the project start it was designed to be fully up-to-date with React 18 (the latest version of React up to this time).
 
-This is the main goal for the current [course][react-udemy], and that is what this repository is all about. The teachers explain:
+## 1.3. Project's intents
 
-> _This course is fully up-to-date with React 18 (the latest version of React)!_
->
-> _It was completely updated and re-recorded from the ground up - it teaches the very latest version of React with all the core, modern features you need to know!_
+Many concepts are to be developed in a React direction-path, some of which are:
 
-## Sections
+-   A thorough introduction to React.js (What is it and why would you use it?)
+-   All the core basics: How React works, building components with React & building UIs with React
+-   Components, props & dynamic data binding
+-   Working with user events and state to create interactive applications
+-   A (thorough) look behind the scenes to understand how React works under the hood
+-   Detailed explanations on how to work with lists and conditional content
 
-What this [**course**][react-udemy] is all about, explained by the instructors:
+## 1.4. How to run it
 
-- A thorough introduction to React.js (What is it and why would you use it?)
-- All the core basics: How React works, building components with React & building UIs with React
-- Components, props & dynamic data binding
-- Working with user events and state to create interactive applications
-- A (thorough) look behind the scenes to understand how React works under the hood
-- Detailed explanations on how to work with lists and conditional content
-- React Hooks (in-depth)!
-- Working with built-in Hooks and building custom Hooks
-- How to debug React apps
-- Styling React apps with "Styled Components" and "CSS Modules"
-- Working with "Fragments" & "Portals"
-- Dealing with side effects
-- Class-based components and functional components
-- Sending Http requests & handling transitional states + responses
-- Handling forms and user input (incl. validation)
-- Redux & Redux Toolkit
-- Routing with React Router
-- An in-depth introduction into Next.js
-- Deploying React Apps
-- Implementing Authentication
-- Unit Tests
-- Combining React with TypeScript
-- Adding Animations
-- Tons of examples and demo projects so that you can apply all the things you learned in real projects
-- And so much more - check out the full curriculum on this page!
+It was created using [Create React App][CRA-docs], whose repository is found in [this][CRA-repo] link. Thus, running it requires Node 14.0.0 or later version on your local development machine, followed by some steps to start a local server.
 
-They say:
+In this case, go to `amounts-monitor` (project) directory, make sure the file `package.json` is present there and run the app by means of these commands:
 
-> _This really is the "Complete Guide" - promised!_
+1. `cd amounts-monitor`
+2. `npm install`
+3. `npm start`
+
+After which the (local) server will points the server IP and port (e.g., `localhost:3000`) that it is accessible from. The second command in order would install every dependency needed for this project, including `react-dom` and `react-scripts`.
 
 [react-udemy]: https://www.udemy.com/course/react-the-complete-guide-incl-redux
+[CRA-docs]: https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
+[CRA-repo]: https://github.com/facebook/create-react-app
