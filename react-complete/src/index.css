@@ -7,89 +7,113 @@
     --font-title: "Anek Latin", sans-serif;
     --font-text: "Finlandica", sans-serif;
 
-    /* Colors */
-    --color-primary: #191d32ff; /* space-cadet */
-    --color-grey: #453a49ff; /* dark-liver */
-    --color-brown: #6d3b47ff; /* catawba */
-    --color-brown-2: #5d323c; /* catawba, but 7 shades before black */
-    --color-brown-3: #42242b; /* catawba, but 5 shades before black */
-    --color-clear: #d9cab3ff; /* bone */
-    --color-accent: #ba2c73ff; /* magenta-dye */
+    /* Semantic-named colors */
+
+    --color-primary: #191d32; /* space-cadet */
+    --color-secondary-1: #6d3b47; /* catawba */
+    --color-secondary-2: #5d323c; /* catawba, but 7 shades before black */
+    --color-secondary-3: #42242b; /* catawba, but 5 shades before black */
+    --color-neutral-1: #d9cab3; /* bone */
+    --color-neutral-2: #453a49; /* dark-liver */
+    --color-accent-1: #ba2c73; /* magenta-dye */
     --color-accent-2: #a52766; /* same as before, but 9 steps before black */
     --color-accent-3: #841f52; /* same as before, but 7 steps before black */
+    --color-danger: #ff6542; /* tomato */
+    --color-danger-2: #ff481f; /* tomato, shade 2 */
+    --color-success: #2a7221; /* pakistan green*/
+    --color-success-2: #235F1C; /* pakistan green, shade 2*/
 
     /* CSS Gradients */
     --gradient-top: linear-gradient(
         0deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-right: linear-gradient(
         90deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-bottom: linear-gradient(
         180deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-left: linear-gradient(
         270deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-top-right: linear-gradient(
         45deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-bottom-right: linear-gradient(
         135deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-top-left: linear-gradient(
         225deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-bottom-left: linear-gradient(
         315deg,
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
     --gradient-radial: radial-gradient(
-        #191d32ff,
-        #282f44ff,
-        #453a49ff,
-        #6d3b47ff,
-        #ba2c73ff
+        var(--color-primary),
+        var(--color-neutral-2),
+        var(--color-secondary-1),
+        var(--color-accent-1)
     );
+
+    /* Contextual-named colors */
+
+    --color-text-brand: var(--color-primary);
+
+    --color-border-info: var(--color-secondary-1);
+    --color-background-main: var(--color-secondary-1);
+
+    --color-text-main: var(--color-neutral-1);
+    --color-border-focus: var(--color-neutral-1);
+    --color-background-contrast: var(--color-neutral-1);
+
+    --color-text-placeholder: var(--color-neutral-2);
+    --color-background-info: var(--color-neutral-2);
+    --color-background-input: var(--color-neutral-2);
+
+    --color-text-error: var(--color-danger);
+    --color-border-error: var(--color-danger);
+
+    --color-border-main: var(--color-accent-1);
+    --color-background-focus: var(--color-accent-1);
+    --color-background-strong: var(--color-accent-3);
+
+    --color-background-success: var(--color-success);
+    --color-background-success-hover: var(--color-success-2);
+    --color-border-destructive: var(--color-danger);
+    --color-background-destructive: var(--color-danger);
+    --color-background-destructive-hover: var(--color-danger-2);
 }
 
 * {
@@ -97,33 +121,37 @@
 }
 
 *:focus {
-    outline: var(--color-accent) dashed 2px;
+    outline: var(--color-accent-1) dashed 2px;
 }
 
 ::selection {
-    color: var(--color-clear);
-    background-color: var(--color-accent-3);
+    color: var(--color-text-main);
+    background-color: var(--color-background-strong);
 }
 
 html {
     font-family: var(--font-text);
-    background: linear-gradient(225deg, var(--color-primary), var(--color-grey)),
+    background: linear-gradient(
+            225deg,
+            var(--color-primary),
+            var(--color-neutral-2)
+        ),
         rgb(0, 0, 0);
     /* height: 100%; */
 }
 
 body {
     font-size: 1rem;
-    color: var(--color-clear);
+    color: var(--color-neutral-1);
     margin: 20px;
 }
 
 button {
     font: inherit;
     cursor: pointer;
-    color: var(--color-clear);
-    background-color: var(--color-brown);
-    border: 1px var(--color-clear) solid;
+    color: var(--color-neutral-1);
+    background-color: var(--color-secondary-1);
+    border: 1px var(--color-neutral-1) solid;
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
 }
@@ -131,6 +159,6 @@ button {
 button:hover,
 button:active {
     color: white;
-    background-color: var(--color-accent);
-    border-color: var(--color-clear);
+    background-color: var(--color-accent-1);
+    border-color: var(--color-neutral-1);
 }

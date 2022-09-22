@@ -2,7 +2,7 @@ import Card from "../UI/Card";
 import ItemsList from "./ItemsList";
 import Filter from "./Filter";
 import AmountsChart from "../Amounts/AmountsChart";
-import "./Items.css";
+import styles from "./Items.module.css";
 import { useState } from "react";
 
 const Items = (props) => {
@@ -23,7 +23,7 @@ const Items = (props) => {
     );
 
     return (
-        <Card className="item-listing">
+        <Card className={styles["item-listing"]}>
             <Filter
                 yearsAlternatives={yearsAlternatives}
                 onSelectYear={selectYearHandler}

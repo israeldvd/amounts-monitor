@@ -1,30 +1,64 @@
 import { useState } from "react";
-import "./AmountForm.css";
+import styles from "./AmountForm.module.css";
 
 const AmountForm = (props) => {
+    const descriptionInputName = "item-description-input";
+    const dateInputName = "item-date-input";
+    const costInputName = "item-cost-input";
+
     const [enteredInput, setInput] = useState({
-        "item-description-input": "",
-        "item-cost-input": 0,
-        "item-date-input": "",
+        [descriptionInputName]: "",
+        [costInputName]: 0,
+        [dateInputName]: "",
+    });
+
+    const [isValid, setValidationState] = useState({
+        [descriptionInputName]: true,
     });
 
     const inputChangeHandler = (event) => {
-        if (event.target.name in enteredInput)
+        const targetName = event.target.name;
+        if (targetName in enteredInput) {
             setInput((prevState) => {
                 return {
                     ...prevState,
-                    [event.target.name]: event.target.value,
+                    [targetName]: event.target.value,
                 };
             });
+        }
+
+        if (targetName in isValid) {
+            setValidationState((previousValidationState) => {
+                return { ...previousValidationState, [targetName]: true };
+            });
+        }
     };
 
     const submitHandler = (event) => {
         event.preventDefault();
 
+        const emptyInputFields = Array.from(
+            Array.from(
+                event.target.querySelectorAll(`.${styles.setter} input`)
+            ).filter((input) => input.value.trim().length === 0)
+        );
+
+        console.log(emptyInputFields);
+
+        if (emptyInputFields.length) {
+            setValidationState({ [descriptionInputName]: false });
+
+            emptyInputFields.forEach((element) => {
+                element.placeholder = "Insert a valid text here";
+            });
+
+            return;
+        }
+
         const amountsData = {
-            description: enteredInput["item-description-input"],
-            cost: parseFloat(enteredInput["item-cost-input"]),
-            date: new Date(enteredInput["item-date-input"] + "T00:00:00"),
+            description: enteredInput[descriptionInputName],
+            cost: parseFloat(enteredInput[costInputName]),
+            date: new Date(enteredInput[dateInputName] + "T00:00:00"),
         };
 
         setInput(
@@ -38,44 +72,58 @@ const AmountForm = (props) => {
 
     return (
         <form action="POST" onSubmit={submitHandler}>
-            <div className="settings">
-                <div className="setter">
-                    <label htmlFor="item-description-input">Description</label>
+            <div className={styles["settings"]}>
+                <div className={styles["setter"]}>
+                    <label htmlFor={descriptionInputName}>Description</label>
                     <input
                         type="text"
-                        value={enteredInput["item-description-input"]}
-                        id="item-description-input"
-                        name="item-description-input"
+                        value={
+                            isValid[descriptionInputName]
+                                ? enteredInput[descriptionInputName]
+                                : ""
+                        }
+                        id={descriptionInputName}
+                        name={descriptionInputName}
+                        className={
+                            isValid[descriptionInputName]
+                                ? ""
+                                : styles["invalid"]
+                        }
                         onChange={inputChangeHandler}
+                        required
                     />
                 </div>
-                <div className="setter">
-                    <label htmlFor="item-cost-input">Cost</label>
+                <div className={styles["setter"]}>
+                    <label htmlFor={costInputName}>Cost</label>
                     <input
-                        id="item-cost-input"
-                        name="item-cost-input"
+                        id={costInputName}
+                        name={costInputName}
                         type="number"
-                        value={enteredInput["item-cost-input"]}
+                        value={enteredInput[costInputName]}
                         min="0.01"
                         step="0.01"
                         onChange={inputChangeHandler}
+                        required
                     />
                 </div>
-                <div className="setter">
-                    <label htmlFor="item-date-input">Date</label>
+                <div className={styles["setter"]}>
+                    <label htmlFor={dateInputName}>Date</label>
                     <input
                         type="date"
-                        value={enteredInput["item-date-input"]}
-                        id="item-date-input"
-                        name="item-date-input"
+                        value={enteredInput[dateInputName]}
+                        id={dateInputName}
+                        name={dateInputName}
                         min="2000-01-01"
                         max="2050-12-31"
                         onChange={inputChangeHandler}
+                        required
                     />
                 </div>
             </div>
-            <div className="action">
-                <button type='button' onClick={props.onUserCancel}>Cancel</button>
+            <div className={styles["action"]}>
+                <button type="button" onClick={props.onUserCancel}>
+                    Cancel
+                </button>
                 <button type="submit">Add new</button>
             </div>
         </form>

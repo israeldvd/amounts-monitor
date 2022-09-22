@@ -1,5 +1,5 @@
 import Card from "../UI/Card";
-import "./AddAmount.css";
+import styles from "./AddAmount.module.css";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -23,11 +23,16 @@ const AddAmount = (props) => {
     };
 
     return (
-        <Card className="add-amount">
+        <Card className={styles["add-amount"]}>
             {!isAdding && (
                 <button onClick={changeAdditionState}>Add new amount</button>
             )}
-            {isAdding && <AmountForm onUserInput={userInputHandler} onUserCancel={changeAdditionState} />}
+            {isAdding && (
+                <AmountForm
+                    onUserInput={userInputHandler}
+                    onUserCancel={changeAdditionState}
+                />
+            )}
         </Card>
     );
 };

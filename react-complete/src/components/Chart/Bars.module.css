@@ -11,15 +11,15 @@
     overflow: hidden;
     height: 100%;
     width: 100%;
-    border: 1px solid var(--color-clear);
-    box-shadow: inset 0px 0px 6px 2px var(--color-primary);
+    border: 1px solid var(--color-border-focus);
+    box-shadow: inset 0px 0px 6px 2px var(--color-border-info);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 .bar__fill {
-    background-color: var(--color-accent-2);
+    background-color: var(--color-background-main);
     width: 100%;
     border-radius: 5px;
     transition: all 0.4s 0s ease;

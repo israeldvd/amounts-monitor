@@ -1,5 +1,5 @@
 import * as locSet from "../../utils/localeSettings";
-import "./ItemDate.css";
+import styles from "./ItemDate.module.css";
 
 const ItemDate = (props) => {
     const locale = locSet.getNavigatorLanguage;
@@ -12,10 +12,10 @@ const ItemDate = (props) => {
     const year = props.date.getFullYear();
 
     return (
-        <div className="item-date">
-            <div className="month">{month}</div>
-            <div className="day">{day}</div>
-            <div className="year">{year}</div>
+        <div className={styles["item-date"]}>
+            <div className={styles["month"]}>{month}</div>
+            <div className={styles["day"]}>{day}</div>
+            <div className={styles["year"]}>{year}</div>
         </div>
     );
 }
