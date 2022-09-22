@@ -1,0 +1,22 @@
+.filter {
+    padding: 0 1.5rem;
+}
+
+.filter-control {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.filter-control label {
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.filter-control select {
+    font: inherit;
+    color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 5px 1px;
+}

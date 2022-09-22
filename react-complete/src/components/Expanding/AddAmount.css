@@ -1,0 +1,8 @@
+.add-amount {
+    text-align: center;
+    background-color: var(--color-grey);
+    padding: 1rem;
+    width: 50rem;
+    max-width: 90%;
+    margin: 2rem auto;
+}
