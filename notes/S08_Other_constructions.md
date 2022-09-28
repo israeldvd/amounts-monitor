@@ -6,6 +6,7 @@
   - [1.1. Table of contents](#11-table-of-contents)
   - [1.2. Module Introduction](#12-module-introduction)
   - [1.3. Designing Parts of a Form](#13-designing-parts-of-a-form)
+  - [1.4. Adding The "ErrorModal" Component](#14-adding-the-errormodal-component)
 
 ## 1.2. Module Introduction
 
@@ -19,3 +20,14 @@ Now, something not convered directly before. For **writing richer `form`s** and 
 
 -   An approach for organizing the project: arranging them as **separate UI-components** (directory UI, alongside Card, for example)
 -   You may use a **fallback value** for "type" property passed in by _props_, as demonstrated using the OR operator: `{props.type || "button"}`. That prevents it loses its meaning.
+
+## 1.4. Adding The "ErrorModal" Component
+
+Adding `ErrorModal`, a (new) component: it is hopefully reusable in the app as a whole (similarly to `Button` in the same component). The Modal component, as commonly used, acts resembling a **template** for future calls, allowing dynamic **title** and **message body** for example.
+
+Its semantic structure of it could be based on a `header`, `div` and `footer`, a good-looking and well-defined construction. The `ErrorModal` might stay in two places:
+
+1. where it is generated (in this case, the place would be the `form`), or
+2. the highest-level component, given that it would be part of the UI, simply.
+
+Both strategies are all right. Here the project employs the _second option_, with a common-div wrapping the existing parts, old and new. This servers the purpose of producing one-root-element return.
