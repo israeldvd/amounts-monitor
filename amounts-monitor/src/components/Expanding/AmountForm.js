@@ -73,6 +73,7 @@ const AmountForm = (props) => {
     };
 
     return (
+        // TODO: prevent user interaction with form inputs (check stash)
         <form action="POST" onSubmit={submitHandler}>
             <div className={styles["settings"]}>
                 <div className={styles["setter"]}>
