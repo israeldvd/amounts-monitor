@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import Button from "../UI/Button";
 import styles from "./AmountForm.module.css";
 
 const AmountForm = (props) => {
@@ -121,10 +123,10 @@ const AmountForm = (props) => {
                 </div>
             </div>
             <div className={styles["action"]}>
-                <button type="button" onClick={props.onUserCancel}>
+                <Button type="button" onClick={props.onUserCancel}>
                     Cancel
-                </button>
-                <button type="submit">Add new</button>
+                </Button>
+                <Button type="submit">Add new</Button>
             </div>
         </form>
     );

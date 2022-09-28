@@ -145,20 +145,3 @@ body {
     color: var(--color-neutral-1);
     margin: 20px;
 }
-
-button {
-    font: inherit;
-    cursor: pointer;
-    color: var(--color-neutral-1);
-    background-color: var(--color-secondary-1);
-    border: 1px var(--color-neutral-1) solid;
-    border-radius: 0.4rem;
-    padding: 0.5rem 1rem;
-}
-
-button:hover,
-button:active {
-    color: white;
-    background-color: var(--color-accent-1);
-    border-color: var(--color-neutral-1);
-}
