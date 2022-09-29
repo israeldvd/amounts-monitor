@@ -30,4 +30,4 @@ Its semantic structure of it could be based on a `header`, `div` and `footer`, a
 1. where it is generated (in this case, the place would be the `form`), or
 2. the highest-level component, given that it would be part of the UI, simply.
 
-Both strategies are all right. Here the project employs the _second option_, with a common element (or fragment ) wrapping the existing parts, old and new. This serves the purpose of guaranteeing _one-root-element return_.
+Both strategies are all right. Here the project employs the _second option_, with a common element (or fragment, as will be described soon) wrapping the existing parts, old and new. This serves the purpose of guaranteeing _one-root-element return_.
