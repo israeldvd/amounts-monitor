@@ -25,7 +25,7 @@ Now, something not convered directly before. For **writing richer `form`s** and 
 
 Adding `ErrorModal`, a (new) component: it is hopefully reusable in the app as a whole (similarly to `Button` in the same component). The Modal component, as commonly used, acts resembling a **template** for future calls, allowing dynamic **title** and **message body** for example.
 
-Its semantic structure of it could be based on a `header`, `div` and `footer`, a good-looking and well-defined construction. The `ErrorModal` might stay in two places:
+Its semantic structure could be based on a `header`, `div` and `footer`, a good-looking and well-defined construction. The `ErrorModal` might stay in two places:
 
 1. where it is generated (in this case, the place would be the `form`), or
 2. the highest-level component, given that it would be part of the UI, simply.
