@@ -2,15 +2,16 @@
 
 ## 1.1. Table of contents
 
-- [1. Other design styles and constructions](#1-other-design-styles-and-constructions)
-  - [1.1. Table of contents](#11-table-of-contents)
-  - [1.2. Module Introduction](#12-module-introduction)
-  - [1.3. Designing Parts of a Form](#13-designing-parts-of-a-form)
-  - [1.4. Adding The "ErrorModal" Component](#14-adding-the-errormodal-component)
-  - [1.5. Managing the Error State](#15-managing-the-error-state)
-  - [1.6. Fragments for a JSX limitation](#16-fragments-for-a-jsx-limitation)
-  - [1.7. Introducing React Portals](#17-introducing-react-portals)
-  - [1.8. Working with Portals](#18-working-with-portals)
+-   [1. Other design styles and constructions](#1-other-design-styles-and-constructions)
+    -   [1.1. Table of contents](#11-table-of-contents)
+    -   [1.2. Module Introduction](#12-module-introduction)
+    -   [1.3. Designing Parts of a Form](#13-designing-parts-of-a-form)
+    -   [1.4. Adding The "ErrorModal" Component](#14-adding-the-errormodal-component)
+    -   [1.5. Managing the Error State](#15-managing-the-error-state)
+    -   [1.6. Fragments for a JSX limitation](#16-fragments-for-a-jsx-limitation)
+    -   [1.7. Introducing React Portals](#17-introducing-react-portals)
+    -   [1.8. Working with Portals](#18-working-with-portals)
+    -   [1.9. Working with "ref"s](#19-working-with-refs)
 
 ## 1.2. Module Introduction
 
@@ -115,3 +116,22 @@ The second part resembles the `index.js` file, in which the `div#root` is select
 You may want to separate the to-be-transported pieces of code into **new constants**, simplifying their reference when calling the method which creates a portal (see ahead).
 
 In conclusion, _**portals**_ are really about **moving a component's content elsewhere**, preserving their positions in the React hierarchy, allowing them to **maintain the properties and behaviors** it inherited from the React tree. Some other use-case scenarioes are: **_tooltip_** & **_side-drawer_**.
+
+## 1.9. Working with "ref"s
+
+From the last topic: implenting portals to the modal helped the App to stay semanticly fine more accessible. **_Refs_**, in turn, **connect HTML element with the JavaScript code** – used, for example, when one wants to get rid of registering every keystroke in a state.
+
+For that the developer must use `useRef` (after importing it). A **`ref` prop** can be added to any element, making React aware of the reference to the value returned by `useRef()`.
+
+They are commonly used in conjuction with with **_inputs_**. Being also **dangerous**, so what is OK to do with _refs_.? It is a reference to the element itself, so avoid changing it headfirst.
+
+-   **Reading _input_ data** is usually fine
+-   Rarely use refs. to manipulate the DOM.
+
+_Refs_ used occasionally and wisely does not represent a problem. They shorten code a little more.
+
+The method responsible for creating _refs._ actually **return an object** with an prop `current`, accessible as a property, whose value simply is a real DOM element. The [official docs][docs-useref] (v. 16.8.0) writes:
+
+> _`useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`). The returned object will persist for the full lifetime of the component._
+
+[docs-useref]: https://reactjs.org/docs/hooks-reference.html#useref
