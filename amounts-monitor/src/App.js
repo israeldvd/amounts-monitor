@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import Items from "./components/Amounts/Items";
 import AddAmount from "./components/Expanding/AddAmount";
 
@@ -37,13 +37,13 @@ const App = () => {
     };
 
     return (
-        <div>
+        <Fragment>
             <header>
                 <h1>Amounting the savings</h1>
             </header>
             <AddAmount onUserInput={userInputHandler} />
             <Items items={items} />
-        </div>
+        </Fragment>
     );
 };
 

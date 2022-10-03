@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, Fragment } from "react";
 
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
@@ -102,7 +102,7 @@ const AmountForm = (props) => {
     };
 
     return (
-        <React.Fragment>
+        <Fragment>
             {error && (
                 <ErrorModal
                     title={error.title} /* TODO: React-portal this component*/
@@ -169,7 +169,7 @@ const AmountForm = (props) => {
                     <Button type="submit">Add new</Button>
                 </div>
             </form>
-        </React.Fragment>
+        </Fragment>
     );
 };
 
