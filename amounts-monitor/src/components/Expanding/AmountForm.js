@@ -10,11 +10,9 @@ const AmountForm = (props) => {
     const dateInputName = "item-date-input";
     const costInputName = "item-cost-input";
 
-    const [enteredInput, setInput] = useState({
-        [descriptionInputName]: "",
-        [costInputName]: 0,
-        [dateInputName]: "",
-    });
+    const descriptionInputRef = useRef();
+    const dateInputRef = useRef();
+    const costInputRef = useRef();
 
     const [isValid, setValidationState] = useState({
         [descriptionInputName]: true,
@@ -29,13 +27,14 @@ const AmountForm = (props) => {
         const emptyInputFields = formInputs.filter(
             (input) => input.value.trim().length === 0
         );
-        let inputNames = [];
 
+        let inputNames = [];
         if (emptyInputFields.length) {
             setValidationState({ [descriptionInputName]: false });
 
             emptyInputFields.forEach((element) => {
                 inputNames.push(element.name);
+                element.value="";
                 element.placeholder = placeholder;
             });
         }
@@ -45,14 +44,6 @@ const AmountForm = (props) => {
 
     const inputChangeHandler = (event) => {
         const targetName = event.target.name;
-        if (targetName in enteredInput) {
-            setInput((prevState) => {
-                return {
-                    ...prevState,
-                    [targetName]: event.target.value,
-                };
-            });
-        }
 
         if (targetName in isValid) {
             setValidationState((previousValidationState) => {
@@ -65,9 +56,11 @@ const AmountForm = (props) => {
         event.preventDefault();
 
         // return all empty input fields
-        const invalidInputsList = getInvalidInputs(
-            Array.from(event.target.querySelectorAll(`.${styles.setter} input`))
-        );
+        const invalidInputsList = getInvalidInputs([
+            descriptionInputRef.current,
+            costInputRef.current,
+            dateInputRef.current,
+        ]);
 
         if (invalidInputsList.length > 0) {
             setError({
@@ -83,9 +76,9 @@ const AmountForm = (props) => {
 
         // handle the data if nothing is amiss
         const amountsData = {
-            description: enteredInput[descriptionInputName],
-            cost: parseFloat(enteredInput[costInputName]),
-            date: new Date(enteredInput[dateInputName] + "T00:00:00"),
+            description: descriptionInputRef.current.value,
+            cost: parseFloat(costInputRef.current.value),
+            date: new Date(dateInputRef.current.value + "T00:00:00"),
         };
 
         setInput(
@@ -119,13 +112,9 @@ const AmountForm = (props) => {
                         </label>
                         <input
                             type="text"
-                            value={
-                                isValid[descriptionInputName]
-                                    ? enteredInput[descriptionInputName]
-                                    : ""
-                            }
                             id={descriptionInputName}
                             name={descriptionInputName}
+                            ref={descriptionInputRef}
                             className={
                                 isValid[descriptionInputName]
                                     ? ""
@@ -140,8 +129,8 @@ const AmountForm = (props) => {
                         <input
                             id={costInputName}
                             name={costInputName}
+                            ref={costInputRef}
                             type="number"
-                            value={enteredInput[costInputName]}
                             min="0.01"
                             step="0.01"
                             onChange={inputChangeHandler}
@@ -152,9 +141,9 @@ const AmountForm = (props) => {
                         <label htmlFor={dateInputName}>Date</label>
                         <input
                             type="date"
-                            value={enteredInput[dateInputName]}
                             id={dateInputName}
                             name={dateInputName}
+                            ref={dateInputRef}
                             min="2000-01-01"
                             max="2050-12-31"
                             onChange={inputChangeHandler}
