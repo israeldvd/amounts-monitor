@@ -8,6 +8,7 @@
   - [1.3. Designing Parts of a Form](#13-designing-parts-of-a-form)
   - [1.4. Adding The "ErrorModal" Component](#14-adding-the-errormodal-component)
   - [1.5. Managing the Error State](#15-managing-the-error-state)
+  - [1.6. Fragments for a JSX limitation](#16-fragments-for-a-jsx-limitation)
 
 ## 1.2. Module Introduction
 
@@ -40,3 +41,26 @@ The next step would be making the `ErrorModal` more dynamic (besides styling it)
 For example, this comes with designing a state value whose aim is to store an object to "fill" the modal – it has a "title" and "content" – which would start off empty, making some boolean test _false_, and, when filled, _true_.
 
 Finally, to make the modal vanish away, this pattern allows setting the error-object state to null. Using `&&` operator is a way to display contents conditionally, as used here before, given that the language returns the condition after `&&` if the first one is false (in this case, the state-value, which may be `null`).
+
+## 1.6. Fragments for a JSX limitation
+
+JSX limitations: one root element at most, only, is allowed, which is due to JavaScript itself. How to to work that problem around:
+
+-   wrap everything with a **`div`** (or any other element) or
+-   use a **list** -- this way, unique keys are required.
+-   create and use a `Wrapper` **component** (placed in a directory _Helpers_, for example)
+-   use React **Fragments**
+
+The `Wrapper` compoent would only serve the purpose of returning the children it has by means of `props.children`. Wrapper components, however, are best done automatically with `<Fragment>` (or `<React.Fragment>`) around the children, or with empty tags (`<>`), which is _not_ allowed for all project setups. Commonly, using auxiliary elements causes many unnecessary nesting.
+
+Import a Fragment directly with:
+
+```javascript
+import { Fragment } from "react";
+
+const Component = () => {
+    return <Fragment>{/*...*/}</Fragment>;
+};
+```
+
+**Conclusion** after using these two options: no extra unnecessary `div`s. However, better than defining a new component, React already does it with Fragments, which always work and always accept "key" attribute.
