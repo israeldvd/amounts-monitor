@@ -7,6 +7,7 @@
   - [1.2. Module Introduction](#12-module-introduction)
   - [1.3. Designing Parts of a Form](#13-designing-parts-of-a-form)
   - [1.4. Adding The "ErrorModal" Component](#14-adding-the-errormodal-component)
+  - [1.5. Managing the Error State](#15-managing-the-error-state)
 
 ## 1.2. Module Introduction
 
@@ -31,3 +32,11 @@ Its semantic structure could be based on a `header`, `div` and `footer`, a good-
 2. the highest-level component, given that it would be part of the UI, simply.
 
 Both strategies are all right. Here the project employs the _second option_, with a common element (or fragment, as will be described soon) wrapping the existing parts, old and new. This serves the purpose of guaranteeing _one-root-element return_.
+
+## 1.5. Managing the Error State
+
+The next step would be making the `ErrorModal` more dynamic (besides styling it). A **state** may be used to control its visibility through simple form validation/verification and sending proper **_props_** down to the template-component with conditional appearance.
+
+For example, this comes with designing a state value whose aim is to store an object to "fill" the modal – it has a "title" and "content" – which would start off empty, making some boolean test _false_, and, when filled, _true_.
+
+Finally, to make the modal vanish away, this pattern allows setting the error-object state to null. Using `&&` operator is a way to display contents conditionally, as used here before, given that the language returns the condition after `&&` if the first one is false (in this case, the state-value, which may be `null`).
