@@ -9,6 +9,8 @@
   - [1.4. Adding The "ErrorModal" Component](#14-adding-the-errormodal-component)
   - [1.5. Managing the Error State](#15-managing-the-error-state)
   - [1.6. Fragments for a JSX limitation](#16-fragments-for-a-jsx-limitation)
+  - [1.7. Introducing React Portals](#17-introducing-react-portals)
+  - [1.8. Working with Portals](#18-working-with-portals)
 
 ## 1.2. Module Introduction
 
@@ -64,3 +66,52 @@ const Component = () => {
 ```
 
 **Conclusion** after using these two options: no extra unnecessary `div`s. However, better than defining a new component, React already does it with Fragments, which always work and always accept "key" attribute.
+
+## 1.7. Introducing React Portals
+
+> _Making things work is usually different than **creating good code**_.
+
+Modal overlays are not meant to be nested inside other (non-root) elements, technically. An HTML structure is more **sound**, prone to **quality** when that inferior design doesn't stand a chance.
+
+This happens when importing Modal component, for example, inside a component that triggers it. It's a not good idea to ignore semantic or accessibility issues, such as using `div`s as buttons or screen readers not reading the modal that is deep down the structure tree.
+
+**_React portals_** helps with problems mentioned earlier; they simply get contents to be placed elsewhere, particularly when the code is moderately fixed relative to how it was designed.
+
+## 1.8. Working with Portals
+
+To use portal for higher-level components similar to modals, here are some tips:
+
+1. set **`div`s** in the `index.html` file next to the `div#root` (inside `body` tag):
+
+    ```html
+    <!-- specify the kind of component goes here -->
+    <div id="backdrop-root"></div>
+
+    <!-- for sidedrawers, modals... -->
+    <div id="overlay-root"></div>
+
+    <!-- contents go here -->
+    <div id="root"></div>
+    ```
+
+2. import another React library: `react-dom`
+3. create portals (use special **JSX braces** for calling the method)
+
+Obs.:
+
+> React \[library\] is also compatible with React Native, but `react-dom` is specific to DOM-related "transposition".
+
+Regarding the import name, use whatever one you'd rather pick, e.g., "ReactDOM", but that is not mandatory.
+
+**_Using portals_**. This might be done on the Modal component, providing **abstraction** to every future call – avoiding the definition of new "subcomponents" on not-modal components.
+
+"Portalling" comes with the `react-dom`'s method `createPortal`, which receives these as arguments:
+
+1. **JSX code**, particularly element-components (props. can be passed to them), and
+2. the **element** which it points to – it can be accessed by DOM'S API `document` and picked by ID
+
+The second part resembles the `index.js` file, in which the `div#root` is selected.
+
+You may want to separate the to-be-transported pieces of code into **new constants**, simplifying their reference when calling the method which creates a portal (see ahead).
+
+In conclusion, _**portals**_ are really about **moving a component's content elsewhere**, preserving their positions in the React hierarchy, allowing them to **maintain the properties and behaviors** it inherited from the React tree. Some other use-case scenarioes are: **_tooltip_** & **_side-drawer_**.
