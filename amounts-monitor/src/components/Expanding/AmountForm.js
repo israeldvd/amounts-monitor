@@ -107,7 +107,7 @@ const AmountForm = (props) => {
                 <ErrorModal
                     title={error.title} /* TODO: React-portal this component*/
                     content={error.message}
-                    onClick={errorModalClose}
+                    onConfirm={errorModalClose}
                 />
             )}
             {/* TODO: prevent user interaction with form inputs (check stash) */}
