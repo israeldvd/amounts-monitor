@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useRef, useState, Fragment } from "react";
 
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
@@ -19,6 +19,10 @@ const AmountForm = (props) => {
     });
 
     const [error, setError] = useState();
+
+    const clearInputs = (...inputs) => {
+        inputs.forEach((currentInput) => (currentInput.value = ""));
+    };
 
     const getInvalidInputs = (
         formInputs,
@@ -81,10 +85,10 @@ const AmountForm = (props) => {
             date: new Date(dateInputRef.current.value + "T00:00:00"),
         };
 
-        setInput(
-            Object.fromEntries(
-                Object.entries(enteredInput).map(([k]) => [k, ""])
-            )
+        clearInputs(
+            descriptionInputRef.current,
+            costInputRef.current,
+            dateInputRef.current
         );
 
         props.onUserInput(amountsData);
