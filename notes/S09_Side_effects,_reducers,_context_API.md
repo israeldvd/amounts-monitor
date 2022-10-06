@@ -33,3 +33,23 @@ the browser yields the value, but it could not execute for every rendering, but 
 -   This tipically is done with _props_ or states whose changes would trigger something (e.g., show a popup or give permission to a button click).
 -   User-entered data can also be indentified as Side Effects, not only dealing with HTTP request or storing data.
 -   So, use Side Effect whenever an action is supposed to run in **reponse to some other action**.
+
+> _Add all "things" you use in your effect function if those "things" could change because your component (or some parent component) re-rendered_
+
+**_Using the useEffect Cleanup Function_**. The cleanup function executes before **every Side Effect execution** and before **every unmounting** (removal of the component). This serves many purposes, such as _clearing timeouts_ whenever an event occurs (an user may still be typing in a form). An example snippet for that scenario:
+
+```javascript
+useEffect(() => {
+    const timeoutId = setTimeout(() => {
+        // check form validity (e.g., state-update)
+        // after every 500ms AND a pause on typing (see input states below)
+    }, 500);
+
+    // cleanup function (its name is negligible)
+    return () => {
+        clearTimeout(timeoutId);
+    };
+}, [enteredInput1, enteredInput2]); //inputs as dependencies
+```
+
+From the previous example, what must be kept in mind, yet, is that the **effect** (the all-encompassing anonymous function) **executes for any change** in the dependecies (the input states), meaning cleanups are made as from the second render and every time an input is changed.
