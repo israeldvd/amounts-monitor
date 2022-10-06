@@ -7,6 +7,7 @@
   - [1.2. Introduction to Side Effects](#12-introduction-to-side-effects)
   - [1.3. Handling Side Effects](#13-handling-side-effects)
   - [1.4. useEffect summary](#14-useeffect-summary)
+  - [1.5. Introducing useReducer & Reducers In General](#15-introducing-usereducer--reducers-in-general)
 
 ## 1.2. Introduction to Side Effects
 
@@ -69,6 +70,48 @@ Using `[]` as dependecy, an effect runs only the first time the component is mou
 
 -   When `[]` is set as _DependecyList_, it runs at the unmounting time.
 
-> _Clean up function runs **after** the new render but **_before_** the 'new' effects are applied._
+> _Clean up function runs **after** the new render but \*\*\_before_\*\* the 'new' effects are applied.\_
+
+## 1.5. Introducing useReducer & Reducers In General
+
+For more complex state management, a solution is to use `useReducer`. Usually avoid it for simple scenarios.
+
+-   For example, use it when there are **multiple related states**, **multiple ways of changing this state** etc.
+-   Simply is a replacement for `useState()`, but requires a more **complex setup**
+
+Sometimes, when coding, one may need to **update some state** (e.g., a _form_ state) **based on other two or more states** (e.g., some of it _inputs_). But setting a new state, while relying on previous states, is supposed to assume a _function form_ (with a callback), but it wouldn't be possible.
+
+Or even when two **states are closely related**, the case similar when storing an input data and its validity. Those are problems for which `useReducer` is a qualified idea.
+
+**_A word of caution_**. Avoid updating a state from another one, given the reason that this state might be out-of-date. See that, in this example-case, employing `setInputIsValid((prevState) => {})` (_function form_) wouldn't work for the reason this `prevState` is **not** associated with the other state (for example, `enteredInputData`), even though they are related. `useReducer()` is a good choice.
+
+The [docs](#https://reactjs.org/docs/hooks-reference.html#usereducer) read:
+
+> _`useReducer` is usually preferable to `useState` when you have complex state logic that involves multiple sub-values. It also lets you optimize performance for components that trigger deep updates because you can pass `dispatch` down instead of callbacks._
+
+**_Implementing the `useReducer`_**. The following snippet of code is a help to understand it.
+
+```javascript
+const [state, dispatchFn] = useReducer(reducerFn, initialState, initFn);
+```
+
+-   **Returned array** (exactly two values)
+
+    1.  `state`: the state snapshot
+    2.  `distachFn`: function to dispatch a new action
+
+-   **Arguments**
+
+    1.  `reducerFn`: triggered automatically once an action is dispatched and gets that and should return the new updated state:
+
+        -   `(prevState, action) => newState`
+        -   similar to the function form from `useState`
+
+    1.  `initialState`: the initial state
+    1.  `initFn`: functin to set the initial state programmatically
+
+The `reducerFn` can be defined outside the component definition if it doesn't need to interact with anything of the component function.
+
+##
 
 [useeffect]: #13-handling-side-effects
