@@ -38,7 +38,7 @@ const AmountForm = (props) => {
 
             emptyInputFields.forEach((element) => {
                 inputNames.push(element.name);
-                element.value="";
+                element.value = "";
                 element.placeholder = placeholder;
             });
         }
@@ -49,7 +49,7 @@ const AmountForm = (props) => {
     const inputChangeHandler = (event) => {
         const targetName = event.target.name;
 
-        if (targetName in isValid) {
+        if (isValid[targetName] !== undefined) {
             setValidationState((previousValidationState) => {
                 return { ...previousValidationState, [targetName]: true };
             });
