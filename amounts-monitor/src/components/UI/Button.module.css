@@ -1,4 +1,4 @@
-button {
+.button {
     font: inherit;
     cursor: pointer;
     color: var(--color-neutral-1);
@@ -8,8 +8,8 @@ button {
     padding: 0.5rem 1rem;
 }
 
-button:hover,
-button:active {
+.button:hover,
+.button:active {
     color: white;
     background-color: var(--color-accent-1);
     border-color: var(--color-neutral-1);
