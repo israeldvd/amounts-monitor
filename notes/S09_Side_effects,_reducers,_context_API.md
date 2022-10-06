@@ -6,6 +6,7 @@
   - [1.1. Table of contents](#11-table-of-contents)
   - [1.2. Introduction to Side Effects](#12-introduction-to-side-effects)
   - [1.3. Handling Side Effects](#13-handling-side-effects)
+  - [1.4. useEffect summary](#14-useeffect-summary)
 
 ## 1.2. Introduction to Side Effects
 
@@ -53,3 +54,19 @@ useEffect(() => {
 ```
 
 From the previous example, what must be kept in mind, yet, is that the **effect** (the all-encompassing anonymous function) **executes for any change** in the dependecies (the input states), meaning cleanups are made as from the second render and every time an input is changed.
+
+## 1.4. useEffect summary
+
+As pointed out previously, every **effect** not relying on dependecies (not even `[]`) runs for **every render cycle** (for example, change in state), including the first time the **component is mounted**. Out of curiosity, you could simply check that using `console.log`.
+
+Using `[]` as dependecy, an effect runs only the first time the component is mounted and redered. Adding some **dependency** (such as those of the list `[someInput, anotherOne]`) implies effect running after changes in it, not only in the case mentioned before now.
+
+**Cleanup functions** execute before every **unmounting** of the component it is created on; conversely, it is triggered before every effect execution, except the first time (when the component is mounted and rendered).
+
+-   Refer to the definition of "effect" and examples in [this][useeffect] section.
+
+-   They are defined with the `return` statement inside `useEffect`'s _EffectCallback_.
+
+-   When `[]` is set as _DependecyList_, it runs at the unmounting time.
+
+[useeffect]: #13-handling-side-effects
