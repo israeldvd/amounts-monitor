@@ -9,22 +9,29 @@ const descriptionInputName = "item-description-input";
 const dateInputName = "item-date-input";
 const costInputName = "item-cost-input";
 
-const dispatchForm = (state, action) => {
-    // name-specific value state-changer
-    // if (action.type === "USER_INPUT" && action.name === descriptionInputName)
-    //     return {
-    //         description: {
-    //             value: action.val,
-    //             isValid: state.description.isValid, //repeat
-    //         },
-    //         cost: state.cost, //repeat state
-    //         date: state.date, //repeat state
-    //         isValid:
-    //             action.val.trim().length > 0 &&
-    //             state.cost.isValid &&
-    //             state.date.isValid,
-    //     };
+const getInvalidInputs = (
+    formInputs,
+    placeholder = "Insert a valid text here"
+) => {
+    let inputNames = [];
 
+    formInputs.forEach((element) => {
+        if (element.value.trim().length === 0) {
+            setFormState({ type: "INPUT_BLUR", name: element.name });
+            inputNames.push(element.name);
+            element.value = "";
+            element.placeholder = placeholder;
+        }
+    });
+
+    return inputNames;
+};
+
+const clearInputs = (...inputs) => {
+    inputs.forEach((currentInput) => (currentInput.value = ""));
+};
+
+const dispatchForm = (state, action) => {
     // generic input-value state update
     if (action.type === "USER_INPUT") {
         return {
@@ -91,36 +98,8 @@ const AmountForm = (props) => {
         isValid: null,
     });
 
-    const clearInputs = (...inputs) => {
-        inputs.forEach((currentInput) => (currentInput.value = ""));
-    };
-
-    const getInvalidInputs = (
-        formInputs,
-        placeholder = "Insert a valid text here"
-    ) => {
-        let inputNames = [];
-
-        formInputs.forEach((element) => {
-            if (element.value.trim().length === 0) {
-                setFormState({ type: "INPUT_BLUR", name: element.name });
-                inputNames.push(element.name);
-                element.value = "";
-                element.placeholder = placeholder;
-            }
-        });
-
-        return inputNames;
-    };
-
     const inputChangeHandler = (event) => {
         const targetName = event.target.name;
-
-        // if (isValid[targetName] !== undefined) {
-        //     setValidationState((previousValidationState) => {
-        //         return { ...previousValidationState, [targetName]: true };
-        //     });
-        // }
 
         setFormState({
             type: "USER_INPUT",
