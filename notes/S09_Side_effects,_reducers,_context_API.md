@@ -20,12 +20,12 @@ _Side Effects_ work **outside of normal component evaluation**. For example, it 
 
 Side Effects are used in React with `useEffect`, which takes two arguments:
 
--   `() => {}`: a function that is triggered only **if the dependencies changed**, after every component evaluation
+-   `() => {}`: this is the **_effect_**, a function that is triggered only **if the dependencies have changed**, after every component evaluation
 -   `[ dependencies ]`: dependencies of this effect, their changes are conditions for running the side-effect code
 
 **_Storing data in browser_**. For a project with logging status, for example, an option is to use `localStore.setItem` (independant of React) or _cookies_. The function receives two string arguments, a **key-value pair** (identifier and its value, e.g., `"1"`).
 
-To give data a **persistance** even after a page reload or something similar, a Side Effect is necessary to **check the local storage** for the wanted local pair. For example, with `localStore.getItem()` .
+To give data a **persistance** even after a page reload or something similar, a Side Effect is necessary to **check the local storage** for the wanted local pair. For example, with `localStore.getItem()`,
 the browser yields the value, but it could not execute for every rendering, but only if the dependencies change.
 
 **_Rule to have dependencies_**. Usually, use **what you have in the side-effect function** (every constant, method, if changed, and so on) as a dependency. For example, `enteredPassword` state. This guarantees it executes only if a change is made to this state in the **last component rerender cycle**.
