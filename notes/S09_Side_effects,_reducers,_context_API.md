@@ -69,4 +69,6 @@ Using `[]` as dependecy, an effect runs only the first time the component is mou
 
 -   When `[]` is set as _DependecyList_, it runs at the unmounting time.
 
+> _Clean up function runs **after** the new render but **_before_** the 'new' effects are applied._
+
 [useeffect]: #13-handling-side-effects
