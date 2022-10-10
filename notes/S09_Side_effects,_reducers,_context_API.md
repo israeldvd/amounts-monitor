@@ -13,6 +13,7 @@
     - [1.6.2. Providing and Listening parts](#162-providing-and-listening-parts)
     - [1.6.3. Using a Custom Context Provider Component](#163-using-a-custom-context-provider-component)
     - [1.6.4. React Context Limitations](#164-react-context-limitations)
+  - [1.7. Rule of Hooks](#17-rule-of-hooks)
 
 ## 1.2. Introduction to Side Effects
 
@@ -229,6 +230,15 @@ Note that
 -   _React Context should not **replace** all component communications and props_
     -   they are still very import, as noted in the [previous section](#17-using-a-custom-context-provider-component)
     -   short "prop chain" is not a big problem
+
+## 1.7. Rule of Hooks
+
+Some rules are important to follow. These are the official ones:
+
+-   only call _React Hooks_ inside component functins or custom Hooks
+-   don't call them inside nested functions or in any block statemets
+
+Another non-official good **rule** is: always add everything used inside `useEffect` as item in its dependecy list.
 
 ##
 
