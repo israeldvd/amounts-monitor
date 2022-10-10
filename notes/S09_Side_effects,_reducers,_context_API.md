@@ -10,6 +10,7 @@
   - [1.5. Introducing useReducer & Reducers In General](#15-introducing-usereducer--reducers-in-general)
   - [1.6. React Context API](#16-react-context-api)
   - [1.7. Using a Custom Context Provider Component](#17-using-a-custom-context-provider-component)
+  - [1.8. React Context Limitations](#18-react-context-limitations)
 
 ## 1.2. Introduction to Side Effects
 
@@ -212,6 +213,16 @@ Instead of just exporting the value, a possible implementation consists of defin
     2. use the _default export_ to use the context value.
 
 Doing that **reduces the code load** from where it would and changes the **central place of management** from the `App.js` (or wherever it would be) to a dedicated context file.
+
+## 1.8. React Context Limitations
+
+Note that
+
+-   _React Context is **NOT** optimized for **high frequency changes**_
+    -   many changes are done every minute (or seconds), so avoid using it in those situations (Redux is a waay to work around it, though)
+-   _React Context should not **replace** all component communications and props_
+    -   they are still very import, as noted in the [previous section](#17-using-a-custom-context-provider-component)
+    -   short "prop chain" is not a big problem
 
 ##
 
