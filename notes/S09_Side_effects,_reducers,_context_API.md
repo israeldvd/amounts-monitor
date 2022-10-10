@@ -2,12 +2,12 @@
 
 ## 1.1. Table of contents
 
--   [1. Advanced concepts: side effects, reducers and context API](#1-advanced-concepts-side-effects-reducers-and-context-api)
-    -   [1.1. Table of contents](#11-table-of-contents)
-    -   [1.2. Introduction to Side Effects](#12-introduction-to-side-effects)
-    -   [1.3. Handling Side Effects](#13-handling-side-effects)
-    -   [1.4. useEffect summary](#14-useeffect-summary)
-    -   [1.5. Introducing useReducer & Reducers In General](#15-introducing-usereducer--reducers-in-general)
+- [1. Advanced concepts: side effects, reducers and context API](#1-advanced-concepts-side-effects-reducers-and-context-api)
+  - [1.1. Table of contents](#11-table-of-contents)
+  - [1.2. Introduction to Side Effects](#12-introduction-to-side-effects)
+  - [1.3. Handling Side Effects](#13-handling-side-effects)
+  - [1.4. useEffect summary](#14-useeffect-summary)
+  - [1.5. Introducing useReducer & Reducers In General](#15-introducing-usereducer--reducers-in-general)
 
 ## 1.2. Introduction to Side Effects
 
@@ -116,6 +116,7 @@ The `reducerFn` can be defined outside the component definition if it doesn't ne
 
 -   **Be consitent when calling dispatches**: defining initial state and updating them is supposed to use the same design structure; for example, an object with two values gives **consistency** to its usage: `{value: "", validity: true}`
 -   **Follow conventions**: it is not wrong to _dispatch a new action_ passing numbers or strings as parameters, but it is usually common to send an **object** similar to this example (note the capital case): `{type: "USER_INPUT", val: target.value}`
+-   **Consider using reducers if**: more "power" is needed, there are related pieces of state and/or more complex state updates
 
 ##
 
