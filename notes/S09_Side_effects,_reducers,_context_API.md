@@ -9,6 +9,7 @@
   - [1.4. useEffect summary](#14-useeffect-summary)
   - [1.5. Introducing useReducer & Reducers In General](#15-introducing-usereducer--reducers-in-general)
   - [1.6. React Context API](#16-react-context-api)
+  - [1.7. Using a Custom Context Provider Component](#17-using-a-custom-context-provider-component)
 
 ## 1.2. Introduction to Side Effects
 
@@ -191,6 +192,26 @@ Alternatives to do the _listening part_:
 
 -   This is still recommended when forwarding actions through **a lot of components** to a specific. For instance, when forwarding a function to a log-out button.
 -   **_Props_** are still useful to **pass data to components**, configuring them and/or getting them to be reusable.
+
+## 1.7. Using a Custom Context Provider Component
+
+Instead of just exporting the value, a possible implementation consists of defining a **custom context provider**, in which there is a management of states, its updating-functions and so on. Take a logging context:
+
+1.  In that case, define `isLoggedIn` state (or whatever one) inside the context-definition file,
+2.  Update it there (for instance, get the `localStore` data)
+3.  Define the designed components, such as `AuthContextProvider`, which would return the `Provider`
+    -   set the value property for the `Provider` according to the states, context and/or other data, preferably dynamic
+    -   use `props.children` to turn it into a **wrapper component**
+4.  Declare default and named **exports**
+
+    -   _default_: context value from `createContext`, as done in the previous section
+    -   _named_: component(s)
+
+5.  **Importing** the custom provider component and context:
+    1. wrap the `App` component, for example, with the _named export_ (that being the situation, it is used once, right in the file `index.js`);
+    2. use the _default export_ to use the context value.
+
+Doing that **reduces the code load** from where it would and changes the **central place of management** from the `App.js` (or wherever it would be) to a dedicated context file.
 
 ##
 
