@@ -9,26 +9,16 @@ const descriptionInputName = "item-description-input";
 const dateInputName = "item-date-input";
 const costInputName = "item-cost-input";
 
-const getInvalidInputs = (
-    formInputs,
-    placeholder = "Insert a valid text here"
-) => {
+const getInvalidInputs = (...formInputs) => {
     let inputNames = [];
 
     formInputs.forEach((element) => {
         if (element.value.trim().length === 0) {
-            setFormState({ type: "INPUT_BLUR", name: element.name });
             inputNames.push(element.name);
-            element.value = "";
-            element.placeholder = placeholder;
         }
     });
 
     return inputNames;
-};
-
-const clearInputs = (...inputs) => {
-    inputs.forEach((currentInput) => (currentInput.value = ""));
 };
 
 const dispatchForm = (state, action) => {
@@ -57,18 +47,34 @@ const dispatchForm = (state, action) => {
         };
     }
 
+    // reset form parts
+    if (action.type === "INPUT_CLEAR") {
+        return {
+            ...state,
+            [action.name]: {
+                ...state[action.name],
+                value: "",
+                placeholder: action.placeholder ? action.placeholder : "",
+            },
+            isValid: state.isValid,
+        };
+    }
+
     // otherwise, this would 'reset' all entries
     return {
         [descriptionInputName]: {
             value: "",
+            placeholder: "",
             isValid: false,
         },
         [costInputName]: {
             value: "",
+            placeholder: "",
             isValid: false,
         },
         [dateInputName]: {
             value: "",
+            placeholder: "",
             isValid: false,
         },
         isValid: false,
@@ -85,14 +91,17 @@ const AmountForm = (props) => {
     const [formState, setFormState] = useReducer(dispatchForm, {
         [descriptionInputName]: {
             value: "",
+            placeholder: "",
             isValid: null,
         },
         [costInputName]: {
             value: "",
+            placeholder: "",
             isValid: null,
         },
         [dateInputName]: {
             value: "",
+            placeholder: "",
             isValid: null,
         },
         isValid: null,
@@ -116,11 +125,19 @@ const AmountForm = (props) => {
         event.preventDefault();
 
         // return all empty input fields
-        const invalidInputsList = getInvalidInputs([
+        const invalidInputsList = getInvalidInputs(
             descriptionInputRef.current,
             costInputRef.current,
-            dateInputRef.current,
-        ]);
+            dateInputRef.current
+        );
+
+        invalidInputsList.forEach((elementName) => {
+            setFormState({
+                type: "INPUT_CLEAR",
+                name: elementName,
+                placeholder: "Insert a valid text here.",
+            });
+        });
 
         if (invalidInputsList.length > 0) {
             setError({
@@ -140,12 +157,6 @@ const AmountForm = (props) => {
             cost: parseFloat(costInputRef.current.value),
             date: new Date(dateInputRef.current.value + "T00:00:00"),
         };
-
-        clearInputs(
-            descriptionInputRef.current,
-            costInputRef.current,
-            dateInputRef.current
-        );
 
         props.onUserInput(amountsData);
     };
@@ -175,6 +186,10 @@ const AmountForm = (props) => {
                             type="text"
                             id={descriptionInputName}
                             ref={descriptionInputRef}
+                            value={formState[descriptionInputName].value}
+                            placeholder={
+                                formState[descriptionInputName].placeholder
+                            }
                             className={
                                 formState[descriptionInputName].isValid ===
                                 false
@@ -192,6 +207,8 @@ const AmountForm = (props) => {
                             name={costInputName}
                             id={costInputName}
                             ref={costInputRef}
+                            value={formState[costInputName].value}
+                            placeholder={formState[costInputName].placeholder}
                             className={
                                 formState[costInputName].isValid === false
                                     ? styles["invalid"]
@@ -212,6 +229,8 @@ const AmountForm = (props) => {
                             type="date"
                             id={dateInputName}
                             ref={dateInputRef}
+                            value={formState[dateInputName].value}
+                            placeholder={formState[dateInputName].placeholder}
                             className={
                                 formState[dateInputName].isValid === false
                                     ? styles["invalid"]
