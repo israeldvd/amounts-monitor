@@ -187,6 +187,11 @@ Alternatives to do the _listening part_:
     - The hook takes away the need of consuming the context and modifying the return statement
     - For the examples done before, `FileImport` is replace with `SomeContext`, and `value` with `ctx`
 
+**_Functions withing a context_**. They are also allowed to be passed down into a tree, given a context, fact which could even make `props` unnecessary.
+
+-   This is still recommended when forwarding actions through **a lot of components** to a specific. For instance, when forwarding a function to a log-out button.
+-   **_Props_** are still useful to **pass data to components**, configuring them and/or getting them to be reusable.
+
 ##
 
 [useeffect]: #13-handling-side-effects
