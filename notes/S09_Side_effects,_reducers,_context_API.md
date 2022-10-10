@@ -9,8 +9,10 @@
   - [1.4. useEffect summary](#14-useeffect-summary)
   - [1.5. Introducing useReducer & Reducers In General](#15-introducing-usereducer--reducers-in-general)
   - [1.6. React Context API](#16-react-context-api)
-  - [1.7. Using a Custom Context Provider Component](#17-using-a-custom-context-provider-component)
-  - [1.8. React Context Limitations](#18-react-context-limitations)
+    - [1.6.1. Defining and Using a Context](#161-defining-and-using-a-context)
+    - [1.6.2. Providing and Listening parts](#162-providing-and-listening-parts)
+    - [1.6.3. Using a Custom Context Provider Component](#163-using-a-custom-context-provider-component)
+    - [1.6.4. React Context Limitations](#164-react-context-limitations)
 
 ## 1.2. Introduction to Side Effects
 
@@ -127,6 +129,8 @@ The `reducerFn` can be defined outside the component definition if it doesn't ne
 
 -   Finally comes a _State Storage_, something that allows direct connections between components that are **not ancestor or child** to each other.
 
+### 1.6.1. Defining and Using a Context
+
 **Where to place it**: you could create a directory in App named **_context_** or **_store_** (or **_state_**) will have a file to do this direct "connection".
 
 -   Use `React.createContext()`, pass a `defaultValue` to it (usually an object) and store the returned **value** in a constant
@@ -146,6 +150,8 @@ To use this **context component**, you can use the **`Provider`** component (use
 -   It is not necessary if the `defaultValue` is set, because all consumers will assume this value when using `SomeContext`:
 
     > _The `defaultValue` argument is only used when a component does not have a matching `Provider` above it in the tree. This default value can be helpful for testing components in isolation without wrapping them._
+
+### 1.6.2. Providing and Listening parts
 
 Implementing it comes in two parts:
 
@@ -194,7 +200,7 @@ Alternatives to do the _listening part_:
 -   This is still recommended when forwarding actions through **a lot of components** to a specific. For instance, when forwarding a function to a log-out button.
 -   **_Props_** are still useful to **pass data to components**, configuring them and/or getting them to be reusable.
 
-## 1.7. Using a Custom Context Provider Component
+### 1.6.3. Using a Custom Context Provider Component
 
 Instead of just exporting the value, a possible implementation consists of defining a **custom context provider**, in which there is a management of states, its updating-functions and so on. Take a logging context:
 
@@ -214,7 +220,7 @@ Instead of just exporting the value, a possible implementation consists of defin
 
 Doing that **reduces the code load** from where it would and changes the **central place of management** from the `App.js` (or wherever it would be) to a dedicated context file.
 
-## 1.8. React Context Limitations
+### 1.6.4. React Context Limitations
 
 Note that
 
