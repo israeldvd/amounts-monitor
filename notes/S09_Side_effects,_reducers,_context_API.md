@@ -8,6 +8,7 @@
   - [1.3. Handling Side Effects](#13-handling-side-effects)
   - [1.4. useEffect summary](#14-useeffect-summary)
   - [1.5. Introducing useReducer & Reducers In General](#15-introducing-usereducer--reducers-in-general)
+  - [1.6. React Context API](#16-react-context-api)
 
 ## 1.2. Introduction to Side Effects
 
@@ -117,6 +118,74 @@ The `reducerFn` can be defined outside the component definition if it doesn't ne
 -   **Be consitent when calling dispatches**: defining initial state and updating them is supposed to use the same design structure; for example, an object with two values gives **consistency** to its usage: `{value: "", validity: true}`
 -   **Follow conventions**: it is not wrong to _dispatch a new action_ passing numbers or strings as parameters, but it is usually common to send an **object** similar to this example (note the capital case): `{type: "USER_INPUT", val: target.value}`
 -   **Consider using reducers if**: more "power" is needed, there are related pieces of state and/or more complex state updates
+
+## 1.6. React Context API
+
+**React Context (API)** is expected to be present every time a component is supposed to **forward prop (or many)**, and it does not have direct use to it (or all of them) – a more elegant solution exists to **avoid _prop chaining_** (see [official docs](#https://reactjs.org/docs/context.html)).
+
+-   Finally comes a _State Storage_, something that allows direct connections between components that are **not ancestor or child** to each other.
+
+**Where to place it**: you could create a directory in App named **_context_** or **_store_** (or **_state_**) will have a file to do this direct "connection".
+
+-   Use `React.createContext()`, pass a `defaultValue` to it (usually an object) and store the returned **value** in a constant
+-   What is returned back is an object which have components `Provider` and `Consumer` as properties
+
+To use this **context component**, you can use the **`Provider`** component (use the _dot notation_ to retrieve it, after import) to wrap components whose _family tree_ is allowed to observe this context.
+
+-   Naming examples: `import SomeContext from "./store/some-context.js"`.
+    -   `.js` file usually comes not with _Pascal Case_, resulting in its name-case differing from a component file's name-case convention.
+    -   Note that both _Pascal case_ and _kebab-case_ notations are present in this solution.
+-   Usage example:
+    ```javascript
+    <SomeContext.Provider>
+        <Children />
+    </SomeContext.Provider>
+    ```
+-   It is not necessary if the `defaultValue` is set, because all consumers will assume this value when using `SomeContext`:
+
+    > _The `defaultValue` argument is only used when a component does not have a matching `Provider` above it in the tree. This default value can be helpful for testing components in isolation without wrapping them._
+
+Implementing it comes in two parts:
+
+1. **providing part**, and
+2. **listening part** (use the values).
+
+Alternatives to do the _listening part_:
+
+1. Use a **`Consumer` component**, placing the code which needs the context value `ctx` in a return statement from a **new function** that the _Consumer_ makes use of as a child.
+
+    - It can't be used without using `Provider`
+    - Use `value` property on `Provider` to update this "global state", restrain "crashs" and pass data without props chaining
+        - A "crash" would happen if a `Consumer` tries getting the provided context value, but with no `value` property in the `Provider`.
+        - This update should be **dynamic**, otherwise the value would always remain the same.
+    - To get the context value, one simply can acess it from the function called by the `Consumer`.
+
+    For this case, the **parameter** automatically is the argument passed into the context when it was created or defined: when there is _Provider_, its `value` assumes:
+
+    ```html
+    <SomeContext.Provider value={someState}>
+        <SomeContext.Consumer>
+            {(ctx) => {
+                return <h1>{ctx} {<!-- = .Provider.value -->}</h2>
+            }}
+        </SomeContext.Consumer>
+    </SomeContext.Provider>
+    ```
+
+    But when there is _not_, the `defaultValue` mentioned before is referenced as `ctx`:
+
+    ```html
+    <SomeContext.Consumer>
+        {(ctx) => {
+            return <h1>{ctx} {<!-- = defaultValue -->}</h2>
+        }}
+    </SomeContext.Consumer>
+    ```
+
+2. The **second alternative** is to use value from the **`useContext` Hook**: `const value = useContext(FileImport)`.
+    - It is more cleaner and concise than the first alternative
+    - The hook takes away the need of consuming the context and modifying the return statement
+    - For the examples done before, `FileImport` is replace with `SomeContext`, and `value` with `ctx`
 
 ##
 
