@@ -13,6 +13,7 @@
   - [1.8. Working with Portals](#18-working-with-portals)
   - [1.9. Working with "ref"s](#19-working-with-refs)
   - [1.10. Controlled vs Uncontrolled Components](#110-controlled-vs-uncontrolled-components)
+  - [1.11. Diving into "Forward Refs"](#111-diving-into-forward-refs)
 
 ## 1.2. Module Introduction
 
@@ -138,6 +139,28 @@ The method responsible for creating _refs._ actually **return an object** with a
 ## 1.10. Controlled vs Uncontrolled Components
 
 Using _refs_ makes an component to be called **_uncontrolled_**, given the fact that it _no longer_ has its **state managed directly by React**, meaning this: alterations through `ref` make a **direct change** to the _referenced_ element – no longer a React-specific thing. As noted before, **controlled components** have their internal state controlled by React.
+
+## 1.11. Diving into "Forward Refs"
+
+Using imperative mode, as suggested by React community, is a rare practice. But it is a possibility for some situations in which a parent wants to **execute a child's function**, for which **Forward Refs** are used in cooperation with [`useImperativeHandle`](#https://reactjs.org/docs/hooks-reference.html#useimperativehandle) Hook.
+
+> _`useImperativeHandle` customizes the instance value that is exposed to parent components when using `ref`_
+
+In this project and example, similar to that covered in the docs' section, a function inside `Input` component is given to be executed by its parent; again, it's **not** a costumary action. (This assumes that the `input` elements and its parent `divs` were refactored, which wasn't done before).
+
+-   At first, trying to write `<Input ref={emailRef} />`, for instance, and call `emailRef.current.myFunction()` **would not be possible** for any `myFunction()` declared in `Input`'s scope.
+    > \_Function components cannot be given `refs`"
+-   Know that calling `.focus()` in a HTML element is allowed on its DOM
+-   Also, that example takes use of a second argument can a component can accept (besides `props`): `ref`, a reference set from outside
+
+Having `useImperativeHandle` takes two arguments:
+
+1. the `ref` sent by from the "outside", which establish a binding between this component and its parent (or one of them)
+2. the second being a function that returns an **object**.
+    - This will make "available" every data pointed by its properties;
+    - for example: `return { thisGiveFocus: giveFocus }` would externalize a function `giveFocus` by its name
+
+To make the bind go forward, it is necessary to implement `React.forwardRef()`, whose first argument is the component.
 
 ##
 
