@@ -7,39 +7,6 @@
     gap: 1.4rem;
 }
 
-.setter {
-    max-width: 90%;
-}
-
-.settings label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.3rem;
-}
-
-.settings input {
-    font: inherit;
-    width: 21rem;
-    max-width: 100%;
-    min-height: 2rem;
-    overflow-wrap: break-word;
-    color: var(--color-text-main);
-    border: 1px solid var(--color-border-focus);
-    border-radius: 6px 2px;
-    background-color: var(--color-background-info);
-    padding: 4px;
-}
-
-.settings input:focus,
-.settings input:active {
-    background-color: var(--color-background-main);
-}
-
-#amount-input {
-    width: 6rem;
-    max-width: 100%;
-}
-
 .action {
     display: flex;
     gap: 1rem;
@@ -71,7 +38,7 @@
     background-color: var(--color-background-success-hover);
 }
 
-.setter .invalid {
+.invalid {
     outline: var(--color-border-destructive) dotted 1px;
     border-color: var(--color-border-destructive);
 }

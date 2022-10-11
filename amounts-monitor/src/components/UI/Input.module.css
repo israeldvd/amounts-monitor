@@ -1,0 +1,32 @@
+.setter {
+    max-width: 90%;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+input {
+    font: inherit;
+    width: 21rem;
+    max-width: 100%;
+    min-height: 2rem;
+    overflow-wrap: break-word;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border-focus);
+    border-radius: 6px 2px;
+    background-color: var(--color-background-info);
+    padding: 4px;
+}
+
+input:focus,
+input:active {
+    background-color: var(--color-background-main);
+}
+
+#amount-input {
+    width: 6rem;
+    max-width: 100%;
+}

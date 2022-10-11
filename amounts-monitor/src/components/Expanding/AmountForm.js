@@ -2,6 +2,7 @@ import { useRef, useState, Fragment, useReducer } from "react";
 
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
+import Input from "../UI/Input";
 
 import styles from "./AmountForm.module.css";
 
@@ -108,12 +109,12 @@ const AmountForm = (props) => {
     });
 
     const inputChangeHandler = (event) => {
-        const targetName = event.target.name;
+        const target = event.target;
 
         setFormState({
             type: "USER_INPUT",
-            name: targetName,
-            val: event.target.value,
+            name: target.name,
+            val: target.value,
         });
     };
 
@@ -163,6 +164,11 @@ const AmountForm = (props) => {
 
     const errorModalClose = () => {
         setError(null);
+
+        if (formState[descriptionInputName].isValid === false)
+            descriptionInputRef.current.activate();
+        else if (formState[costInputName]) costInputRef.current.activate();
+        else dateInputRef.current.activate();
     };
 
     return (
@@ -177,72 +183,63 @@ const AmountForm = (props) => {
             {/* TODO: prevent user interaction with form inputs (check stash) */}
             <form action="POST" onSubmit={submitHandler}>
                 <div className={styles["settings"]}>
-                    <div className={styles["setter"]}>
-                        <label htmlFor={descriptionInputName}>
-                            Description
-                        </label>
-                        <input
-                            name={descriptionInputName}
-                            type="text"
-                            id={descriptionInputName}
-                            ref={descriptionInputRef}
-                            value={formState[descriptionInputName].value}
-                            placeholder={
-                                formState[descriptionInputName].placeholder
-                            }
-                            className={
-                                formState[descriptionInputName].isValid ===
-                                false
-                                    ? styles["invalid"]
-                                    : ""
-                            }
-                            onChange={inputChangeHandler}
-                            onBlur={validateInputHandler}
-                            required
-                        />
-                    </div>
-                    <div className={styles["setter"]}>
-                        <label htmlFor={costInputName}>Cost</label>
-                        <input
-                            name={costInputName}
-                            id={costInputName}
-                            ref={costInputRef}
-                            value={formState[costInputName].value}
-                            placeholder={formState[costInputName].placeholder}
-                            className={
-                                formState[costInputName].isValid === false
-                                    ? styles["invalid"]
-                                    : ""
-                            }
-                            type="number"
-                            min="0.01"
-                            step="0.01"
-                            onChange={inputChangeHandler}
-                            onBlur={validateInputHandler}
-                            required
-                        />
-                    </div>
-                    <div className={styles["setter"]}>
-                        <label htmlFor={dateInputName}>Date</label>
-                        <input
-                            name={dateInputName}
-                            type="date"
-                            id={dateInputName}
-                            ref={dateInputRef}
-                            value={formState[dateInputName].value}
-                            placeholder={formState[dateInputName].placeholder}
-                            className={
-                                formState[dateInputName].isValid === false
-                                    ? styles["invalid"]
-                                    : ""
-                            }
-                            min="2000-01-01"
-                            max="2050-12-31"
-                            onChange={inputChangeHandler}
-                            onBlur={validateInputHandler}
-                            required
-                        />
-                    </div>
+                    <Input
+                        label="Description"
+                        name={descriptionInputName}
+                        type="text"
+                        id={descriptionInputName}
+                        ref={descriptionInputRef}
+                        value={formState[descriptionInputName].value}
+                        placeholder={
+                            formState[descriptionInputName].placeholder
+                        }
+                        className={
+                            formState[descriptionInputName].isValid === false
+                                ? styles["invalid"]
+                                : ""
+                        }
+                        onChange={inputChangeHandler}
+                        onBlur={validateInputHandler}
+                        required
+                    />
+                    <Input
+                        label="Cost"
+                        name={costInputName}
+                        type="number"
+                        id={costInputName}
+                        ref={costInputRef}
+                        value={formState[costInputName].value}
+                        placeholder={formState[costInputName].placeholder}
+                        className={
+                            formState[costInputName].isValid === false
+                                ? styles["invalid"]
+                                : ""
+                        }
+                        min="0.01"
+                        step="0.01"
+                        onChange={inputChangeHandler}
+                        onBlur={validateInputHandler}
+                        required
+                    />
+                    <Input
+                        label="Date"
+                        name={dateInputName}
+                        type="date"
+                        id={dateInputName}
+                        ref={dateInputRef}
+                        value={formState[dateInputName].value}
+                        placeholder={formState[dateInputName].placeholder}
+                        className={
+                            formState[dateInputName].isValid === false
+                                ? styles["invalid"]
+                                : ""
+                        }
+                        min="2000-01-01"
+                        max="2050-12-31"
+                        onChange={inputChangeHandler}
+                        onBlur={validateInputHandler}
+                        required
+                    />
                 </div>
                 <div className={styles["action"]}>
                     <Button type="button" onClick={props.onUserCancel}>
