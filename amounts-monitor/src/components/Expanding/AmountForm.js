@@ -25,13 +25,32 @@ const getInvalidInputs = (...formInputs) => {
 const dispatchForm = (state, action) => {
     // generic input-value state update
     if (action.type === "USER_INPUT") {
+        const inputValidation = action.val.trim().length > 0;
         return {
             ...state,
             [action.name]: {
                 ...state[action.name],
                 value: action.val,
+                isValid: inputValidation,
             },
             isValid: state.isValid,
+        };
+    }
+
+    if (action.type === "FORM_VALIDATION") {
+        return {
+            ...state,
+            isValid: Object.values(state).reduce((validity, stateProp) => {
+                if (
+                    stateProp &&
+                    typeof stateProp === "object" &&
+                    Object.hasOwn(stateProp, "isValid")
+                ) {
+                    return validity && !!stateProp.isValid;
+                }
+
+                return validity;
+            }, true),
         };
     }
 
@@ -44,7 +63,7 @@ const dispatchForm = (state, action) => {
                 ...state[action.name],
                 isValid: inputValidation,
             },
-            isValid: state.isValid && inputValidation,
+            isValid: state.isValid,
         };
     }
 
@@ -116,10 +135,15 @@ const AmountForm = (props) => {
             name: target.name,
             val: target.value,
         });
+
+        setFormState({
+            type: "FORM_VALIDATION",
+        });
     };
 
     const validateInputHandler = (event) => {
         setFormState({ type: "INPUT_BLUR", name: event.target.name });
+        setFormState({ type: "FORM_VALIDATION" });
     };
 
     const submitHandler = (event) => {

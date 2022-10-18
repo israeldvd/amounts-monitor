@@ -31,6 +31,9 @@ const Input = React.forwardRef((props, ref) => {
                 onChange={props.onChange}
                 onBlur={props.onBlur}
                 required={props.required}
+                min={props.min}
+                max={props.max}
+                step={props.step}
             />
         </div>
     );
