@@ -35,6 +35,24 @@ const dispatchForm = (state, action) => {
         };
     }
 
+    if (action.type === "FORM_VALIDATION") {
+        return {
+            ...state,
+            isValid: Object.values(state).reduce((validity, stateProp) => {
+                console.log(validity);
+                if (
+                    stateProp &&
+                    typeof stateProp === "object" &&
+                    Object.hasOwn(stateProp, "isValid")
+                ) {
+                    return validity && !!stateProp.isValid;
+                }
+
+                return validity;
+            }, true),
+        };
+    }
+
     // after onBlur, validate the input state (validation method may vary, accoring to name)
     if (action.type === "INPUT_BLUR") {
         const inputValidation = state[action.name].value.trim().length > 0;
@@ -44,7 +62,7 @@ const dispatchForm = (state, action) => {
                 ...state[action.name],
                 isValid: inputValidation,
             },
-            isValid: state.isValid && inputValidation,
+            isValid: state.isValid,
         };
     }
 
@@ -116,10 +134,15 @@ const AmountForm = (props) => {
             name: target.name,
             val: target.value,
         });
+
+        setFormState({
+            type: "FORM_VALIDATION",
+        });
     };
 
     const validateInputHandler = (event) => {
         setFormState({ type: "INPUT_BLUR", name: event.target.name });
+        setFormState({ type: "FORM_VALIDATION" });
     };
 
     const submitHandler = (event) => {

@@ -42,3 +42,16 @@
     outline: var(--color-border-destructive) dotted 1px;
     border-color: var(--color-border-destructive);
 }
+
+.action button:disabled {
+    color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.action button:disabled:hover {
+    color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.2);
+    cursor: initial;
+}

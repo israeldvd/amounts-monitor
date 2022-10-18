@@ -2,7 +2,6 @@ import App from "./App";
 
 import { unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
-import { createRoot } from "react-dom/client";
 import { render } from "@testing-library/react";
 
 let container = null;
