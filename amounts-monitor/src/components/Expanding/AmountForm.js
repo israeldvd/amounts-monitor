@@ -10,6 +10,11 @@ const descriptionInputName = "item-description-input";
 const dateInputName = "item-date-input";
 const costInputName = "item-cost-input";
 
+const inputErrorPlaceholder = (name = "") => {
+    if (name === costInputName) return "0.00";
+    return "Insert a valid text here.";
+};
+
 const getInvalidInputs = (...formInputs) => {
     let inputNames = [];
 
@@ -31,6 +36,9 @@ const dispatchForm = (state, action) => {
             [action.name]: {
                 ...state[action.name],
                 value: action.val,
+                placeholder: inputValidation
+                    ? ""
+                    : inputErrorPlaceholder(action.name),
                 isValid: inputValidation,
             },
             isValid: state.isValid,
@@ -160,7 +168,7 @@ const AmountForm = (props) => {
             setFormState({
                 type: "INPUT_CLEAR",
                 name: elementName,
-                placeholder: "Insert a valid text here.",
+                placeholder: inputErrorPlaceholder(),
             });
         });
 
